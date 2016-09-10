@@ -1,0 +1,112 @@
+
+Question 1
+************
+
+Nsuper = Number of characters in the Superstring
+Nsub = Number of characters in the substring
+
+We sort the substring whose anagram is needed to be searched in ascending order. We pick every "Nsub" long substring of the superstring starting from index 0. We do this in a for loop using index. we sort each of this substring got from superstring and compare to the original. If there is a match we return True immediately, if not we move to the next index.
+
+I chose this algorithm because it is very pythonic. Amazingly a search over a string can be carried out within 5 to 6 lines of code (everything else is just to deal with corner cases.) 
+
+Worst case Runtime efficiency = O(Nsuper - Nsub) * O(Nsub) = O(Nsuper * Nsub)
+We sort a 'Nsub' long string, 'Nsuper - Nsub' times
+
+Worst Case Memory  = O(Nsuper + Nsub)
+
+
+
+Question 2
+************
+
+Nstring = N = Number of characters in the string
+
+We traverse through the string from start to finish and at every index location we do a search on either side of the index until 
+ 1) The search reaches the end of the string on either side, or
+ 2) There is ni mirror match
+
+We have to take care that palindromes can be of two types:
+
+ a) rrr  and.
+ b) rrrr
+
+Its easy to do a mirror search in the first case with an index anchored @ the middle character. IN the second case some nifty index hacking needs to be undertaken to find mirror matching. Finally the length of the pallindrome found is comapred to an older one found and the longer one is kept.
+
+I chose this algorithm becuase this is how I would search for a palindrome in a string manually as well. 
+
+Worst Case runtime efficiency =  O( 1+ 2 + 3 + ... + N/2) = O(N^2)
+Over the entire length of string we carry out searches of increasing length of the index upto half the string length.
+
+Worst Case Memory = O(Nstring)
+
+
+
+Question 3
+************
+
+The algorithm is pretty straightforward. We massage the data from an adjacency list to an edgeList. This jsut fairly easy data manipulation. The edgelist is then sorted off according to edge weights. Then we pick the lowest weight edge and only those in the MST where at least one of the two nodes on that edge has not been touched before. We continue till all the edges are exhausted.
+
+let  	V = number of vertices/nodes in the graph
+	E = number of edges in the graph
+
+
+We created the algorithm becuase it made intutuive sense. Add the lowest cost edges as long it is an edges which has a vertex that has not been seen before. It seems this this called Kruskal's algorithm. It explicitly checks for formation of cycles (which is done implicitly our algorithm by the requirement that only edges with at least one untouched vertx is added to the MST)
+https://en.wikipedia.org/wiki/Kruskal%27s_algorithm
+
+Worst case run time efficiency = O(E)  
+We parse through all the edges in the edgelist. This algorithm is good if the graph has many vertices but not as many edges (i.e sparse) but this algorithm would do poorly for a completely connected/strongly connected graph since it will continue looking at edges long past when all the vertices have already been touched.
+
+Worst Case Memory = O(E) + O(V)
+EdgeList contains all the edges and the MST contains all the nodes.
+
+
+
+Question 4
+************
+
+The algorithm works as follows: Given a tree in terms of a square matrix, a root node and two nodes whose common ancestor is to be found, we use properties of a BST to see if the two nodes fall on either side of the root. If they do then the root is the common ancestor else we find the branch from the root to follow (if both numbers are larger than root then follow the right branch else follow the left branch)
+
+let     V = number of vertices/nodes in the tree
+        E = number of edges in the tree
+
+
+This is the tree trversal along the depth of the tree. This is how I would search the tree manually is given a problem of this type.
+
+
+Worst Case run time efficiency = O(log V)
+Since we are traversing the depth of the BST
+
+Worst Case Mempry = O(V^2)
+Thats how the data is provided to us. 
+
+
+Question 5
+************
+
+We did two implementations here. A queue based implementation and a pointer based implementation.
+
+let 	V = number of elements in the linked list.
+
+
+queue based:
+************
+
+We initialize a queue with the size of 'm' the # of elements back from the end that we need to return the element from. As we traverse the linked list we keep on adding the elements to the queue. At some point in time the queue will be full so we have to evict one element while we add another. Eventually we reach the end of the linked list at which time the queue will be holding the last 'm' elements in the linked list. The first element of the queue then is the element we want.
+
+If we reach the end of the linked list and the queue is still not full then it means the 'm' is larger than the size of the linked list.
+
+
+Worst Case run time efficiency = O(V)
+Worse Case Memory = O(V) + O(m)
+
+
+pointer based:
+**************
+
+We keep two pointers (leading and lagging). The leading pointer traverses the linked list. The lagging pointer does the same but it starts only after the leading pointer has moved by 'm' places. Thus when the leading pointer reaches the end of the linked list the lagging pointers is pointing to an elements that is 'm' elements from the end of the list.
+
+
+Worst Case run time efficiency = O(V)
+Worse Case Memory = O(V) 
+
+
