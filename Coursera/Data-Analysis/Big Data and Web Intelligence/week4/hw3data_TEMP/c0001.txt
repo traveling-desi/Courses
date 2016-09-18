@@ -1,0 +1,19 @@
+books/bc/tanselCGSS93/Tuzhilin93:::Alexander Tuzhilin:::Applications of temporal Databases to Knowledge-based Simulations.
+books/bc/tanselCGSS93/Tuzhilin93:::Alexander Tuzhilin:::could cannot did didnt does ding ding dong dong bells and whistles and happy go lucky about above after again against map-reduce
+books/bc/tanselCGSS93/Snodgrass93:::Richard T. Snodgrass:::An Overview of TQuel. $$%$$% ###$#ggg #$%$GGG 
+books/aw/kimL89/DiederichM89:::Jim Diederich::Jack Milton:::Objects, Messages, and Rules in Database Design.
+books/aw/kimL89/Maier89:::David Maier:::Making Database Systems Fast Enough for CAD Applications.
+conf/ac/FriedmanMRR03:::Roy Friedman::Achour Mostéfaoui::Sergio Rajsbaum::Michel Raynal:::Using Error-Correcting Codes to Solve Distributed Agreement Problems: A Future Direction in Distributed Computing?
+journals/cj/BaldoniQR01:::Roberto Baldoni::Francesco Quaglia::Michel Raynal:::Consistent Checkpointing for Transaction Systems.
+conf/pdd/HurfinPR93:::Michel Hurfin::Noël Plouzeau::Michel Raynal:::Detecting Atomic Sequences of Predicates in Distributed Computations.
+journals/dc/HelaryMNR00:::Jean-Michel Hélary::Achour Mostéfaoui::Robert H. B. Netzer::Michel Raynal:::Communication-Based Prevention of Useless Checkpoints in Fistributed Computations.
+conf/hase/Raynal97:::Michel Raynal:::A Case Study of Agreement Problems in Distributed Systems: Non-Blocking Atomic Commitment.
+conf/pact/Raynal01:::Michel Raynal:::Quiescent Uniform Reliable Broadcast as an Introduction to Failure Detector Oracles.
+conf/podc/MostefaouiRRR01:::Achour Mostéfaoui::Sergio Rajsbaum::Michel Raynal::Matthieu Roy:::A hierarchy of conditions for consensus solvability.
+conf/podc/FessantPR03:::Fabrice Le Fessant::Philippe Raipin Parvédy::Michel Raynal:::Brief announcement: early decision despite general process omission failures.
+conf/spaa/MostefaouiR01:::Achour Mostéfaoui::Michel Raynal:::Randomized k-set agreement.
+conf/srds/HurfinMRT99:::Michel Hurfin::Raimundo A. Macêdo::Michel Raynal::Frederic Tronel:::A General Framework to Solve Agreement Problems.
+conf/srds/HelaryMNR97:::Jean-Michel Hélary::Achour Mostéfaoui::Robert H. B. Netzer::Michel Raynal:::Preventing Useless Checkpoints in Distributed Computations.
+journals/tc/BochmannR83:::Gregor von Bochmann::Michel Raynal:::Structured Specification of Communicating Systems.
+conf/ftdcs/YauCCLR03:::Stephen S. Yau::Carl K. Chang::Randy Chow::Luca Limoncini::Michel Raynal:::Challenges of Future Distributed Computing Systems.
+conf/icdcs/PrakashRS96:::Ravi Prakash::Michel Raynal::Mukesh Singhal:::An Efficient Causal Ordering Algorithm for Mobile Computing Environments.
