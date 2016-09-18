@@ -1,0 +1,59 @@
+library(AppliedPredictiveModeling)
+data(segmentationOriginal)
+library(caret)
+test <- subset(segmentationOriginal,Case== "Test",select = -Case)
+train <- subset(segmentationOriginal,Case== "Train",select = -Case)
+set.seed(125)
+modFit <- train(Class ~. , method="rpart",data=train)
+
+library(rattle)
+fancyRpartPlot(modFit$finalModel)
+
+#
+#test1 <- test[1,c("TotalIntenCh2","FiberWidthCh1", "PerimStatusCh1")]
+#test1[1,] <- c(23000,10,2)
+#predict(modFit,test1)
+
+#test2 <- test[1,c("TotalIntenCh2","FiberWidthCh1", "VarIntenCh4")]
+#test2[1,] <- c(50000,10,100)
+#predict(modFit,test2)
+
+
+load(url("http://dl.dropboxusercontent.com/u/47814734/olive.rda"))
+head(olive)
+modFit <- train(Area ~. , method="rpart",data=olive)
+newdata = as.data.frame(t(colMeans(olive)))
+predict(modFit,newdata)
+
+
+
+
+library(ElemStatLearn)
+data(SAheart)
+set.seed(8484)
+train = sample(1:dim(SAheart)[1],size=dim(SAheart)[1]/2,replace=F)
+trainSA = SAheart[train,]
+testSA = SAheart[-train,]
+set.seed(13234)
+modFit <- train(chd ~ age+alcohol+obesity+tobacco+typea+ldl , method="glm",data=trainSA)
+
+missClass = function(values,prediction){sum(((prediction > 0.5)*1) != values)/length(values)}
+
+prediction_test <- predict(modFit,newdata=testSA)
+prediction_train <- predict(modFit,newdata=trainSA)
+
+missClass(trainSA[,"chd"],prediction_train)
+missClass(testSA[,"chd"],prediction_test)
+
+
+
+library(ElemStatLearn)
+data(vowel.train)
+data(vowel.test) 
+set.seed(33833)
+vowel.train$y <- as.factor(vowel.train$y)
+vowel.test$y <- as.factor(vowel.test$y)
+modFit <- train(y ~ ., method="rf", data=vowel.train)
+varImp(modFit)
+
+

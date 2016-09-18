@@ -1,0 +1,83 @@
+
+library(caret)
+
+
+library(ElemStatLearn)
+data(vowel.train)
+data(vowel.test) 
+set.seed(33833)
+vowel.train$y <- as.factor(vowel.train$y)
+vowel.test$y <- as.factor(vowel.test$y)
+mod_rf <- train(y~., method="rf",data=vowel.train)
+mod_gbm <- train(y~., method="gbm",data=vowel.train)
+predict_rf <- predict(mod_rf,vowel.test)
+predict_gbm <- predict(mod_gbm,vowel.test)
+confusionMatrix(predict_rf,vowel.test$y)
+confusionMatrix(predict_gbm,vowel.test$y)
+confusionMatrix(predict_gbm[predict_gbm == predict_rf],vowel.test$y[predict_gbm == predict_rf])
+
+
+
+
+set.seed(3433)
+library(AppliedPredictiveModeling)
+data(AlzheimerDisease)
+adData = data.frame(diagnosis,predictors)
+inTrain = createDataPartition(adData$diagnosis, p = 3/4)[[1]]
+training = adData[ inTrain,]
+testing = adData[-inTrain,]
+set.seed(62433)
+mod_rf <- train(diagnosis ~ ., method="rf",data=training)
+mod_gbm <- train(diagnosis ~ ., method="gbm",data=training)
+mod_lda <- train(diagnosis ~ ., method="lda",data=training)
+predict_rf <- predict(mod_rf,testing)
+predict_gbm <- predict(mod_gbm,testing)
+predict_lda <- predict(mod_lda,testing)
+
+preDF <- data.frame(predict_rf,predict_gbm,predict_lda,diagnosis=testing$diagnosis)
+combModFit <- train(diagnosis ~ ., method ="rf", data=preDF)
+combPred <- predict(combModFit,preDF)
+
+confusionMatrix(predict_rf,testing$diagnosis)
+confusionMatrix(predict_gbm,testing$diagnosis)
+confusionMatrix(predict_lda,testing$diagnosis)
+confusionMatrix(combPred,testing$diagnosis)
+
+
+
+
+set.seed(3523)
+library(AppliedPredictiveModeling)
+data(concrete)
+inTrain = createDataPartition(concrete$CompressiveStrength, p = 3/4)[[1]]
+training = concrete[ inTrain,]
+testing = concrete[-inTrain,]
+mod_lasso <- train(CompressiveStrength ~ ., method="lasso", data=training)
+plot.enet(mod_lasso$finalModel, xvar="penalty", use.color=T)
+
+
+setwd("/Users/sarpotd/Desktop/Coursera/Data Analysis/Practical Machine Learning/week4/")
+dat = read.csv("gaData.csv")
+training = dat[year(dat$date)==2011,]
+tstrain = ts(training$visitsTumblr)
+fit <- bats(y=tstrain)
+testing = dat[year(dat$date)>2011,]
+tstest = ts(testing$visitsTumblr)
+fit_forecast <- forecast(fit,h=dim(testing)[1],level=95)
+table(testing$visitsTumblr > fit_forecast$lower & fit_forecast$upper > testing$visitsTumblr)
+
+
+
+library(e1071)
+set.seed(3523)
+library(AppliedPredictiveModeling)
+data(concrete)
+inTrain = createDataPartition(concrete$CompressiveStrength, p = 3/4)[[1]]
+training = concrete[ inTrain,]
+testing = concrete[-inTrain,]
+set.seed(325)
+mod <- svm(CompressiveStrength ~ ., data=training)
+
+predict_mod <- predict(mod,testing)
+
+(sum((testing$CompressiveStrength - predict_mod)^2)/length(predict_mod))^0.5

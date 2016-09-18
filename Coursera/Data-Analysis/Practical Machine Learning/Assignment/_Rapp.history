@@ -1,0 +1,328 @@
+qplot(1:dim(training)[1], FlyAsh,data=training,colour=cut2(1:dim(training)[1],m=200,g=4))
+qplot(1:dim(training)[1], Superplasticizer,data=training,colour=cut2(1:dim(training)[1],m=200,g=4))
+qplot(1:dim(training)[1], Water,data=training,colour=cut2(1:dim(training)[1],m=200,g=4))
+qplot(1:dim(training)[1], CoarseAggregate,data=training,colour=cut2(1:dim(training)[1],m=200,g=4))
+qplot(1:dim(training)[1], FineAggregate,data=training,colour=cut2(1:dim(training)[1],m=200,g=4))
+qplot(1:dim(training)[1], Cement,data=training,colour=cut2(1:dim(training)[1],m=200,g=4))
+qplot(1:dim(training)[1], BlastFurnaceSlag,data=training,colour=cut2(1:dim(training)[1],m=200,g=4))
+?sample
+?aes
+library(caret)
+?aes
+library(AppliedPredictiveModeling)#
+data(segmentationOriginal)#
+library(caret)
+head(segmentationOriginal)
+head(segmentationOriginal[case=train,])
+head(segmentationOriginal["case"=train,])
+?subset
+subset(segmentationOriginal,select=c(Case="Test"))
+subset(segmentationOriginal,select=(Case="Test"))
+subset(segmentationOriginal,select=(Case=="Test"))
+subset(segmentationOriginal,select=c(Case=="Test"))
+segmentationOriginal[Case=="Test",]
+segmentationOriginal["Case==Test",]
+segmentationOriginal[,"Case==Test"]
+segmentationOriginal[,Case]
+segmentationOriginal[,"Case"]
+segmentationOriginal["Case"==Test,]
+segmentationOriginal["Case"=="Test",]
+subset(segmentationOriginal,Case== "Test")
+head(subset(segmentationOriginal,Case== "Test"))
+head(subset(segmentationOriginal,Case== "Test",select = -Case))
+test <- head(subset(segmentationOriginal,Case== "Test",select = -Case))
+train <- head(subset(segmentationOriginal,Case== "Train",select = -Case))
+seed(125)
+?set
+?seed
+?set.seed
+set.seed(125)
+modFit <- train(Class ~. , method="rpart",data=train)
+?predict
+predict(modFit,newdata=c(TotalIntench2 = 23,000, FiberWidthCh1 = 10, PerimStatusCh1=2))
+test[,TotalIntench2 == 23,000]
+test[,"TotalIntench2" == 23,000]
+test["TotalIntench2" == 23,000,]
+test["TotalIntench2" == 23000,]
+test["TotalIntench2" = 23000,]
+test["TotalIntench2 == 23000",]
+test["TotalIntench2 = 23000",]
+head(test)
+test[VarIntenCh1== 12.47468,]
+test["VarIntenCh1" == 12.47468,]
+test["VarIntenCh1" = 12.47468,]
+test["VarIntenCh1 == 12.47468",]
+test[test$VarIntenCh1 == 12.47468,]
+test$VarIntenCh1
+test$VarIntenCh1 == 12.47468
+test$VarIntenCh1 == "12.47468"
+"test$VarIntenCh1 == 12.47468"
+test$VarIntenCh1 == "12.47468"
+test$VarIntenCh1 = "12.47468"
+test$VarIntenCh1
+test <- head(subset(segmentationOriginal,Case== "Test",select = -Case))
+predict(modFit,newdata=testing)
+predict(modFit,newdata=test)
+test(,"TotalIntench2")
+test(,TotalIntench2)
+test[],TotalIntench2]
+test[,TotalIntench2]
+test[,"TotalIntench2"]
+test$TotalIntench2
+colnames(test)
+test[, "TotalIntenCh2"]
+test1 <- test[1,c("TotalIntenCh2","FiberWidthCh1", "PerimStatusCh1")]
+test1
+test1 <- c(2300,10,2)
+test
+test`1
+test1
+]
+''
+``
+test1
+predict(modFit,test1)
+predict(modFit,newdata=test1)
+test1
+test1 <- test[1,c("TotalIntenCh2","FiberWidthCh1", "PerimStatusCh1")]
+test1
+test1[1] <- c(2300,10,2)
+test1[1,] <- c(2300,10,2)
+test1
+predict(modFit,test1)
+predict(modFit,newdata=test1)
+str(modFit)
+test1[1,] <- c(23000,10,2)#
+predict(modFit,test1)
+test1
+test2 <- test[1,c("TotalIntenCh2","FiberWidthCh1", "VarIntenCh4"]#
+test2[1,] <- c(50000,10,100)#
+predict(modFit,test2)
+test2 <- test[1,c("TotalIntenCh2","FiberWidthCh1", "VarIntenCh4")]#
+test2[1,] <- c(50000,10,100)#
+predict(modFit,test2)
+test <- head(subset(segmentationOriginal,Case== "Test",select = -Case))#
+train <- head(subset(segmentationOriginal,Case== "Train",select = -Case))#
+set.seed(125)#
+modFit <- train(Class ~. , method="rpart",data=train)#
+test1 <- test[1,c("TotalIntenCh2","FiberWidthCh1", "PerimStatusCh1")]#
+test1[1,] <- c(23000,10,2)#
+predict(modFit,test1)
+test <- subset(segmentationOriginal,Case== "Test",select = -Case)#
+train <- subset(segmentationOriginal,Case== "Train",select = -Case)#
+set.seed(125)#
+modFit <- train(Class ~. , method="rpart",data=train)
+library(AppliedPredictiveModeling)#
+data(segmentationOriginal)#
+library(caret)#
+test <- subset(segmentationOriginal,Case== "Test",select = -Case)#
+train <- subset(segmentationOriginal,Case== "Train",select = -Case)#
+set.seed(125)#
+modFit <- train(Class ~. , method="rpart",data=train)
+test1 <- test[1,c("TotalIntenCh2","FiberWidthCh1", "PerimStatusCh1")]
+test1
+test1[1,] <- c(23000,10,2)#
+predict(modFit,test1)
+test1
+test2 <- test[1,c("TotalIntenCh2","FiberWidthCh1", "VarIntenCh4")]#
+test2[1,] <- c(50000,10,100)#
+predict(modFit,test2)
+print(modFit$finalModel)
+library(rattle)
+fancyRpartPlot(modFit$finalModel)
+library(rattle)
+fancyRpartPlot(modFit$finalModel)
+library(pgmm)#
+data(olive)#
+olive = olive[,-1]
+load(url("http://dl.dropboxusercontent.com/u/47814734/olive.rda"))#
+head(olive)
+modFit <- train(Area ~. , method="rpart",data=olive)
+newdata = as.data.frame(t(colMeans(olive)))#
+predict(modFit,newdata)
+olive
+library(ElemStatLearn)#
+data(SAheart)#
+set.seed(8484)#
+train = sample(1:dim(SAheart)[1],size=dim(SAheart)[1]/2,replace=F)#
+trainSA = SAheart[train,]#
+testSA = SAheart[-train,]#
+set.seed(13234)
+head(trainSA)
+modFit <- train(chd ~ c(age,alcohol,obesity,tobacco,typea, ldl) , method="glm",data=trainSA)
+modFit <- train(chd ~ (age,alcohol,obesity,tobacco,typea, ldl) , method="glm",data=trainSA)
+modFit <- train(chd ~ age+alcohol+obesity+tobacco+typea+ldl , method="glm",data=trainSA)
+?predict
+prediction <- predict(modFit,newdata=testSA)
+missClass = function(values,prediction){sum(((prediction > 0.5)*1) != values)/length(values)}
+missClass
+trainSA[,"chd"]
+prediction_test <- predict(modFit,newdata=testSA)#
+prediction_train <- predict(modFit,newdata=trainSA)#
+#
+missClass(trainSA[,"chd"],prediction_train)#
+missClass(testSA[,"chd"],prediction_test)
+library(ElemStatLearn)#
+data(vowel.train)#
+data(vowel.test)
+head(vowel.test)
+str(vowel.train)
+as.factor(vowel.train$y)
+?type
+vowel.train$y <- as.factor(vowel.train$y)
+str(vowel.train)
+set.seed(33833)#
+vowel.train$y <- as.factor(vowel.train$y)#
+vowel.test$y <- as.factor(vowel.test$y)#
+modFit <- train(y ~ ., method=rf, data=vowel.train)
+head(vowel.train)
+str(vowel.train)
+str(vowel.test)
+modFit <- train(y ~ ., method="rf", data=vowel.train)
+?varimp
+??varimp
+varImp(modFit)
+modFit <- train(y ~ ., method="rf", data=vowel.test)
+varImp(modFit)
+?randomForest
+modFit <- randomForest(y ~ .,  data=vowel.train)
+varImp(modFit)
+modFit <- train(y ~ ., method="rf", data=vowel.train)
+library(caret)#
+setwd("/Users/sarpotd/Desktop/Coursera/Data Analysis/Practical Machine Learning/Assignment/")#
+train <- read.csv("pml-training.csv",header=TRUE,na.strings = c("NA",""))#
+test <- read.csv("pml-testing.csv",header=TRUE,na.strings = c("NA",""))#
+perc_of_na <- function(d) {sum(is.na(d))/length(d)}#
+b <- apply(train,2,perc_of_na)#
+new_train <- train[,b < 0.95]#
+new_test <- test[,b < 0.95]#
+modFit <- train(classe ~ ., method="rf", data=new_train, trControl = trainControl(method = "cv", number = 4))#
+predict(modFit,new_test)
+new_test
+predict(modFit,new_train)
+?confusion
+?confusionmatrix
+??confusionmatrix
+train_predict <- predict(modFit,new_train)
+confusionMatrix.table(train_predict,new_train$classe)
+library(caret)
+confusionMatrix.table(train_predict,new_train$classe)
+confusionMatrix(train_predict,new_train$classe)
+?kfold
+??kfold
+?createDataPartition
+clean_train <- train[,b < 0.95]#
+clean_train_split <- createDataPartition(y=new_train$classe,p=0.75,list=FALSE)#
+#
+sample_train <- clean_train[clean_train_split,]#
+sample_test <- clean_train[-clean_train_split,]#
+#
+modFit <- train(classe ~ ., method="rf", data=sample_train, trControl = trainControl(method = "cv", number = 4))#
+predict(modFit,sample_test)
+sample_predict <- predict(modFit,sample_test)
+confusionMatrix(sample_predict,sample_test$classe)
+clean_test_predict <- predict(modFit,clean_test)
+clean_test <- test[,b < 0.95]#
+#modFit <- train(classe ~ ., method="rf", data=clean_train, trControl = trainControl(method = "cv", number = 4))#
+clean_test_predict <- predict(modFit,clean_test)
+clean_test_predict
+head(clean_train)
+head(clean_test)
+varImp(modFit)
+clean_train[,-"X"]
+clean_train[,-("X")]
+clean_train[,-c("X")]
+which(colnames(clean_train)=="X")
+which(colnames(clean_train)=="X"|"user_name")
+which(colnames(clean_train)=="X | user_name")
+which(colnames(clean_train)=="X || user_name")
+which(colnames(clean_train)=="X" || "user_name")
+which(colnames(clean_train)=="X" OR "user_name")
+?or
+??or
+head(clean_train[,-c(1:7)])
+clean_train <- clean_train[,-c(1:7)]#
+clean_train_split <- createDataPartition(y=new_train$classe,p=0.75,list=FALSE)#
+#
+sample_train <- clean_train[clean_train_split,]#
+sample_test <- clean_train[-clean_train_split,]#
+#
+modFit <- train(classe ~ ., method="rf", data=sample_train, trControl = trainControl(method = "cv", number = 4))#
+sample_predict <- predict(modFit,sample_test)
+varImp(modFit)
+confusionMatrix(sample_predict,sample_test$classe)
+clean_test <- test[,b < 0.95]#
+clean_test <- clean_test[,-c(1:7)]#
+#modFit <- train(classe ~ ., method="rf", data=clean_train, trControl = trainControl(method = "cv", number = 4))#
+clean_test_predict <- predict(modFit,clean_test)
+clean_test_predict
+clean_test
+pml_write_files = function(x){#
+  n = length(x)#
+  for(i in 1:n){#
+    filename = paste0("problem_id_",i,".txt")#
+    write.table(x[i],file=filename,quote=FALSE,row.names=FALSE,col.names=FALSE)#
+  }#
+}
+answers = c("B" "A" "B" "A" "A" "E" "D" "B" "A" "A" "B" "C" "B" "A" "E" "E" "A" "B" "B" "B")
+answers = c("B", "A" ,"B" ,"A" ,"A", "E", "D", "B", "A", "A", "B", "C", "B", "A", "E", "E", "A", "B", "B", "B")
+answers
+pml_write_files(answers)
+clean_test
+head(clean_train[,roll_belt=="B"])
+head(clean_train[,"roll_belt"=="B"])
+clean_train[,"roll_belt"=="B"]
+clean_train[,"roll_belt"==B]
+head(clean_train["roll_belt"==B,])
+head(clean_train["roll_belt"=="B",])
+head(clean_train[roll_belt=="B",])
+head(clean_train[clean_train$roll_belt=="B",])
+head(clean_train[clean_train$roll_belt==B,])
+table(clean_train$roll_belt)
+range(clean_train$roll_belt)
+?cut2
+library(Hmisc)
+?cut2
+cut2(clean_train$roll_belt,g=5)
+table(cut2(clean_train$roll_belt,g=5),clean_train$classe)
+head(clean_test)
+confusionMatrix(sample_predict,sample_test$classe)
+clean_test_predict <- predict(modFit,clean_test)
+clean_test_predict
+dim(clean_train)
+dim(train)
+di(test)
+dim(test)
+plot(clean_train$classe,clean_train$roll_belt)
+qplot(clean_train$classe,clean_train$roll_belt)
+varImp(modFit)
+?qplot
+qplot(clean_train$pitch_frearm,clean_train$roll_belt)
+qplot(clean_train$pitch_forearm,clean_train$roll_belt)
+qplot(clean_train$pitch_forearm,clean_train$roll_belt)
+qplot(clean_train$pitch_forearm,clean_train$roll_belt,color=clean_train$classe)
+library(rattle)
+fancyRpartPlot(modFit$finalModel)
+modelFit
+modFit
+fancyRpartPlot(modFit)
+plot(modfit)
+plot(modFit)
+?train
+head(clean_test)
+head(test)
+which(colnames(clean_test)== "problem_id"")
+)
+""
+which(colnames(clean_test)== "problem_id"))
+which(colnames(clean_test)== "problem_id")
+clean_test <- clean_test[,-which(colnames(clean_test)== "problem_id")]
+dim(clean_test)
+confusionMatrix(sample_predict,sample_cv$classe)
+confusionMatrix(sample_predict,sample_test$classe)
+confusionMatrix(sample_predict,sample_test$classe)$Accuray
+confusionMatrix(sample_predict,sample_test$classe)$Accuracy
+CM <- confusionMatrix(sample_predict,sample_test$classe)
+CM$Accuracy
+CM
+modFit

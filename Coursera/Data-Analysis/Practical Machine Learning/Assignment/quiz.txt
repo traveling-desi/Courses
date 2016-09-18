@@ -1,0 +1,27 @@
+library(caret)
+setwd("/Users/sarpotd/Desktop/Coursera/Data Analysis/Practical Machine Learning/Assignment/")
+train <- read.csv("pml-training.csv",header=TRUE,na.strings = c("NA",""))
+test <- read.csv("pml-testing.csv",header=TRUE,na.strings = c("NA",""))
+
+
+perc_of_na <- function(d) {sum(is.na(d))/length(d)}
+b <- apply(train,2,perc_of_na)
+clean_train <- train[,b < 0.95]
+clean_train <- clean_train[,-c(1:7)]
+
+
+clean_train_split <- createDataPartition(y=new_train$classe,p=0.75,list=FALSE)
+
+sample_train <- clean_train[clean_train_split,]
+sample_test <- clean_train[-clean_train_split,]
+
+modFit <- train(classe ~ ., method="rf", data=sample_train, trControl = trainControl(method = "cv", number = 4))
+sample_predict <- predict(modFit,sample_test)
+confusionMatrix(sample_predict,sample_test$classe)
+
+
+clean_test <- test[,b < 0.95]
+clean_test <- clean_test[,-c(1:7)]
+clean_test <- clean_test[,-which(colnames(clean_test)== "problem_id")]
+#modFit <- train(classe ~ ., method="rf", data=clean_train, trControl = trainControl(method = "cv", number = 4))
+clean_test_predict <- predict(modFit,clean_test)

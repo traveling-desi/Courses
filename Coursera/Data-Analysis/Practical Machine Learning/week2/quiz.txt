@@ -1,0 +1,45 @@
+
+
+
+
+qplot(1:dim(training)[1],CompressiveStrength,data=training,colour=cut2(1:dim(training)[1],m=200,g=4))
+
+
+
+library(caret)
+
+
+new_train <- training[,grep("^IL",colnames(training))]
+preProcess(new_train,thresh=0.8,method=pca)
+
+
+
+
+
+
+
+PCA
+----
+
+new_train <- training[,grep("^IL",colnames(training))]
+new_train <- cbind(training[,"diagnosis"],new_train)
+colnames(new_train)[1] <- "diagnosis"
+
+
+preProc <- preProcess(new_train[,-1],method="pca",thresh=0.8,na.remove = TRUE)
+trainPC <- predict(preProc, new_train[,-1])
+modelPC <- train(new_train$diagnosis ~ ., method='glm',data=trainPC)
+
+new_test <- testing[,grep("^IL",colnames(testing))]
+new_test <- cbind(testing[,"diagnosis"],new_test)
+colnames(new_test)[1] <- "diagnosis"
+
+testPC <- predict(preProc, new_test[,-1])
+confusionMatrix(testing$diagnosis,predict(modelPC,testPC))
+
+
+
+
+
+modelnonPC <- train(new_train$diagnosis ~ ., method='glm',data=new_train)
+confusionMatrix(testing$diagnosis,predict(modelnonPC,new_test))

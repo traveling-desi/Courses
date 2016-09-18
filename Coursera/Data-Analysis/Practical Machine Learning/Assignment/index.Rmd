@@ -1,0 +1,133 @@
+---
+title: "Practical Machine Learning Coursera class project"
+output: html_document
+---
+
+Introduction
+======
+
+The goal of this assignment is to  predict the exercises that subjets are doing based on the readings of various acclerometers in various belts attached to various parts of the body. We  used data from website http://groupware.les.inf.puc-rio.br/har which also gives explanation for the various features.
+
+After downloading the testing and training data (already created for us) we do basic data pre-processing. The training data has ~20k records and 160 features while the testing data has 20 records and 160 features.
+
+
+```{r}
+## Load packages and load training and testing set
+library(caret)
+```
+
+```{r,echo=FALSE}
+## Change the wd here
+setwd("")
+```
+
+```{r}
+train <- read.csv("pml-training.csv",header=TRUE,na.strings = c("NA",""))
+test <- read.csv("pml-testing.csv",header=TRUE,na.strings = c("NA",""))
+
+
+## we have 19622 records and 159 features + one predicted variable
+dim(train)
+
+## we have 20 records and 159 features + column for problem_id
+dim(test)
+```
+
+
+Data Cleanup
+======
+
+We notice that a large number of columns in the training set have NA (no value) in most of the records. Some columns have more than 97% of their record values as NA. These columns cannot meanningfully be expected to act as valid predictors. We remove all sunch colums. Also there are some columns which are information only and cannot be used as predictors. As example some of these columns are record #, user name, Time and data of observation etc. These values are for record keeping but not useful for prediction. The prediction variable (classe) is a factor variable that indicates what kind of exercise is being done (on fator leel A-E)
+
+After performing such data cleanup we still have ~20k records but only 52 features.
+
+
+```{r}
+## DATA CLEANUP AND PREPROCESSING : Training set
+## A lot of columns have majority NA in them. In our case most have more than 97% NA.
+## We only keep/train on colummns that have less than 95% NA.
+perc_of_na <- function(d) {sum(is.na(d))/length(d)}
+b <- apply(train,2,perc_of_na)
+clean_train <- train[,b < 0.95]
+
+## Remove information varibales like user name, time/date of observation etc. since these 
+## shouldnt matter to the class of actiivty being performed. Remove first seven columns
+clean_train <- clean_train[,-c(1:7)]
+
+## We have 19622 records and  52 features + one predicted variable
+dim(clean_train)
+```
+
+Cross Validation
+======
+
+Next in order to find out out of sample error for the model we will train we set aside 25% of the trainig set as cross validation set(CV set.) The CV set is randomly sampled from the training set.
+
+
+
+```{r}
+## CROSS VALIDATION
+## create parition of cleaned training data into training set and Cross Validation set to find
+## out of sample error/accuracy.
+clean_train_split <- createDataPartition(y=clean_train$classe,p=0.75,list=FALSE)
+sample_train <- clean_train[clean_train_split,]
+sample_cv <- clean_train[-clean_train_split,]
+
+## Set aside 25% of training records for cross valiation and find out the out of sample error.
+dim(sample_train)
+dim(sample_cv)
+
+```
+
+Model Fitting
+======
+
+To train the model we use randomw forest from the caret package. Why did we use random forest? Because random forest is widely known to be extremely accurate and very easy to use (the interpertation of the model itself is harder though). As part of the training itself we do 4 fold crossvalidation (not to be confused with CV set aside earlier to measure the out of sample error)
+
+
+```{r}
+## MODEL TRAINING: RANDOM FOREST
+modFit <- train(classe ~ ., method="rf", data=sample_train, trControl = trainControl(method = "cv", number = 4))
+```
+
+A quick check on the fitted model shows that out of the 52 variables available, if only 27 variables are randomly sampled we get the maximum accuracy. THis is automatically selected by the model.
+
+
+```{r}
+modFit
+```
+
+we can see the accuracy plot of the model against the # of variables randomly selected here:
+
+```{r,echo=FALSE}
+plot(modFit)
+```
+
+To predict the out of sample error for this model, we use this model on the CV set that we had set aside earlier. The Accuracy rate if about 99.29% which means out of sample erorr is about 0.71%. This is extremely good. We can summarize that the model was not overfit to the training data (low variance) and works reasonable well on data it has not seens before.
+
+
+```{r}
+## predict on the cross validation set to find the out of sample error/accuracy.
+sample_predict <- predict(modFit,sample_cv)
+confusionMatrix(sample_predict,sample_cv$classe)
+```
+
+Prediction on Original Test Set
+======
+
+Finally we are ready to predict on the test set. We clean the test set using the same cleanup process we employed for the trainig set. In the test set the predicted variable is absent and is replaced by a problem_id column which is just the record #. Since this column was not in the training set we remove ot from the test set as well.
+
+
+```{r}
+## DATA CLEANUP AND PREPROCESSING : Testing set
+## similar alogrithm as the training set above.
+clean_test <- test[,b < 0.95]
+clean_test <- clean_test[,-c(1:7)]
+clean_test <- clean_test[,-which(colnames(clean_test)== "problem_id")]
+
+## Predict on the testing set and list the predictions
+clean_test_predict <- predict(modFit,clean_test)
+clean_test_predict
+```
+
+This result was submitted to the programming assignment and got full points.

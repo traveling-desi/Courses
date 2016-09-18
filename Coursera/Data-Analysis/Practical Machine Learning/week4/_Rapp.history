@@ -1,0 +1,406 @@
+qplot(1:dim(training)[1], Cement,data=training,colour=cut2(1:dim(training)[1],m=200,g=4))
+qplot(1:dim(training)[1], BlastFurnaceSlag,data=training,colour=cut2(1:dim(training)[1],m=200,g=4))
+?sample
+?aes
+library(caret)
+?aes
+library(AppliedPredictiveModeling)#
+data(segmentationOriginal)#
+library(caret)
+head(segmentationOriginal)
+head(segmentationOriginal[case=train,])
+head(segmentationOriginal["case"=train,])
+?subset
+subset(segmentationOriginal,select=c(Case="Test"))
+subset(segmentationOriginal,select=(Case="Test"))
+subset(segmentationOriginal,select=(Case=="Test"))
+subset(segmentationOriginal,select=c(Case=="Test"))
+segmentationOriginal[Case=="Test",]
+segmentationOriginal["Case==Test",]
+segmentationOriginal[,"Case==Test"]
+segmentationOriginal[,Case]
+segmentationOriginal[,"Case"]
+segmentationOriginal["Case"==Test,]
+segmentationOriginal["Case"=="Test",]
+subset(segmentationOriginal,Case== "Test")
+head(subset(segmentationOriginal,Case== "Test"))
+head(subset(segmentationOriginal,Case== "Test",select = -Case))
+test <- head(subset(segmentationOriginal,Case== "Test",select = -Case))
+train <- head(subset(segmentationOriginal,Case== "Train",select = -Case))
+seed(125)
+?set
+?seed
+?set.seed
+set.seed(125)
+modFit <- train(Class ~. , method="rpart",data=train)
+?predict
+predict(modFit,newdata=c(TotalIntench2 = 23,000, FiberWidthCh1 = 10, PerimStatusCh1=2))
+test[,TotalIntench2 == 23,000]
+test[,"TotalIntench2" == 23,000]
+test["TotalIntench2" == 23,000,]
+test["TotalIntench2" == 23000,]
+test["TotalIntench2" = 23000,]
+test["TotalIntench2 == 23000",]
+test["TotalIntench2 = 23000",]
+head(test)
+test[VarIntenCh1== 12.47468,]
+test["VarIntenCh1" == 12.47468,]
+test["VarIntenCh1" = 12.47468,]
+test["VarIntenCh1 == 12.47468",]
+test[test$VarIntenCh1 == 12.47468,]
+test$VarIntenCh1
+test$VarIntenCh1 == 12.47468
+test$VarIntenCh1 == "12.47468"
+"test$VarIntenCh1 == 12.47468"
+test$VarIntenCh1 == "12.47468"
+test$VarIntenCh1 = "12.47468"
+test$VarIntenCh1
+test <- head(subset(segmentationOriginal,Case== "Test",select = -Case))
+predict(modFit,newdata=testing)
+predict(modFit,newdata=test)
+test(,"TotalIntench2")
+test(,TotalIntench2)
+test[],TotalIntench2]
+test[,TotalIntench2]
+test[,"TotalIntench2"]
+test$TotalIntench2
+colnames(test)
+test[, "TotalIntenCh2"]
+test1 <- test[1,c("TotalIntenCh2","FiberWidthCh1", "PerimStatusCh1")]
+test1
+test1 <- c(2300,10,2)
+test
+test`1
+test1
+]
+''
+``
+test1
+predict(modFit,test1)
+predict(modFit,newdata=test1)
+test1
+test1 <- test[1,c("TotalIntenCh2","FiberWidthCh1", "PerimStatusCh1")]
+test1
+test1[1] <- c(2300,10,2)
+test1[1,] <- c(2300,10,2)
+test1
+predict(modFit,test1)
+predict(modFit,newdata=test1)
+str(modFit)
+test1[1,] <- c(23000,10,2)#
+predict(modFit,test1)
+test1
+test2 <- test[1,c("TotalIntenCh2","FiberWidthCh1", "VarIntenCh4"]#
+test2[1,] <- c(50000,10,100)#
+predict(modFit,test2)
+test2 <- test[1,c("TotalIntenCh2","FiberWidthCh1", "VarIntenCh4")]#
+test2[1,] <- c(50000,10,100)#
+predict(modFit,test2)
+test <- head(subset(segmentationOriginal,Case== "Test",select = -Case))#
+train <- head(subset(segmentationOriginal,Case== "Train",select = -Case))#
+set.seed(125)#
+modFit <- train(Class ~. , method="rpart",data=train)#
+test1 <- test[1,c("TotalIntenCh2","FiberWidthCh1", "PerimStatusCh1")]#
+test1[1,] <- c(23000,10,2)#
+predict(modFit,test1)
+test <- subset(segmentationOriginal,Case== "Test",select = -Case)#
+train <- subset(segmentationOriginal,Case== "Train",select = -Case)#
+set.seed(125)#
+modFit <- train(Class ~. , method="rpart",data=train)
+library(AppliedPredictiveModeling)#
+data(segmentationOriginal)#
+library(caret)#
+test <- subset(segmentationOriginal,Case== "Test",select = -Case)#
+train <- subset(segmentationOriginal,Case== "Train",select = -Case)#
+set.seed(125)#
+modFit <- train(Class ~. , method="rpart",data=train)
+test1 <- test[1,c("TotalIntenCh2","FiberWidthCh1", "PerimStatusCh1")]
+test1
+test1[1,] <- c(23000,10,2)#
+predict(modFit,test1)
+test1
+test2 <- test[1,c("TotalIntenCh2","FiberWidthCh1", "VarIntenCh4")]#
+test2[1,] <- c(50000,10,100)#
+predict(modFit,test2)
+print(modFit$finalModel)
+library(rattle)
+fancyRpartPlot(modFit$finalModel)
+library(rattle)
+fancyRpartPlot(modFit$finalModel)
+library(pgmm)#
+data(olive)#
+olive = olive[,-1]
+load(url("http://dl.dropboxusercontent.com/u/47814734/olive.rda"))#
+head(olive)
+modFit <- train(Area ~. , method="rpart",data=olive)
+newdata = as.data.frame(t(colMeans(olive)))#
+predict(modFit,newdata)
+olive
+library(ElemStatLearn)#
+data(SAheart)#
+set.seed(8484)#
+train = sample(1:dim(SAheart)[1],size=dim(SAheart)[1]/2,replace=F)#
+trainSA = SAheart[train,]#
+testSA = SAheart[-train,]#
+set.seed(13234)
+head(trainSA)
+modFit <- train(chd ~ c(age,alcohol,obesity,tobacco,typea, ldl) , method="glm",data=trainSA)
+modFit <- train(chd ~ (age,alcohol,obesity,tobacco,typea, ldl) , method="glm",data=trainSA)
+modFit <- train(chd ~ age+alcohol+obesity+tobacco+typea+ldl , method="glm",data=trainSA)
+?predict
+prediction <- predict(modFit,newdata=testSA)
+missClass = function(values,prediction){sum(((prediction > 0.5)*1) != values)/length(values)}
+missClass
+trainSA[,"chd"]
+prediction_test <- predict(modFit,newdata=testSA)#
+prediction_train <- predict(modFit,newdata=trainSA)#
+#
+missClass(trainSA[,"chd"],prediction_train)#
+missClass(testSA[,"chd"],prediction_test)
+library(ElemStatLearn)#
+data(vowel.train)#
+data(vowel.test)
+head(vowel.test)
+str(vowel.train)
+as.factor(vowel.train$y)
+?type
+vowel.train$y <- as.factor(vowel.train$y)
+str(vowel.train)
+set.seed(33833)#
+vowel.train$y <- as.factor(vowel.train$y)#
+vowel.test$y <- as.factor(vowel.test$y)#
+modFit <- train(y ~ ., method=rf, data=vowel.train)
+head(vowel.train)
+str(vowel.train)
+str(vowel.test)
+modFit <- train(y ~ ., method="rf", data=vowel.train)
+?varimp
+??varimp
+varImp(modFit)
+modFit <- train(y ~ ., method="rf", data=vowel.test)
+varImp(modFit)
+?randomForest
+modFit <- randomForest(y ~ .,  data=vowel.train)
+varImp(modFit)
+modFit <- train(y ~ ., method="rf", data=vowel.train)
+library(ElemStatLearn)#
+data(vowel.train)#
+data(vowel.test)
+library(caret)
+head(vowel.train)
+set.seed(33833)
+mod_rf <- train(y~., method="rf",data=vowel.train)
+mod_gbm <- train(y~., method="gbm",data=vowel.train)
+predict(mod_rf,vowel.test)
+predict_rf <- predict(mod_rf,vowel.test)
+predict_gbm <- predict(mod_gbm,vowel.test)
+confusionMatrix(predict_rf,vowel.test$y)
+vowel.train$y
+vowel.train$y <- as.factor(vowel.train$y)
+str(vowel.train)
+library(ElemStatLearn)#
+data(vowel.train)#
+data(vowel.test) #
+vowel.train$y <- as.factor(vowel.train$y)#
+vowel.test$y <- as.factor(vowel.test$y)#
+mod_rf <- train(y~., method="rf",data=vowel.train)#
+mod_gbm <- train(y~., method="gbm",data=vowel.train)#
+predict_rf <- predict(mod_rf,vowel.test)#
+predict_gbm <- predict(mod_gbm,vowel.test)
+confusionMatrix(predict_rf,vowel.test$y)
+confusionMatrix(predict_gbm,vowel.test$y)
+library(ElemStatLearn)#
+data(vowel.train)#
+data(vowel.test) #
+set.seed(33833)#
+vowel.train$y <- as.factor(vowel.train$y)#
+vowel.test$y <- as.factor(vowel.test$y)#
+mod_rf <- train(y~., method="rf",data=vowel.train)#
+mod_gbm <- train(y~., method="gbm",data=vowel.train)#
+predict_rf <- predict(mod_rf,vowel.test)#
+predict_gbm <- predict(mod_gbm,vowel.test)#
+confusionMatrix(predict_rf,vowel.test$y)#
+confusionMatrix(predict_gbm,vowel.test$y)
+predict_gbm == predict_rf
+predict_gbm[predict_gbm == predict_rf,]
+predict_gbm[predict_gbm == predict_rf]
+confusionMarix(predict_gbm[predict_gbm == predict_rf],vowel.test$y[predict_gbm == predict_rf])
+confusionMatrix(predict_gbm[predict_gbm == predict_rf],vowel.test$y[predict_gbm == predict_rf])
+set.seed(3433)#
+library(AppliedPredictiveModeling)#
+data(AlzheimerDisease)#
+adData = data.frame(diagnosis,predictors)#
+inTrain = createDataPartition(adData$diagnosis, p = 3/4)[[1]]#
+training = adData[ inTrain,]#
+testing = adData[-inTrain,]
+head(training)
+set.seed(3433)#
+library(AppliedPredictiveModeling)#
+data(AlzheimerDisease)#
+adData = data.frame(diagnosis,predictors)#
+inTrain = createDataPartition(adData$diagnosis, p = 3/4)[[1]]#
+training = adData[ inTrain,]#
+testing = adData[-inTrain,]
+library(caret)
+set.seed(3433)#
+library(AppliedPredictiveModeling)#
+data(AlzheimerDisease)#
+adData = data.frame(diagnosis,predictors)#
+inTrain = createDataPartition(adData$diagnosis, p = 3/4)[[1]]#
+training = adData[ inTrain,]#
+testing = adData[-inTrain,]
+head(testing)
+set.seed(3433)#
+library(AppliedPredictiveModeling)#
+data(AlzheimerDisease)#
+adData = data.frame(diagnosis,predictors)#
+inTrain = createDataPartition(adData$diagnosis, p = 3/4)[[1]]#
+training = adData[ inTrain,]#
+testing = adData[-inTrain,]#
+mod_rf <- train(diagnosis ~ ., method="rf",data=training)#
+mod_gbm <- train(diagnosis ~ ., method="gbm",data=training)#
+mod_lda <- train(diagnosis ~ ., method="lda",data=training)#
+predict_rf <- predict(mod_rf,testing)#
+predict_gbm <- predict(mod_gbm,testing)#
+predict_lda <- predict(mod_lda,testing)#
+confusionMatrix(predict_rf,testing$diagnosis)#
+confusionMatrix(predict_gbm,testing$diagnosis)#
+confusionMatrix(predict_lda,testing$diagnosis)
+preDF <- data.fram(predict_rf,predict_gbm,predict_lda,diagnosis=testing$diagnosis)#
+combModFit <- train(diagnosis ~ ., method ="gam", data=preDF)#
+combPred <- predict(combModFit,preDF)
+preDF <- data.frame(predict_rf,predict_gbm,predict_lda,diagnosis=testing$diagnosis)#
+combModFit <- train(diagnosis ~ ., method ="gam", data=preDF)#
+combPred <- predict(combModFit,preDF)
+confusionMatrix(predict_rf,testing$diagnosis)#
+confusionMatrix(predict_gbm,testing$diagnosis)#
+confusionMatrix(predict_lda,testing$diagnosis)#
+confusionMatrix(combPred,testing$diagnosis)
+set.seed(62433)#
+mod_rf <- train(diagnosis ~ ., method="rf",data=training)#
+mod_gbm <- train(diagnosis ~ ., method="gbm",data=training)#
+mod_lda <- train(diagnosis ~ ., method="lda",data=training)#
+predict_rf <- predict(mod_rf,testing)#
+predict_gbm <- predict(mod_gbm,testing)#
+predict_lda <- predict(mod_lda,testing)#
+#
+preDF <- data.frame(predict_rf,predict_gbm,predict_lda,diagnosis=testing$diagnosis)#
+combModFit <- train(diagnosis ~ ., method ="gam", data=preDF)#
+combPred <- predict(combModFit,preDF)#
+confusionMatrix(predict_rf,testing$diagnosis)#
+confusionMatrix(predict_gbm,testing$diagnosis)#
+confusionMatrix(predict_lda,testing$diagnosis)#
+confusionMatrix(combPred,testing$diagnosis)
+combModFit <- train(diagnosis ~ ., method ="rf", data=preDF)#
+combPred <- predict(combModFit,preDF)
+confusionMatrix(combPred,testing$diagnosis)
+set.seed(3523)#
+library(AppliedPredictiveModeling)#
+data(concrete)#
+inTrain = createDataPartition(concrete$CompressiveStrength, p = 3/4)[[1]]#
+training = concrete[ inTrain,]#
+testing = concrete[-inTrain,]
+head(training)
+?plot.enet
+??plot.enet
+?enet
+??enet
+??plot
+?plot.enet
+??plot.enet
+?plot.enet
+??plot.enet
+set.seed(3523)#
+library(AppliedPredictiveModeling)#
+data(concrete)#
+inTrain = createDataPartition(concrete$CompressiveStrength, p = 3/4)[[1]]#
+training = concrete[ inTrain,]#
+testing = concrete[-inTrain,]#
+#
+mod_lasso <- train(CompressiveStrength ~ ., method="lasso", data=training)#
+plot.enet(mod_lasso$finalModel, xvar="penalty", use.color=T)
+?plot.enet
+setwd("/Users/sarpotd/Desktop/Coursera/Data Analysis/Practical Machine Learning/week4/")
+dat = read.csv("gaData.csv")#
+training = dat[year(dat$date)  2011,]#
+tstrain = ts(training$visitsTumblr)
+head(dat)
+year(data$date)
+year(dat$date)
+?year
+??year
+dat = read.csv("gaData.csv")#
+training = dat[year(dat$date)==2011,]#
+tstrain = ts(training$visitsTumblr)
+libray(data.table)
+library(data.table)
+dat = read.csv("gaData.csv")#
+training = dat[year(dat$date)==2011,]#
+tstrain = ts(training$visitsTumblr)
+?bats
+library(forecast)
+?bats
+?ts
+bats(data=tstrain)
+head(data)
+head(dat)
+?bats
+?ts
+setwd("/Users/sarpotd/Desktop/Coursera/Data Analysis/Practical Machine Learning/week4/")#
+dat = read.csv("gaData.csv")#
+training = dat[year(dat$date)==2011,]#
+tstrain = ts(training$visitsTumblr)#
+bats(y=tstrain)
+?forecast
+setwd("/Users/sarpotd/Desktop/Coursera/Data Analysis/Practical Machine Learning/week4/")#
+dat = read.csv("gaData.csv")#
+training = dat[year(dat$date)==2011,]#
+tstrain = ts(training$visitsTumblr)#
+fit <- bats(y=tstrain)#
+testing = dat[year(dat$date)>2011,]#
+tstest = ts(testing$visitsTumblr)
+fit
+forecast(fit,level=95)
+tstest
+testig
+testing
+dim(testing)
+dim(testing)[1]
+forecast(fit,h=dim(testing)[1],level=95)
+head(testing)
+fit_forecast <- forecast(fit,h=dim(testing)[1],level=95)
+fit_forecast
+head(testing)
+testing$visitsTumblr > fit_forecast
+colnames(fit_forecast)
+summary(fit_forecast)
+str(fit_corecast)
+str(fit_forecast)
+head(fit_forecast)
+fit_forecast$lower
+testing$visitsTumblr > fit_forecast$lower
+fit_forecast$upper < testing$visitsTumblr > fit_forecast$lower
+testing$visitsTumblr > fit_forecast$lower & fit_forecast$upper < testing$visitsTumblr
+testing$visitsTumblr > fit_forecast$lower & fit_forecast$upper > testing$visitsTumblr
+table (testing$visitsTumblr > fit_forecast$lower & fit_forecast$upper > testing$visitsTumblr)
+table (testing$visitsTumblr > fit_forecast$lower & fit_forecast$upper > testing$visitsTumblr)$TRUE
+226/235
+??svm
+?svm
+library(e1071)#
+set.seed(3523)#
+library(AppliedPredictiveModeling)#
+data(concrete)#
+inTrain = createDataPartition(concrete$CompressiveStrength, p = 3/4)[[1]]#
+training = concrete[ inTrain,]#
+testing = concrete[-inTrain,]#
+set.seed(325)
+head(training)
+svm(CompressiveStrength ~ .)
+mod <- svm(CompressiveStrength ~ ., data=training)
+predict_mod <- predict(mod,testing)
+predict_mod
+testing$CompressiveStrength
+((testing$CompressiveStrength - predict_mod)^2/length(predict_mod))^0.5
+sum((testing$CompressiveStrength - predict_mod)^2)
+(sum((testing$CompressiveStrength - predict_mod)^2)/length(predict_mod))^0.5
