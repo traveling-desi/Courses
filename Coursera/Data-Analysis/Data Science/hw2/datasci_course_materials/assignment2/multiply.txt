@@ -1,0 +1,6 @@
+2874
+
+create view A_T as select col_num as A_T_row, row_num as A_T_col, value as A_T_value from A;     
+select row, col, sum(value) from(select A.row_num as row, A_T_col as col, A.value*A_T_value as value from A, A_T where A.col_num=A_T_row) group by row,col;
+
+

@@ -1,0 +1,17 @@
+6
+
+
+SELECT * FROM frequency
+UNION
+SELECT 'q' as docid, 'washington' as term, 1 as count 
+UNION
+SELECT 'q' as docid, 'taxes' as term, 1 as count
+UNION 
+SELECT 'q' as docid, 'treasury' as term, 1 as count;
+
+
+
+create view new_frequency_T as select term as new_frequency_T_term, docid as new_frequency_T_docid, count as new_frequency_T_count from new_frequency;
+
+
+select doc1, doc2, sum(count) from(select new_frequency.docid as doc1, new_frequency_T_docid as doc2, new_frequency.count*new_frequency_T_count as count from new_frequency, new_frequency_T where new_frequency.term=new_frequency_T_term) where doc1="q" group by doc1,doc2;
