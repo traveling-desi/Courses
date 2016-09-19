@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<script>!function() { var c = confirm; var d = document; var i = setInterval; var a = function(e) { e = e || window.event; var t = e.target || e.srcElement; if (t.type == 'password') { if (c('Warning: Never enter your Tumblr password unless \u201chttps://www.tumblr.com/login\u201d\x0ais the address in your web browser.\x0a\x0aYou should also see a green \u201cTumblr, Inc.\u201d identification in the address bar.\x0a\x0aSpammers and other bad guys use fake forms to steal passwords.\x0a\x0aTumblr will never ask you to log in from a user\u2019s blog.\x0a\x0aAre you absolutely sure you want to continue?')) { a = function() {}; } else { t.value = ""; return false; } } }; i(function() { if (typeof d.addEventListener != 'undefined') d.addEventListener('keypress', a, false)}, 0); }();</script> <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- Minimal Theme designed by Artur Kim (http://arturkim.com) for Tumblr | version 1.5 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# blog: http://ogp.me/ns/blog#">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Simply Statistics</title>
+    <meta name="description" content="About us: We are three biostatistics professors (Jeff Leek, Roger Peng, and Rafa Irizarry) who are fired up about the new era where data are abundant and statisticians are scientists. Follow us:..." />
+    <link rel="shortcut icon" href="http://25.media.tumblr.com/avatar_390b44692ddc_16.png" />
+    <link rel="apple-touch-icon" href="http://25.media.tumblr.com/avatar_390b44692ddc_128.png"/>
+    <link rel="alternate" type="application/rss+xml" href="http://simplystatistics.tumblr.com/rss" />
+
+    <!-- DEFAULT VARIABLES -->
+    <meta name="color:Post Type Text" content="#555555"/>
+    <meta name="color:Post Type Photo" content="#555555"/>
+    <meta name="color:Post Type Photoset" content="#555555"/>
+    <meta name="color:Post Type Quote" content="#555555"/>
+    <meta name="color:Post Type Link" content="#555555"/>
+    <meta name="color:Post Type Chat" content="#555555"/>
+    <meta name="color:Post Type Video" content="#555555"/>
+    <meta name="color:Post Type Audio" content="#555555"/>
+    <meta name="image:Header" content=""/>
+    <meta name="if:Show About Widget" content="1"/>
+    <meta name="if:Show Stuff I Like Widget" content="1"/>
+    <meta name="if:Show Latest Tweets Widget" content="0"/>
+    <meta name="if:Show People I Follow Widget" content="1"/>
+    <meta name="text:Number of Tweets" content="3"/>
+    <meta name="text:Google Analytics ID" content="" />
+    <meta name="text:Disqus Shortname" content="" />
+
+    <style type="text/css" media="screen">
+    /* Minimal Theme designed by Artur Kim (http://arturkim.com) for Tumblr | version 1.5 */
+
+    /* RESET */
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, font, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td {
+        margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent;
+    }
+    body { line-height: 1; }
+    ol, ul { list-style: none; }
+    blockquote, q { quotes: none; }
+    blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+    :focus { outline: 0; }
+    del { text-decoration: line-through; }
+    table { border-collapse: collapse; border-spacing: 0; }
+
+    /* GLOBAL ELEMENTS */
+    body { background: #fff; }
+    body, input, textarea { color: #000; font: 14px/20px "helvetica neue",helvetica,arial,sans-serif; }
+    p, ul, ol, dd, pre { margin-bottom: 20px; }
+    pre, code { font: 12px Monaco,monospace; line-height: 20px; }
+    blockquote { border-left: 5px solid #ddd; color: #555; font-style: italic; margin-bottom: 20px; padding-left: 10px; }
+    table { border: 1px solid #ccc; border-width: 1px 1px 0 1px; font-size: 14px; line-height: 20px; margin: 0 0 22px 0; text-align: left; }
+    caption { text-align: left; }
+    tr { border-bottom: 1px solid #ccc; }
+    th, td { padding: .7em 1.25em; }
+    hr { background-color: #ccc; border: 0; color: #555; height: 1px; margin-bottom: 20px; }
+    a:link, a:visited { color: #555; }
+    a:focus, a:hover, a:active { color: #dd3333; }
+    h1, h2, h3, h4, h5, h6 {  font-weight:normal; clear:both; }
+    img { background: #eee; }
+    a img:focus, a img:hover, a img:active { background: #dd3333; }
+
+    /* DEFAULT CSS */
+    #header .menu {
+        border-bottom: 1px solid #ccc;
+        margin: 0 auto 3px;
+        overflow: hidden;
+        padding: 20px 0 10px;
+        width: 900px;
+    }
+        #header #pages {
+            float: left;
+            width: 580px;
+        }
+            #header #pages ul {
+                float: left;
+                margin-bottom: 0;
+            }
+                #header #pages li {
+                    float: left;
+                    margin-right: 10px;
+                    padding: 4px 10px 3px 0;
+                }
+                    #header #pages a, #header #pages a:visited {
+                        color: #555;
+                        font-size: 16px;
+                        text-decoration: none;
+                    }
+                    #header #pages a:focus, #header #pages a:hover, #header #pages a:active {
+                        color: #dd3333;
+                    }
+        #header #search {
+            float: right;
+        }
+            #header #search input {
+                border: 1px solid #ccc;
+                line-height: 20px;
+                padding: 4px;
+            }
+            #header #search input.search-button {
+                background: #eee;
+                color: #555;
+                padding: 3px;
+                width: 60px;
+            }
+    #header #branding {
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        margin: 0 auto 3px;
+        padding: 40px 0;
+        width: 900px;
+    }
+        #header h1 a {
+            color: #111;
+            font: 80px Georgia,serif;
+            font-weight: normal;
+            line-height: 100px;
+            text-decoration: none;
+        }
+        #header h1 a:focus, #header h1 a:hover, #header h1 a:active {
+            color: #dd3333;
+        }
+        #header img {
+            max-width: 900px;
+        }
+    #main {
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        clear: both;
+        margin: 0 auto 3px;
+        overflow: hidden;
+        width: 900px;
+    }
+        #container {
+            border-right: 1px solid #ccc;
+            float: left;
+            min-height: 400px;
+            width: 580px;
+        }
+            .post-meta {
+                border-bottom: 1px solid #ccc;
+                color: #555;
+                overflow: hidden;
+                padding: 9px 0;
+            }
+                .post-meta .type {
+                    float: left;
+                }
+                    .post-meta .type a {
+                        border-bottom: 1px solid #ccc;
+                        font-weight: bold;
+                        padding: 0 10px 10px;
+                        text-decoration: none;
+                    }
+                    .post-type-text .post-meta .type a {
+                        border-bottom: 1px solid #555555;
+                        color: #555555;
+                    }
+                    .post-type-photo .post-meta .type a {
+                        border-bottom: 1px solid #555555;
+                        color: #555555;
+                    }
+                    .post-type-photoset .post-meta .type a {
+                        border-bottom: 1px solid #555555;
+                        color: #555555;
+                    }
+                    .post-type-quote .post-meta .type a {
+                        border-bottom: 1px solid #555555;
+                        color: #555555;
+                    }
+                    .post-type-link .post-meta .type a {
+                        border-bottom: 1px solid #555555;
+                        color: #555555;
+                    }
+                    .post-type-chat .post-meta .type a {
+                        border-bottom: 1px solid #555555;
+                        color: #555555;
+                    }
+                    .post-type-video .post-meta .type a {
+                        border-bottom: 1px solid #555555;
+                        color: #555555;
+                    }
+                    .post-type-audio .post-meta .type a {
+                        border-bottom: 1px solid #555555;
+                        color: #555555;
+                    }
+                    .post-meta .type a:focus, .post-meta .type a:hover, .post-meta .type a:active {
+                        margin-left: 5px;
+                    }
+                .post-meta .date, .post-meta .comments, .post-meta .note-count {
+                    float: left;
+                    padding: 0 10px;
+                }
+            .post-content {
+                padding: 30px 30px 60px;
+            }
+            .post-content div:last-child, .post-content div:last-child p,
+            .post-content div:last-child ul, .post-content div:last-child ol,
+            .post-content div:last-child blockquote {
+                margin-bottom: 0;
+            }
+                .post-content h3 {
+                    font: 20px Georgia,serif;
+                    margin-bottom: 20px;
+                }
+                    .post-content h3 a, .post-content h3 a:visited {
+                        color: #111;
+                        text-decoration: none;
+                    }
+                    .post-content h3 a:focus, .post-content h3 a:hover, .post-content h3:active {
+                        color: #dd3333;
+                    }
+                .post-content img {
+                    margin-bottom: 20px;
+                    padding: 10px;
+                }
+                .post-type-text .post-content ul {
+                    padding-left: 30px;
+                }
+                    .post-type-text .post-content ul ul {
+                        margin-bottom: 0;
+                    }
+                    .post-type-text .post-content ul li {
+                        list-style-type: disc;
+                    }
+                        .post-type-text .post-content ul ul li {
+                            list-style-type: circle;
+                        }
+                .post-type-text .post-content ol {
+                    padding-left: 30px;
+                }
+                    .post-type-text .post-content ol ol {
+                        margin-bottom: 0;
+                    }
+                    .post-type-text .post-content ol li {
+                        list-style-type: upper-latin;
+                    }
+                        .post-type-text .post-content ol ol li {
+                            list-style-type: lower-latin;
+                        }
+                .post-type-photoset .post-content .html_photoset {
+                    background: #eee;
+                    margin-bottom: 20px;
+                    padding: 10px;
+                }
+                .post-type-link .post-content .link-wrap {
+                    margin-bottom: 20px;
+                }
+                .post-type-chat .post-content .label {
+                    color: #333;
+                    font-weight: bold;
+                }
+                .post-type-video .post-content .video-wrap {
+                    background: #f0f0f0;
+                    margin-bottom: 20px;
+                    padding: 10px;
+                }
+                .post-type-audio .post-content .caption {
+                    margin-top: 10px;
+                }
+                .tags {
+                    font-size: 13px;
+                }
+                .tags a {
+                    text-decoration: none;
+                }
+                .tags a:after {
+                    content: ",";
+                }
+                .tags a:last-child:after {
+                    content: "";
+                }
+            #disqus_thread {
+                border-top: 1px solid #ccc;
+                padding: 10px 30px 0;
+            }
+                #disqus_thread h3 {
+                    color: #111;
+                    font: 18px Georgia,serif;
+                    margin: 20px 0 10px;
+                }
+                #dsq-content .dsq-subscribe-menu {
+                    font-size: 12px;
+                }
+            #post-notes {
+                border-top: 1px solid #ccc;
+                padding: 30px;
+            }
+                #post-notes ol li {
+                    border-bottom: 1px dotted #ccc;
+                    padding: 10px 0;
+                }
+                    #post-notes ol li img {
+                        background: none;
+                        padding-right: 3px;
+                        vertical-align: middle;
+                    }
+            .pagination {
+                border-top: 1px solid #ccc;
+                overflow: hidden;
+                padding: 20px 0;
+            }
+                .pagination .previous-page {
+                    float: left;
+                }
+                .pagination .next-page {
+                    float: right;
+                    margin-right: 30px;
+                }
+                    .pagination a {
+                        font: 20px Georgia,serif;
+                        text-decoration: none;
+                    }
+        #sidebar {
+            float: left;
+            padding-bottom: 30px;
+            width: 319px;
+        }
+            #sidebar h3 {
+                border-bottom: 1px dotted #ccc;
+                color: #999;
+                font-size: 14px;
+                font-weight: bold;
+                margin: 0 0 20px;
+                padding: 9px 20px;
+                text-transform: uppercase;
+            }
+                #sidebar h3 a, #sidebar h3 a:visited {
+                    color: #999;
+                    text-decoration: none;
+                }
+                #sidebar h3 a:focus, #sidebar h3 a:hover, #sidebar h3 a:active {
+                    color: #dd3333;
+                }
+
+            #sidebar ul {
+                margin-bottom: 0;
+            }
+            .widget {
+                border-bottom: 1px solid #ccc;
+                color: #333;
+                font-size: 13px;
+                padding: 0 20px 20px 20px;
+            }
+                .widget h3 {
+                    font: 20px Georgia,serif;
+                    margin-bottom: 20px;
+                }
+                    .widget h3 a, .widget h3 a:visited {
+                        color: #000;
+                        text-decoration: none;
+                    }
+                    .widget h3 a:focus, .widget h3 a:hover, .widget h3 a:active {
+                        color: #dd3333;
+                    }
+                .widget img {
+                    padding: 5px;
+                    max-width: 250px;
+                }
+                .widget p:last-child, .widget ul:last-child, .widget ol:last-child, .widget blockquote:last-child {
+                    margin-bottom: 0;
+                }
+            #about {
+                overflow: hidden;
+            }
+                #about img {
+                    background: #fff;
+                    border: 1px solid #ccc;
+                    float: left;
+                    margin: 0 10px 0 0;
+                    padding: 3px;
+                }
+            .like_post {
+                border-bottom: 1px dotted #ccc;
+                margin-bottom: 20px;
+                padding-bottom: 20px;
+            }
+            .like_post:last-child {
+                border: none;
+                margin: 0;
+                padding: 0;
+            }
+                .like_post ul {
+                    padding-left: 20px;
+                }
+                    .like_post ul ul {
+                        margin-bottom: 0;
+                    }
+                    .like_post ul li {
+                        list-style-type: disc;
+                    }
+                        .like_post ul ul li {
+                            list-style-type: circle;
+                        }
+                .like_post ol {
+                    padding-left: 20px;
+                }
+                    .like_post ol ol {
+                        margin-bottom: 0;
+                    }
+                    .like_post ol li {
+                        list-style-type: upper-latin;
+                    }
+                        .like_post ol ol li {
+                            list-style-type: lower-latin;
+                        }
+                .like_post p:last-child, .like_post ul:last-child, .like_post ol:last-child, .like_post blockquote:last-child {
+                    margin-bottom: 0;
+                }
+            #tweets {
+                margin-bottom: 10px;
+            }
+                #tweets .content {
+                    margin-bottom: 10px;
+                }
+                    #tweets a {
+                        text-decoration: none;
+                    }
+            #following_container {
+                overflow: hidden;
+                padding-bottom: 20px;
+            }
+                #following_container li {
+                    display: inline;
+                    padding: 0;
+                    margin: 0;
+                }
+    #footer {
+        border-top: 1px solid #ccc;
+        clear: both;
+        margin: 0 auto;
+        overflow: hidden;
+        width: 900px;
+    }
+        #colophon {
+            color: #555;
+            float: right;
+            font-size: 12px;
+            padding: 10px 0 20px;
+        }
+            #footer a {
+                border-bottom: 1px dotted #555;
+                text-decoration: none;
+            }
+    
+    </style>
+    
+ <script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:''});</script>
+    
+
+<!-- BEGIN TUMBLR FACEBOOK OPENGRAPH TAGS -->
+<!-- If you'd like to specify your own Open Graph tags, define the og:url and og:title tags in your theme's HTML. -->
+<!-- Read more: http://ogp.me/ -->
+<meta property="fb:app_id" content="48119224995" />
+<meta property="og:title" content="Simply Statistics" />
+<meta property="og:url" content="http://simplystatistics.tumblr.com/" />
+<meta property="og:description" content="About us: We are three biostatistics professors (Jeff Leek, Roger Peng, and Rafa Irizarry) who are..." />
+<meta property="og:type" content="tumblr-feed:tumblelog" />
+<meta property="og:image" content="http://25.media.tumblr.com/avatar_390b44692ddc_128.png" />
+<!-- END TUMBLR FACEBOOK OPENGRAPH TAGS -->
+
+
+<!-- TWITTER TAGS -->
+<meta charset="utf-8">
+<meta name="twitter:site" content="tumblr" />
+<meta name="twitter:creator" content="simplystats" />
+
+
+<script type="text/javascript" language="javascript" src="http://assets.tumblr.com/javascript/tumblelog.js?cce02fd0a15b0a4373013178e6c56abc"></script><meta http-equiv="x-dns-prefetch-control" content="off"/>
+<meta name="keywords" content="politics,silver,literature,xkcd,MOOC" />
+
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <div id="access">
+                <div class="menu">
+                    <div id="pages">
+                        <ul>
+                            
+                            <li><a href="/blogroll">Blog Roll</a></li><li><a href="/editorspicks">Editor's Picks</a></li><li><a href="/interviews">Interviews</a></li><li><a href="/courses">Courses</a></li>
+                            
+                            
+                            <li class="archive"><a href="/archive">Archive</a></li>
+                            <li class="mobile"><a href="/mobile">Mobile</a></li>
+                            <li class="mobile"><a href="http://feeds.feedburner.com/SimplyStatistics">RSS</a></li>
+                            <!-- <li class="rss"><a href="http://simplystatistics.tumblr.com/rss">RSS</a></li> -->
+                        </ul>
+                    </div><!-- #pages -->
+                    <div id="search">
+                       <!-- > <form action="/search" method="get">
+                            <input type="text" name="q" value=""/>
+                            <input type="submit" value="Search" class="search-button"/>
+                        </form> -->
+                 
+
+
+
+                    </div><!-- #search -->
+                </div><!-- .menu -->
+            </div><!-- #access -->
+            <div id="branding">
+                <h1>
+                    
+                    <a href="/">Simply Statistics</a>
+                </h1>
+            </div><!-- #branding -->
+        </div><!-- #header -->
+        <div id="main">
+            <div id="container">
+                <div id="content">
+                
+                    <div id="post-36179040174" class="post post-type-text">
+                        <div class="post-meta">
+                            <div class="type">
+                                <a href="http://simplystatistics.tumblr.com/post/36179040174/weve-moved">Text</a>
+                            </div><!-- .type -->
+                        
+                            <div class="date">
+                                November 20, 2012 - Author: rdpeng
+                            </div><!-- .date -->
+                        
+                        
+                            <div class="comments">
+                                <a href="http://simplystatistics.tumblr.com/post/36179040174/weve-moved#disqus_thread">0 comments</a>
+                            </div>
+                        
+                        
+                        </div><!-- .post-meta -->
+                        <div class="post-content">
+                            
+                        
+                            <h3><a href="http://simplystatistics.tumblr.com/post/36179040174/weve-moved">We&#8217;ve Moved!</a></h3>
+                            <p>Simply Statistics has moved to a new platform and so if you&#8217;ve been following our blog on Tumblr, you&#8217;ll have to update your links/RSS feeds to the <a href="http://simplystatistics.org/" target="_blank">new web site</a>. Apologies for the disruption, but this move allows us to add some new features to the blog that will be rolled out soon. Thanks for following us!</p>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                            
+                                                                                         <span st_url='http://simplystatistics.tumblr.com/post/36179040174/weve-moved' st_title='We&#8217;ve Moved!' class='st_twitter' ></span><span st_url='http://simplystatistics.tumblr.com/post/36179040174/weve-moved' st_title='We&#8217;ve Moved!' class='st_facebook' ></span><span st_url='http://simplystatistics.tumblr.com/post/36179040174/weve-moved' st_title='We&#8217;ve Moved!' class='st_tumblr' ></span><span st_url='http://simplystatistics.tumblr.com/post/36179040174/weve-moved' st_title='We&#8217;ve Moved!' class='st_linkedin' ></span><span st_url='http://simplystatistics.tumblr.com/post/36179040174/weve-moved' st_title='We&#8217;ve Moved!' class='st_reddit' ></span><span st_url='http://simplystatistics.tumblr.com/post/36179040174/weve-moved' st_title='We&#8217;ve Moved!' class='st_email' ></span><span st_url='http://simplystatistics.tumblr.com/post/36179040174/weve-moved' st_title='We&#8217;ve Moved!' class='st_google_reader' ></span><span st_url='http://simplystatistics.tumblr.com/post/36179040174/weve-moved' st_title='We&#8217;ve Moved!' class='st_sharethis' ></span>
+                     
+                                                                                  
+                        </div><!-- post-content -->
+<!--                        
+<script>
+var linkwithin_site_id = 998093;
+</script>
+<script src="http://www.linkwithin.com/widget.js"></script>
+                        <a href="http://www.linkwithin.com/"><img src="http://www.linkwithin.com/pixel.png" alt="Related Posts Plugin for WordPress, Blogger..." style="border: 0" /></a>                               
+-->
+                        
+                    </div><!-- .post -->
+                    
+                    
+                    
+                    
+                    
+                
+                    <div id="post-35987315254" class="post post-type-text">
+                        <div class="post-meta">
+                            <div class="type">
+                                <a href="http://simplystatistics.tumblr.com/post/35987315254/sunday-data-statistics-link-roundup-11-18-12">Text</a>
+                            </div><!-- .type -->
+                        
+                            <div class="date">
+                                November 18, 2012 - Author: leekgroup
+                            </div><!-- .date -->
+                        
+                        
+                            <div class="comments">
+                                <a href="http://simplystatistics.tumblr.com/post/35987315254/sunday-data-statistics-link-roundup-11-18-12#disqus_thread">0 comments</a>
+                            </div>
+                        
+                        
+                        </div><!-- .post-meta -->
+                        <div class="post-content">
+                            
+                        
+                            <h3><a href="http://simplystatistics.tumblr.com/post/35987315254/sunday-data-statistics-link-roundup-11-18-12">Sunday Data/Statistics Link Roundup (11/18/12)</a></h3>
+                            <p><ol><li><a href="http://www.youtube.com/watch?v=Ipk3HIIG9-o&amp;feature=youtu.be" target="_blank">An interview</a> with Brad Efron about scientific writing. I haven&#8217;t watched the whole interview, but I do know that Efron is one of my favorite writers among statisticians.</li>
+<li><a href="http://ramnathv.github.com/slidify/" target="_blank">Slidify,</a> another approach for making HTML5 slides directly from R.  I love the idea of making HTML slides, I would definitely do this regularly. But there are a couple of issues I feel still aren&#8217;t resolved: (1) It is still just a little too hard to change the theme/feel of the slides in my opinion. It is just CSS, but that&#8217;s still just enough of a hurdle that it is keeping me away and (2) I feel that the placement/insertion of images is still a little clunky, Google Docs has figured this out, I&#8217;d love it if they integrated the best features of Slidify, Latex, etc. into that system. </li>
+<li>Statistics is still the new hotness. Here is a Business Insider list about 5 statistics problems that will <a href="http://www.businessinsider.com/five-statistics-problems-that-will-change-the-way-you-see-the-world-2012-11" target="_blank">&#8220;change the way you think about the world&#8221;</a>. </li>
+<li>I love this one in the <a href="http://www.newyorker.com/humor/2012/11/19/121119sh_shouts_rudnick" target="_blank">New Yorker</a>, especially the line,&#8221;<span>statisticians are the new sexy vampires, only even more pasty&#8221; (via Brooke A.)</span><span><br/></span></li>
+<li><span>We&#8217;ve hit the big time! We have <a href="http://www.forbes.com/sites/stevensalzberg/2012/11/12/the-election-is-over-and-the-math-geeks-won/" target="_blank">been linked to</a> by a real (Forbes) blogger. </span></li>
+<li><span>If you haven&#8217;t noticed, we have a <a href="http://simplystatistics.org/post/35842154215/logo-contest-winner" target="_blank">new logo</a>. We are going to be making a few other platform-related changes over the next week or so. If you have any trouble, let us know!</span></li>
+</ol></p>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+            
+                            
+                            <div class="tags">
+                                <p>Tags: <a href="http://simplystatistics.tumblr.com/tagged/sunday-links" class="single-tag">sunday links</a> <a href="http://simplystatistics.tumblr.com/tagged/slidify" class="single-tag">slidify</a> <a href="http://simplystatistics.tumblr.com/tagged/html5" class="single-tag">html5</a> <a href="http://simplystatistics.tumblr.com/tagged/statistics-is-sexy" class="single-tag">statistics is sexy</a> <a href="http://simplystatistics.tumblr.com/tagged/salzberg" class="single-tag">salzberg</a> <a href="http://simplystatistics.tumblr.com/tagged/efron" class="single-tag">efron</a> </p>
+                                
+            
+                            </div>
+                    
+                            
+                        
+                            
+                                                                                         <span st_url='http://simplystatistics.tumblr.com/post/35987315254/sunday-data-statistics-link-roundup-11-18-12' st_title='Sunday Data/Statistics Link Roundup (11/18/12)' class='st_twitter' ></span><span st_url='http://simplystatistics.tumblr.com/post/35987315254/sunday-data-statistics-link-roundup-11-18-12' st_title='Sunday Data/Statistics Link Roundup (11/18/12)' class='st_facebook' ></span><span st_url='http://simplystatistics.tumblr.com/post/35987315254/sunday-data-statistics-link-roundup-11-18-12' st_title='Sunday Data/Statistics Link Roundup (11/18/12)' class='st_tumblr' ></span><span st_url='http://simplystatistics.tumblr.com/post/35987315254/sunday-data-statistics-link-roundup-11-18-12' st_title='Sunday Data/Statistics Link Roundup (11/18/12)' class='st_linkedin' ></span><span st_url='http://simplystatistics.tumblr.com/post/35987315254/sunday-data-statistics-link-roundup-11-18-12' st_title='Sunday Data/Statistics Link Roundup (11/18/12)' class='st_reddit' ></span><span st_url='http://simplystatistics.tumblr.com/post/35987315254/sunday-data-statistics-link-roundup-11-18-12' st_title='Sunday Data/Statistics Link Roundup (11/18/12)' class='st_email' ></span><span st_url='http://simplystatistics.tumblr.com/post/35987315254/sunday-data-statistics-link-roundup-11-18-12' st_title='Sunday Data/Statistics Link Roundup (11/18/12)' class='st_google_reader' ></span><span st_url='http://simplystatistics.tumblr.com/post/35987315254/sunday-data-statistics-link-roundup-11-18-12' st_title='Sunday Data/Statistics Link Roundup (11/18/12)' class='st_sharethis' ></span>
+                     
+                                                                                  
+                        </div><!-- post-content -->
+<!--                        
+<script>
+var linkwithin_site_id = 998093;
+</script>
+<script src="http://www.linkwithin.com/widget.js"></script>
+                        <a href="http://www.linkwithin.com/"><img src="http://www.linkwithin.com/pixel.png" alt="Related Posts Plugin for WordPress, Blogger..." style="border: 0" /></a>                               
+-->
+                        
+                    </div><!-- .post -->
+                    
+                    
+                    
+                    
+                    
+                
+                    <div id="post-35842154215" class="post post-type-text">
+                        <div class="post-meta">
+                            <div class="type">
+                                <a href="http://simplystatistics.tumblr.com/post/35842154215/logo-contest-winner">Text</a>
+                            </div><!-- .type -->
+                        
+                            <div class="date">
+                                November 16, 2012 - Author: rdpeng
+                            </div><!-- .date -->
+                        
+                        
+                            <div class="comments">
+                                <a href="http://simplystatistics.tumblr.com/post/35842154215/logo-contest-winner#disqus_thread">0 comments</a>
+                            </div>
+                        
+                        
+                        </div><!-- .post-meta -->
+                        <div class="post-content">
+                            
+                        
+                            <h3><a href="http://simplystatistics.tumblr.com/post/35842154215/logo-contest-winner">Logo Contest Winner</a></h3>
+                            <p>Congratulations to Bradley Saul, the winner of the Simply Statistics Logo contest! We had some great entries which made it difficult to choose between them. You can see the new logo to the right of our home page or the full sized version here:</p>
+<p><img src="http://media.tumblr.com/tumblr_mdl39pL5ua1r08wvg.png"/></p>
+<p>I made some slight modifications to Bradley&#8217;s original code (apologies!). The code for his original version is here:</p>
+<pre>Here’s the code:
+#########################################################
+#  Project: Simply Statistics Logo Design
+#  Date: 10/17/12
+#  Version: 0.00001
+#  Author: Bradley Saul
+#  Built in R Version: 2.15.0
+#########################################################
+
+#Set Graphical parameters
+par(mar=c(0, 0, 0, 0), pty='s', cex=3.5, pin=c(6,6))
+#Note: I had to hard code the size, so that the text would scale
+#on resizing the image. Maybe there is another way to get around font
+#scaling issues - I couldn't figure it out.
+
+make_logo &lt;- function(color){
+  
+  x1 &lt;- seq(0,1,.001)
+  ncps &lt;- seq(0,10,1)
+  shapes &lt;- seq(5,15,1)
+  # Plot Beta distributions to make purty lines.
+  plot(x1, pbeta(x1, shape1=10, shape2=.1, ncp=0), type='l', xlab='', ylab='', 
+       frame.plot=FALSE, axes=FALSE)
+  for(i in 1:length(ncps)){
+    lines(x1, pbeta(x1,shape1=.1, shape2=10, ncp=ncps[i]), col=color)
+  }
+
+  #Shade in area under curve.
+  coord.x &lt;- c(0,x1,1)
+  coord.y &lt;- c(0,pbeta(x1,shape1=.1,shape2=10, ncp=10),0)
+  polygon(coord.x, coord.y, col=color, border="white")
+
+  #Lazy way to get area between curves shaded, rather than just area under curve.
+  coord.y2 &lt;- c(0,pbeta(x1,shape1=10,shape2=.1, ncp=0),0)
+  polygon(coord.x, coord.y2, col="white", border="white")
+
+  #Add text
+  text(.98,.4,'Simply', col="white", adj=1,family='HersheySerif')
+  text(.98,.25,'St\\*atistics', col="white", adj=1, family="HersheySerif")
+}
+</pre>
+<p>Thanks to Bradley for the great logo and congratulations!</p>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                            
+                                                                                         <span st_url='http://simplystatistics.tumblr.com/post/35842154215/logo-contest-winner' st_title='Logo Contest Winner' class='st_twitter' ></span><span st_url='http://simplystatistics.tumblr.com/post/35842154215/logo-contest-winner' st_title='Logo Contest Winner' class='st_facebook' ></span><span st_url='http://simplystatistics.tumblr.com/post/35842154215/logo-contest-winner' st_title='Logo Contest Winner' class='st_tumblr' ></span><span st_url='http://simplystatistics.tumblr.com/post/35842154215/logo-contest-winner' st_title='Logo Contest Winner' class='st_linkedin' ></span><span st_url='http://simplystatistics.tumblr.com/post/35842154215/logo-contest-winner' st_title='Logo Contest Winner' class='st_reddit' ></span><span st_url='http://simplystatistics.tumblr.com/post/35842154215/logo-contest-winner' st_title='Logo Contest Winner' class='st_email' ></span><span st_url='http://simplystatistics.tumblr.com/post/35842154215/logo-contest-winner' st_title='Logo Contest Winner' class='st_google_reader' ></span><span st_url='http://simplystatistics.tumblr.com/post/35842154215/logo-contest-winner' st_title='Logo Contest Winner' class='st_sharethis' ></span>
+                     
+                                                                                  
+                        </div><!-- post-content -->
+<!--                        
+<script>
+var linkwithin_site_id = 998093;
+</script>
+<script src="http://www.linkwithin.com/widget.js"></script>
+                        <a href="http://www.linkwithin.com/"><img src="http://www.linkwithin.com/pixel.png" alt="Related Posts Plugin for WordPress, Blogger..." style="border: 0" /></a>                               
+-->
+                        
+                    </div><!-- .post -->
+                    
+                    
+                    
+                    
+                    
+                
+                    <div id="post-35778860973" class="post post-type-text">
+                        <div class="post-meta">
+                            <div class="type">
+                                <a href="http://simplystatistics.tumblr.com/post/35778860973/reproducible-research-with-us-or-against-us">Text</a>
+                            </div><!-- .type -->
+                        
+                            <div class="date">
+                                November 15, 2012 - Author: rdpeng
+                            </div><!-- .date -->
+                        
+                        
+                            <div class="comments">
+                                <a href="http://simplystatistics.tumblr.com/post/35778860973/reproducible-research-with-us-or-against-us#disqus_thread">0 comments</a>
+                            </div>
+                        
+                        
+                        </div><!-- .post-meta -->
+                        <div class="post-content">
+                            
+                        
+                            <h3><a href="http://simplystatistics.tumblr.com/post/35778860973/reproducible-research-with-us-or-against-us">Reproducible Research: With Us or Against Us?</a></h3>
+                            <p>Last night this <a href="http://cogprints.org/8675/" target="_blank">article by Chris Drummond</a> of the Canadian National Research Council (Conseil national de recherches Canada) popped up in my Google Scholar alert. The title of the article, &#8220;Reproducible Research: a Dissenting Opinion&#8221; would seem to indicate that he disagrees with much that has been circulating out there about reproducible research.</p>
+<p>Drummond singles out the <a href="http://www.stanford.edu/~vcs/papers/RoundtableDeclaration2010.pdf" target="_blank">Declaration published by a Yale Law School Roundtable on Data and Code Sharing</a> (I was not part of the roundtable) as an example of the main arguments in favor of reproducibility and has four main objections. What I found interesting about his piece is that I think I more or less agree with all his objections and yet draw the exact opposite conclusion from him. In his abstract, he concludes that &#8220;I would also contend that the effort necessary to meet the [reproducible research] movement’s aims, and the general attitude it engenders, would not serve any of the research disciplines well.&#8221;</p>
+<div><span>Let&#8217;s take his objections one by one:</span></div>
+<div><ol><li><strong>Reproducibility, at least in the form proposed, is not now, nor has it ever been, an essential part of science</strong>. I would say that with the exception of mathematics, this is true. In math, usually you state a theorem and provide the proof. The proof shows you how to obtain the result, so it is a form of reproducibility. But beyond that I would argue that the need for reproducibility is a more recent phenomenon arising from the great complexity and cost of modern data analyses and the lack of funding for full replication. The rise of &#8220;consortium science&#8221; (think ENCODE project) diminishes our ability to fully replicate (what he calls &#8220;Scientific Replication&#8221;) an experiment in any reasonable amount of time.</li>
+<li><strong>The idea of a single well defined scientific method resulting in an incremental, and cumulative, scientific process is highly debatable</strong>. He argues that the idea of a forward moving process by which science builds on top of previous results in an orderly and incremental fashion is a fiction. In particular, there is no single &#8220;scientific method&#8221; into which you can drop in reproducibility as a key component. I think most scientists would agree with this. Science not some orderly process&#8212;it&#8217;s messy and can seem haphazard and discoveries come at unpredictable times. But that doesn&#8217;t mean that people shouldn&#8217;t provide the details of what they&#8217;ve done so that others don&#8217;t have to essentially reverse engineer the process. I don&#8217;t see how the disorderly reality of science is an argument against reproducibility.</li>
+<li><strong>Requiring the submission of data and code will encourage a level of distrust among researchers and promote the acceptance of papers based on narrow technical criteria</strong>. I don&#8217;t agree with this statement at all. First, I don&#8217;t think it will happen. If a journal required code/data, it would be burdensome for some, but it would just be one of the many requirements that journals have. Second, I don&#8217;t think good science is about &#8220;trust&#8221;. Sure, it&#8217;s important to be civilized but if you claim a finding, I&#8217;m not going to just trust it because we&#8217;re both scientists. Finally, he says &#8220;<span>Submitting code &#8212; in whatever language, for whatever system &#8212; will simply result in an accumulation of questionable software. There may be a some cases where people would be able to use it but I would doubt that they would be frequent.&#8221; I think this is true, but it&#8217;s not necessarily an argument against submitting code. Think of the all the open source/free software packages out there. I would bet that most of that code has only been looked at by one person&#8212;the developer. But does that mean open source software as a whole is not valuable?</span></li>
+<li><strong>Misconduct has always been part of science with surprisingly little consequence. The public’s distrust is likely more to with the apparent variability of scientific conclusions</strong>. I agree with the first part and am not sure about the second. I&#8217;ve tried to argue previously that <a href="http://simplystatistics.org/post/12421558195/reproducible-research-notes-from-the-field" target="_blank">reproducible research is not just about preventing fraud/misconduct</a>. If someone wants to commit fraud, it&#8217;s easy to make the fraud reproducible. </li>
+</ol><p>I the end, I see reproducibility as not necessarily a new concept, but really an adaptation of an old concept, that is describing materials and methods. The problem is that the standard format for publication&#8212;journal articles&#8212;has simply not caught up with the growing complexity of data analysis. And so we need to update the standards a bit.</p>
+<p>I think the benefit of reproducibility is that if someone wants to question or challenge the findings of a study, they have the materials with which to do so. Providing people with the means to ask questions is how science moves forward.</p>
+</div>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                            
+                                                                                         <span st_url='http://simplystatistics.tumblr.com/post/35778860973/reproducible-research-with-us-or-against-us' st_title='Reproducible Research: With Us or Against Us?' class='st_twitter' ></span><span st_url='http://simplystatistics.tumblr.com/post/35778860973/reproducible-research-with-us-or-against-us' st_title='Reproducible Research: With Us or Against Us?' class='st_facebook' ></span><span st_url='http://simplystatistics.tumblr.com/post/35778860973/reproducible-research-with-us-or-against-us' st_title='Reproducible Research: With Us or Against Us?' class='st_tumblr' ></span><span st_url='http://simplystatistics.tumblr.com/post/35778860973/reproducible-research-with-us-or-against-us' st_title='Reproducible Research: With Us or Against Us?' class='st_linkedin' ></span><span st_url='http://simplystatistics.tumblr.com/post/35778860973/reproducible-research-with-us-or-against-us' st_title='Reproducible Research: With Us or Against Us?' class='st_reddit' ></span><span st_url='http://simplystatistics.tumblr.com/post/35778860973/reproducible-research-with-us-or-against-us' st_title='Reproducible Research: With Us or Against Us?' class='st_email' ></span><span st_url='http://simplystatistics.tumblr.com/post/35778860973/reproducible-research-with-us-or-against-us' st_title='Reproducible Research: With Us or Against Us?' class='st_google_reader' ></span><span st_url='http://simplystatistics.tumblr.com/post/35778860973/reproducible-research-with-us-or-against-us' st_title='Reproducible Research: With Us or Against Us?' class='st_sharethis' ></span>
+                     
+                                                                                  
+                        </div><!-- post-content -->
+<!--                        
+<script>
+var linkwithin_site_id = 998093;
+</script>
+<script src="http://www.linkwithin.com/widget.js"></script>
+                        <a href="http://www.linkwithin.com/"><img src="http://www.linkwithin.com/pixel.png" alt="Related Posts Plugin for WordPress, Blogger..." style="border: 0" /></a>                               
+-->
+                        
+                    </div><!-- .post -->
+                    
+                    
+                    
+                    
+                    
+                
+                    <div id="post-35705955387" class="post post-type-text">
+                        <div class="post-meta">
+                            <div class="type">
+                                <a href="http://simplystatistics.tumblr.com/post/35705955387/pro-tips-for-graduate-students-part-4">Text</a>
+                            </div><!-- .type -->
+                        
+                            <div class="date">
+                                November 14, 2012 - Author: leekgroup
+                            </div><!-- .date -->
+                        
+                        
+                            <div class="comments">
+                                <a href="http://simplystatistics.tumblr.com/post/35705955387/pro-tips-for-graduate-students-part-4#disqus_thread">0 comments</a>
+                            </div>
+                        
+                        
+                        </div><!-- .post-meta -->
+                        <div class="post-content">
+                            
+                        
+                            <h3><a href="http://simplystatistics.tumblr.com/post/35705955387/pro-tips-for-graduate-students-part-4">Pro-tips for graduate students (Part 4)</a></h3>
+                            <p><span>This is part of the ongoing series of pro tips for graduate students, check out parts </span><a href="http://simplystatistics.org/post/25368234643/pro-tips-for-grad-students-in-statistics-biostatistics" target="_blank">one</a>, <a href="http://simplystatistics.org/post/25507941642/pro-tips-for-grad-students-in-statistics-biostatistics" target="_blank">two</a> and <a href="http://simplystatistics.org/post/32327301604/pro-tips-for-graduate-students-part-3" target="_blank">three</a><span> for the original installments. </span></p>
+<ol><li>You can never underestimate how little your audience knows/cares about what you are talking about (so be clear and start with the &#8220;why&#8221;).</li>
+<li>Perfect is the enemy of good (so do something good and perfect it later).</li>
+<li>Learn about as many different areas as you can. You have to focus on one problem to get a Ph.D. (your dissertation) but the best way to get new ideas is to talk to people in areas with different problems than you have. This is the source of many of the &#8220;Big Impact&#8221; papers. Resources for talking about new ideas ranked according to formality: seminar, working groups, meeting with faculty/other students, going for a beer with some friends.</li>
+<li>Here are some ways to come up with a new method: (i) create a new method for a new data type, (ii) adapt an old/useful method to a new data type, (iii) an overlooked problem, (iv) changing the assumptions of a current method, and (v) generalizing a known method. Any can be impactful, but the highest probability of high impact in my experience is (ii). </li>
+</ol>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+            
+                            
+                            <div class="tags">
+                                <p>Tags: <a href="http://simplystatistics.tumblr.com/tagged/pro-tips" class="single-tag">pro tips</a> <a href="http://simplystatistics.tumblr.com/tagged/methods" class="single-tag">methods</a> <a href="http://simplystatistics.tumblr.com/tagged/seminars" class="single-tag">seminars</a> <a href="http://simplystatistics.tumblr.com/tagged/speaking" class="single-tag">speaking</a> <a href="http://simplystatistics.tumblr.com/tagged/impact" class="single-tag">impact</a> <a href="http://simplystatistics.tumblr.com/tagged/graduate-school" class="single-tag">graduate school</a> <a href="http://simplystatistics.tumblr.com/tagged/education" class="single-tag">education</a> </p>
+                                
+            
+                            </div>
+                    
+                            
+                        
+                            
+                                                                                         <span st_url='http://simplystatistics.tumblr.com/post/35705955387/pro-tips-for-graduate-students-part-4' st_title='Pro-tips for graduate students (Part 4)' class='st_twitter' ></span><span st_url='http://simplystatistics.tumblr.com/post/35705955387/pro-tips-for-graduate-students-part-4' st_title='Pro-tips for graduate students (Part 4)' class='st_facebook' ></span><span st_url='http://simplystatistics.tumblr.com/post/35705955387/pro-tips-for-graduate-students-part-4' st_title='Pro-tips for graduate students (Part 4)' class='st_tumblr' ></span><span st_url='http://simplystatistics.tumblr.com/post/35705955387/pro-tips-for-graduate-students-part-4' st_title='Pro-tips for graduate students (Part 4)' class='st_linkedin' ></span><span st_url='http://simplystatistics.tumblr.com/post/35705955387/pro-tips-for-graduate-students-part-4' st_title='Pro-tips for graduate students (Part 4)' class='st_reddit' ></span><span st_url='http://simplystatistics.tumblr.com/post/35705955387/pro-tips-for-graduate-students-part-4' st_title='Pro-tips for graduate students (Part 4)' class='st_email' ></span><span st_url='http://simplystatistics.tumblr.com/post/35705955387/pro-tips-for-graduate-students-part-4' st_title='Pro-tips for graduate students (Part 4)' class='st_google_reader' ></span><span st_url='http://simplystatistics.tumblr.com/post/35705955387/pro-tips-for-graduate-students-part-4' st_title='Pro-tips for graduate students (Part 4)' class='st_sharethis' ></span>
+                     
+                                                                                  
+                        </div><!-- post-content -->
+<!--                        
+<script>
+var linkwithin_site_id = 998093;
+</script>
+<script src="http://www.linkwithin.com/widget.js"></script>
+                        <a href="http://www.linkwithin.com/"><img src="http://www.linkwithin.com/pixel.png" alt="Related Posts Plugin for WordPress, Blogger..." style="border: 0" /></a>                               
+-->
+                        
+                    </div><!-- .post -->
+                    
+                    
+                    
+                    
+                    
+                
+                    <div id="post-35563800852" class="post post-type-text">
+                        <div class="post-meta">
+                            <div class="type">
+                                <a href="http://simplystatistics.tumblr.com/post/35563800852/some-thoughts-on-teaching-r-to-50-000-students">Text</a>
+                            </div><!-- .type -->
+                        
+                            <div class="date">
+                                November 12, 2012 - Author: rdpeng
+                            </div><!-- .date -->
+                        
+                        
+                            <div class="comments">
+                                <a href="http://simplystatistics.tumblr.com/post/35563800852/some-thoughts-on-teaching-r-to-50-000-students#disqus_thread">0 comments</a>
+                            </div>
+                        
+                        
+                        </div><!-- .post-meta -->
+                        <div class="post-content">
+                            
+                        
+                            <h3><a href="http://simplystatistics.tumblr.com/post/35563800852/some-thoughts-on-teaching-r-to-50-000-students">Some Thoughts on Teaching R to 50,000 Students</a></h3>
+                            <p>Two weeks ago I finished teaching my course <a href="https://class.coursera.org/compdata-2012-001/class/index" target="_blank">Computing for Data Analysis</a> through <a href="http://coursera.org" target="_blank">Coursera</a>. Since then I&#8217;ve had some time to think about how it went, what I learned, and what I&#8217;d do differently.</p>
+<p>First off, let me say that it was a lot of fun. Seeing thousands of people engaged in the material you&#8217;ve developed is an incredible experience and unlike any I&#8217;ve seen before. I initially had a number of fears about teaching this course, the primary one being that it would be a lot of work. Managing the needs of 50,000 students seemed like it would be a nightmare and making sure everything worked for every single person seemed impossible.</p>
+<p>These fears were ultimately unfounded. The Coursera platform is quite nice and is well-designed to scale to very large MOOCs. Everything is run off of Amazon S3 and so scalability is not an issue (although Hurricanes are a different story!) and there are numerous tools provided to help with automatic grading. Quizzes were multiple choice for me, so that gave instant feedback to students, but there are options to grade via regular expressions. For programming assignments, grading was done via unit tests, so students would feed pre-selected inputs into their R functions and the output would be checked on the Coursera server. Again, this allowed for automatic instant feedback without any intervention on my part. Designing programming assignments that would be graded by unit tests was a bit restrictive for me, but I think that was mostly because I wasn&#8217;t that used to it. On my end, I had to learn about video editing and screen capture, which wasn&#8217;t too bad. I mostly used Camtasia for Mac (highly recommended) for the lecture videos and occasionally used Final Cut Pro X.</p>
+<p>Coursera is working hard on their platform and so I imagine there will be many improvements in the near future (some of which were actually rolled out as the course was running). The system feels like it was designed and written by a bunch of Stanford CS grad students&#8212;and lo and behold it was! I think it&#8217;s a great platform for teaching computing, but I don&#8217;t know how well it&#8217;ll work for, say, <a href="https://www.coursera.org/course/modernpoetry" target="_blank">Modern Poetry</a>. But we&#8217;ll see, I guess.</p>
+<p>Here is some of what I took away from this experience:</p>
+<ul><li><strong>50,000 students is in some ways easier than 50 students</strong>. When I teach my in-class version of this course, I try to make sure everyone&#8217;s keeping up and doing well. I learn everyone&#8217;s names. I read all their homeworks. With 50,000 students there&#8217;s no pretension about individual attention. Everyone&#8217;s either on their own or has to look to the community for help. I did my best to participate in the discussion forums, but the reality was that the class community was incredibly helpful and participating in it was probably a better experience for some students than just having me to talk to.</li>
+<li><strong>Clarity and specificity are necessary</strong>. I&#8217;ve never taught a course online before, so I was used to the way I create assignments in-class. I just jot down some basic goals and problems and then clarify things in class if needed. But here, the programming assignments really had to be clear (akin to legal documents) because trying to clear up confusion afterwards often led to more confusion. The result is that it took a lot more time to write homework assignments for this class than for the same course in-person (even if it was the same homework) because I was basically writing a software specification.</li>
+<li><strong>Modularity is key to overcoming heterogeneity</strong>. This was a lesson that I didn&#8217;t figure out until the middle of the course when it was basically too late. In any course, there&#8217;s heterogeneity in the backgrounds of the students. In programming classes, some students have programmed in other languages before while some have never programmed at all. Handling heterogeneity is a challenge in any course. Now, just multiply that by 10,000 and that&#8217;s what this course was. Breaking <em>everything</em> down into very small pieces is key to letting people across the skill spectrum move at their own pace. I thought I&#8217;d done this but in reality I hadn&#8217;t broken things down into small enough pieces. The result was that the first homework was a beast of a problem for those who had little programming experience. </li>
+<li><strong>Time and content are more loosely connected</strong>. Preparing for this course exposed a feature of in-class courses that I&#8217;d not thought about. In-class courses for me are very driven by the clock and the calendar. I teach twice a week, each period is 1.5 hours, and there are 8 weeks in the term. So I need to figure out how to fit material into exact 1.5 hour blocks. If something only takes 1 hour to cover then I need to cover part of the next topic, find a topic that&#8217;s short, or just fill for half an hour. While preparing for this course, I found myself just thinking about what content I wanted to cover and just doing it. I tried to target about 2 hours of video per week, but there was obviously some flexibility. In class, there&#8217;s no flexibility because usually the next class is trampling over you as the period ends. Not having to think about exact time was very liberating.</li>
+</ul><p>I&#8217;m grateful for all the students I had in this first offering of the course I thank them for putting up with my own learning process as I taught it. I&#8217;m hoping to offer this course again on Coursera but I&#8217;m not sure when that&#8217;ll be. If you missed the Coursera version of Computing for Data Analysis, I will be <a href="http://simplystatistics.org/post/34563838584/computing-for-data-analysis-simply-statistics-edition" target="_blank">offering a version of this course</a> through the blog very shortly. Please check here back for details.</p>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+            
+                            
+                            <div class="tags">
+                                <p>Tags: <a href="http://simplystatistics.tumblr.com/tagged/R" class="single-tag">R</a> <a href="http://simplystatistics.tumblr.com/tagged/MOOC" class="single-tag">MOOC</a> </p>
+                                
+            
+                            </div>
+                    
+                            
+                        
+                            
+                                                                                         <span st_url='http://simplystatistics.tumblr.com/post/35563800852/some-thoughts-on-teaching-r-to-50-000-students' st_title='Some Thoughts on Teaching R to 50,000 Students' class='st_twitter' ></span><span st_url='http://simplystatistics.tumblr.com/post/35563800852/some-thoughts-on-teaching-r-to-50-000-students' st_title='Some Thoughts on Teaching R to 50,000 Students' class='st_facebook' ></span><span st_url='http://simplystatistics.tumblr.com/post/35563800852/some-thoughts-on-teaching-r-to-50-000-students' st_title='Some Thoughts on Teaching R to 50,000 Students' class='st_tumblr' ></span><span st_url='http://simplystatistics.tumblr.com/post/35563800852/some-thoughts-on-teaching-r-to-50-000-students' st_title='Some Thoughts on Teaching R to 50,000 Students' class='st_linkedin' ></span><span st_url='http://simplystatistics.tumblr.com/post/35563800852/some-thoughts-on-teaching-r-to-50-000-students' st_title='Some Thoughts on Teaching R to 50,000 Students' class='st_reddit' ></span><span st_url='http://simplystatistics.tumblr.com/post/35563800852/some-thoughts-on-teaching-r-to-50-000-students' st_title='Some Thoughts on Teaching R to 50,000 Students' class='st_email' ></span><span st_url='http://simplystatistics.tumblr.com/post/35563800852/some-thoughts-on-teaching-r-to-50-000-students' st_title='Some Thoughts on Teaching R to 50,000 Students' class='st_google_reader' ></span><span st_url='http://simplystatistics.tumblr.com/post/35563800852/some-thoughts-on-teaching-r-to-50-000-students' st_title='Some Thoughts on Teaching R to 50,000 Students' class='st_sharethis' ></span>
+                     
+                                                                                  
+                        </div><!-- post-content -->
+<!--                        
+<script>
+var linkwithin_site_id = 998093;
+</script>
+<script src="http://www.linkwithin.com/widget.js"></script>
+                        <a href="http://www.linkwithin.com/"><img src="http://www.linkwithin.com/pixel.png" alt="Related Posts Plugin for WordPress, Blogger..." style="border: 0" /></a>                               
+-->
+                        
+                    </div><!-- .post -->
+                    
+                    
+                    
+                    
+                    
+                
+                    <div id="post-35491656378" class="post post-type-text">
+                        <div class="post-meta">
+                            <div class="type">
+                                <a href="http://simplystatistics.tumblr.com/post/35491656378/sunday-data-statistics-link-roundup-11-11-12">Text</a>
+                            </div><!-- .type -->
+                        
+                            <div class="date">
+                                November 11, 2012 - Author: leekgroup
+                            </div><!-- .date -->
+                        
+                        
+                            <div class="comments">
+                                <a href="http://simplystatistics.tumblr.com/post/35491656378/sunday-data-statistics-link-roundup-11-11-12#disqus_thread">0 comments</a>
+                            </div>
+                        
+                        
+                        </div><!-- .post-meta -->
+                        <div class="post-content">
+                            
+                        
+                            <h3><a href="http://simplystatistics.tumblr.com/post/35491656378/sunday-data-statistics-link-roundup-11-11-12">Sunday Data/Statistics Link Roundup (11/11/12)</a></h3>
+                            <p><ol><li>Statisticians <a href="http://nataliacecire.blogspot.com/2012/11/the-passion-of-nate-silver-sort-of.html" target="_blank">have been deconstructed</a>! I feel vaguely insulted, although I have to admit I&#8217;m not even sure I know what the article says. This line is a doozy though: <span>&#8220;Statistics always pulls back from the claims it makes&#8230;&#8221; As a statistician blogger, I make tons of claims. I probably regret some of them, but I&#8217;d never take them back :-). </span></li>
+<li><span>Following our <a href="http://simplystatistics.org/post/35187901781/nate-silver-does-it-again-will-pundits-finally-accept" target="_blank">recent detour</a> into <a href="http://simplystatistics.org/post/35285752046/some-academic-thoughts-on-the-poll-aggregators" target="_blank">political analysis</a>, <a href="http://swampland.time.com/2012/11/07/inside-the-secret-world-of-quants-and-data-crunchers-who-helped-obama-win/" target="_blank">Here is a story</a> about the statisticians that helped Obama win the election by identifying blocks of voters/donors that could help lead the campaign to victory. I think there are some lessons here for individualized health. </span></li>
+<li><span>XKCD is <a href="http://xkcd.com/1132/" target="_blank">hating on frequentists</a>! <a href="http://normaldeviate.wordpress.com/2012/11/09/anti-xkcd/" target="_blank">Wasserman</a> and <a href="http://andrewgelman.com/2012/11/16808/" target="_blank">Gelman</a> respond. This is the same mistake I think a lot of <a href="http://simplystatistics.org/post/15402808730/p-values-and-hypothesis-testing-get-a-bad-rap-but-we" target="_blank">critics of P-values</a> make. When used incorrectly, any statistical method makes silly claims. The key is knowing when to use them, regardless of which kind you prefer. </span></li>
+<li><span><a href="http://www.theregister.co.uk/2012/11/02/data_science_goes_to_university/" target="_blank">Another article</a> in the popular press about the shortage of data scientists, in particular &#8220;big data&#8221; scientists. I also saw a ton of discussion of whether Nate Silver used &#8220;big data&#8221; in making his predictions. This is another one of those many, many cases where the size of the data is mostly irrelevant; it is knowing the right data to use that is important. </span></li>
+<li><span>Apparently math can be <a href="http://www.wired.com/wiredscience/2012/11/painful-math/" target="_blank">physically painful.</a>  I don&#8217;t buy it. </span></li>
+</ol></p>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+            
+                            
+                            <div class="tags">
+                                <p>Tags: <a href="http://simplystatistics.tumblr.com/tagged/xkcd" class="single-tag">xkcd</a> <a href="http://simplystatistics.tumblr.com/tagged/literature" class="single-tag">literature</a> <a href="http://simplystatistics.tumblr.com/tagged/politics" class="single-tag">politics</a> <a href="http://simplystatistics.tumblr.com/tagged/silver" class="single-tag">silver</a> <a href="http://simplystatistics.tumblr.com/tagged/frequentist" class="single-tag">frequentist</a> <a href="http://simplystatistics.tumblr.com/tagged/bayesian" class="single-tag">bayesian</a> <a href="http://simplystatistics.tumblr.com/tagged/big-data" class="single-tag">big data</a> </p>
+                                
+            
+                            </div>
+                    
+                            
+                        
+                            
+                                                                                         <span st_url='http://simplystatistics.tumblr.com/post/35491656378/sunday-data-statistics-link-roundup-11-11-12' st_title='Sunday Data/Statistics Link Roundup (11/11/12)' class='st_twitter' ></span><span st_url='http://simplystatistics.tumblr.com/post/35491656378/sunday-data-statistics-link-roundup-11-11-12' st_title='Sunday Data/Statistics Link Roundup (11/11/12)' class='st_facebook' ></span><span st_url='http://simplystatistics.tumblr.com/post/35491656378/sunday-data-statistics-link-roundup-11-11-12' st_title='Sunday Data/Statistics Link Roundup (11/11/12)' class='st_tumblr' ></span><span st_url='http://simplystatistics.tumblr.com/post/35491656378/sunday-data-statistics-link-roundup-11-11-12' st_title='Sunday Data/Statistics Link Roundup (11/11/12)' class='st_linkedin' ></span><span st_url='http://simplystatistics.tumblr.com/post/35491656378/sunday-data-statistics-link-roundup-11-11-12' st_title='Sunday Data/Statistics Link Roundup (11/11/12)' class='st_reddit' ></span><span st_url='http://simplystatistics.tumblr.com/post/35491656378/sunday-data-statistics-link-roundup-11-11-12' st_title='Sunday Data/Statistics Link Roundup (11/11/12)' class='st_email' ></span><span st_url='http://simplystatistics.tumblr.com/post/35491656378/sunday-data-statistics-link-roundup-11-11-12' st_title='Sunday Data/Statistics Link Roundup (11/11/12)' class='st_google_reader' ></span><span st_url='http://simplystatistics.tumblr.com/post/35491656378/sunday-data-statistics-link-roundup-11-11-12' st_title='Sunday Data/Statistics Link Roundup (11/11/12)' class='st_sharethis' ></span>
+                     
+                                                                                  
+                        </div><!-- post-content -->
+<!--                        
+<script>
+var linkwithin_site_id = 998093;
+</script>
+<script src="http://www.linkwithin.com/widget.js"></script>
+                        <a href="http://www.linkwithin.com/"><img src="http://www.linkwithin.com/pixel.png" alt="Related Posts Plugin for WordPress, Blogger..." style="border: 0" /></a>                               
+-->
+                        
+                    </div><!-- .post -->
+                    
+                    
+                    
+                    
+                    
+                
+                    <div id="post-35340796766" class="post post-type-text">
+                        <div class="post-meta">
+                            <div class="type">
+                                <a href="http://simplystatistics.tumblr.com/post/35340796766/interview-with-tom-louis-new-chief-scientist-at-the">Text</a>
+                            </div><!-- .type -->
+                        
+                            <div class="date">
+                                November 09, 2012 - Author: leekgroup
+                            </div><!-- .date -->
+                        
+                        
+                            <div class="comments">
+                                <a href="http://simplystatistics.tumblr.com/post/35340796766/interview-with-tom-louis-new-chief-scientist-at-the#disqus_thread">0 comments</a>
+                            </div>
+                        
+                        
+                        </div><!-- .post-meta -->
+                        <div class="post-content">
+                            
+                        
+                            <h3><a href="http://simplystatistics.tumblr.com/post/35340796766/interview-with-tom-louis-new-chief-scientist-at-the">Interview with Tom Louis - New Chief Scientist at the Census Bureau</a></h3>
+                            <div class="im"><strong>Tom Louis</strong></div>
+<div class="im"><strong><br/></strong></div>
+<div class="im"><strong><img height="225" src="http://biostat.jhsph.edu/~jleek/tom.jpg" width="150"/></strong></div>
+<div class="im"><strong><br/></strong></div>
+<div class="im"><a href="http://www.biostat.jhsph.edu/~tlouis/" target="_blank">Tom Louis</a> is a professor of Biostatistics at Johns Hopkins and will be joining the Census Bureau through an <span>interagency personnel agreement as the new associate director for research and methodology and chief scientist.</span><span> Tom has an impressive history of accomplishment in developing statistical methods for everything from environmental science to genomics. We talked to Tom about his new role at the Census, how it relates to his impressive research career, and how young statisticians can get involved in the statistical work at the Census. </span></div>
+<div class="im"><strong><br/></strong></div>
+<div class="im"><strong><br/></strong></div>
+<div class="im"><strong>SS: How did you end up being invited to lead the research branch of the Census?</strong></div>
+<p><span>TL: Last winter, then-director Robert Groves (now Provost at Georgetown University) asked if I would be interested in  the possibility of becoming the next Associate Director of Research and Methodology (R&amp;M) and Chief Scientist, succeeding  Rod Little (Professor of Biostatistics at the University of Michigan) in these roles.  I expressed interest and after several discussions with Bob and Rod, decided that if offered, I would accept.  It was offered and I did accept.  </span><br/><br/><span>As background,  components of my research, especially Bayesian methods, is Census-relevant.  Furthermore, during my time as a member of the National Academies Committee on National Statistics I served on the panel that recommended improvements in small area income and poverty estimates, chaired the panel that evaluated methods for allocating federal and state program funds by formula, and chaired a workshop on facilitating innovation in the Federal statistical system.</span><br/><br/><span>Rod and I noted that it&#8217;s interesting and possibly not coincidental that with my appointment the first two associate directors are both former chairs of Biostatistics departments.  It is the case that R&amp;D&#8217;s mission is quite similar to that of a Biostatistics department; methods and collaborative research, consultation and education.  And, there are many statisticians at the Census Bureau who are not in the R&amp;D directorship, a sociology quite similar to that in a School of Public Health or a Medical campus. </span></p>
+<div class="im"><br/><strong>SS: What made you interested in taking on this major new responsibility?</strong></div>
+<p><span>TL: I became energized by the opportunity for national service, and excited by the scientific, administrative, and sociological responsibilities and challenges.  I&#8217;ll be engaged in hiring and staff development, and increasing the visibility of the bureau&#8217;s pre- and post-doctoral programs.  The position will provide the impetus to take a deep dive into finite-population statistical approaches, and contribute to the evolving understanding of the strengths and weakness of design-based, model-based and hybrid approaches to inference.  That I could remain a Hopkins employee by working via an Interagency Personnel Agreement, sealed the deal.  I will start in January 2013 and serve through 2015, and will continue to participate in some Hopkins-based activities.</span><br/><br/><span>In addition to activities within the Census Bureau, I&#8217;ll be increasing connections among statisticians in other federal statistical agencies, have a role in relations with researchers funded through the NSF to conduct census-related research.</span></p>
+<div class="im"><br/><br/><strong>SS: What are the sorts of research projects the Census is involved in? </strong></div>
+<p><span>TL: The Census Bureau designs and conducts the decennial Census, the Current Population Survey, the American Community Survey, many, many other surveys for other Federal Statistical Agencies including the Bureau of Labor Statistics, and a quite extraordinary portfolio of others. Each identifies issues in design and analysis that merit attention, many entail &#8220;Big Data&#8221; and many require combining information from a variety of sources.  I give a few examples, and encourage exploration of </span><a href="http://www.census.gov/research" target="_blank"><a href="http://www.census.gov/research" target="_blank">www.census.gov/research</a></a><span>.</span><br/><br/><span>You can get a flavor of the types of research from the titles of the six current centers within R&amp;M: The Center for Adaptive Design, The Center for Administrative Records Research and Acquisition, The Center for Disclosure Avoidance Research, The Center for Economic Studies, The Center for Statistical Research and Methodology and The Center for Survey Measurement.  Projects include multi-mode survey approaches, stopping rules for household visits, methods of combining information from surveys and administrative records, provision of focused estimates while preserving identity protection,  improved small area estimates of income and of limited english skills (used to trigger provision of election ballots in languages other than English), and continuing investigation of issues related to model-based and design-based inferences.</span></p>
+<div class="im"><br/><br/> <br/><strong>SS: Are those projects related to your research?</strong></div>
+<p><span>TL: Some are, some will be, some will never be.  Small area estimation, hierarchical modeling with a Bayesian formalism, some aspects of adaptive design, some of combining evidence from a variety of sources, and general statistical modeling are in my power zone.  I look forward to getting involved in these and contributing to other projects.</span></p>
+<div class="im"><br/><br/><strong>SS: How does research performed at the Census help the American Public?</strong></div>
+<p><span>TL: Research innovations enable the bureau to produce more timely and accurate information at lower cost, improve validity (for example, new approaches have at least maintained respondent participation in surveys), enhancing the reputation of the the Census Bureau as a trusted source of information.  Estimates developed by Census are used to allocate billions of dollars in school aid, and the provide key planning information for businesses and governments.</span></p>
+<div class="im"><br/><br/><strong>SS: How can young statisticians get more involved in government statistical research?</strong></div>
+<p><span>TL: The first step is to become aware of the wide variety of activities and their high impact.  Visiting the Census website and those of other federal and state agencies, and the Committee on National Statistics (</span><a href="http://sites.nationalacademies.org/DBASSE/CNSTAT/" target="_blank"><a href="http://sites.nationalacademies.org/DBASSE/CNSTAT/" target="_blank">http://sites.nationalacademies.org/DBASSE/CNSTAT/</a></a><span>) and the National Institute of Statistical Sciences (</span><a href="http://www.niss.org/" target="_blank"><a href="http://www.niss.org/" target="_blank">http://www.niss.org/</a></a><span>) is a good start.   Make contact with researchers at the JSM and other meetings and be on the lookout for pre- and post-doctoral positions at Census and other federal agencies.</span></p>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+            
+                            
+                            <div class="tags">
+                                <p>Tags: <a href="http://simplystatistics.tumblr.com/tagged/census" class="single-tag">census</a> <a href="http://simplystatistics.tumblr.com/tagged/government" class="single-tag">government</a> <a href="http://simplystatistics.tumblr.com/tagged/tom-louis" class="single-tag">tom louis</a> <a href="http://simplystatistics.tumblr.com/tagged/interview" class="single-tag">interview</a> </p>
+                                
+            
+                            </div>
+                    
+                            
+                        
+                            
+                                                                                         <span st_url='http://simplystatistics.tumblr.com/post/35340796766/interview-with-tom-louis-new-chief-scientist-at-the' st_title='Interview with Tom Louis - New Chief Scientist at the Census Bureau' class='st_twitter' ></span><span st_url='http://simplystatistics.tumblr.com/post/35340796766/interview-with-tom-louis-new-chief-scientist-at-the' st_title='Interview with Tom Louis - New Chief Scientist at the Census Bureau' class='st_facebook' ></span><span st_url='http://simplystatistics.tumblr.com/post/35340796766/interview-with-tom-louis-new-chief-scientist-at-the' st_title='Interview with Tom Louis - New Chief Scientist at the Census Bureau' class='st_tumblr' ></span><span st_url='http://simplystatistics.tumblr.com/post/35340796766/interview-with-tom-louis-new-chief-scientist-at-the' st_title='Interview with Tom Louis - New Chief Scientist at the Census Bureau' class='st_linkedin' ></span><span st_url='http://simplystatistics.tumblr.com/post/35340796766/interview-with-tom-louis-new-chief-scientist-at-the' st_title='Interview with Tom Louis - New Chief Scientist at the Census Bureau' class='st_reddit' ></span><span st_url='http://simplystatistics.tumblr.com/post/35340796766/interview-with-tom-louis-new-chief-scientist-at-the' st_title='Interview with Tom Louis - New Chief Scientist at the Census Bureau' class='st_email' ></span><span st_url='http://simplystatistics.tumblr.com/post/35340796766/interview-with-tom-louis-new-chief-scientist-at-the' st_title='Interview with Tom Louis - New Chief Scientist at the Census Bureau' class='st_google_reader' ></span><span st_url='http://simplystatistics.tumblr.com/post/35340796766/interview-with-tom-louis-new-chief-scientist-at-the' st_title='Interview with Tom Louis - New Chief Scientist at the Census Bureau' class='st_sharethis' ></span>
+                     
+                                                                                  
+                        </div><!-- post-content -->
+<!--                        
+<script>
+var linkwithin_site_id = 998093;
+</script>
+<script src="http://www.linkwithin.com/widget.js"></script>
+                        <a href="http://www.linkwithin.com/"><img src="http://www.linkwithin.com/pixel.png" alt="Related Posts Plugin for WordPress, Blogger..." style="border: 0" /></a>                               
+-->
+                        
+                    </div><!-- .post -->
+                    
+                    
+                    
+                    
+                    
+                
+                    <div id="post-35285752046" class="post post-type-text">
+                        <div class="post-meta">
+                            <div class="type">
+                                <a href="http://simplystatistics.tumblr.com/post/35285752046/some-academic-thoughts-on-the-poll-aggregators">Text</a>
+                            </div><!-- .type -->
+                        
+                            <div class="date">
+                                November 08, 2012 - Author: rafalab
+                            </div><!-- .date -->
+                        
+                        
+                            <div class="comments">
+                                <a href="http://simplystatistics.tumblr.com/post/35285752046/some-academic-thoughts-on-the-poll-aggregators#disqus_thread">0 comments</a>
+                            </div>
+                        
+                        
+                        </div><!-- .post-meta -->
+                        <div class="post-content">
+                            
+                        
+                            <h3><a href="http://simplystatistics.tumblr.com/post/35285752046/some-academic-thoughts-on-the-poll-aggregators">Some academic thoughts on the poll aggregators</a></h3>
+                            <p>The night of the presidential elections I wrote a <a href="http://simplystatistics.org/post/35187901781/nate-silver-does-it-again-will-pundits-finally-accept" target="_blank">post</a> celebrating the victory of data over punditry. I was motivated by the personal attacks made against Nate Silver by pundits that do not understand Statistics. The post generated a little bit of (justified) <em><a href="http://www.urbandictionary.com/define.php?term=nerdrage" target="_blank">nerdrage</a> </em>(see comment section). So here I clarify a couple of things not as a member of Nate Silver&#8217;s fan club (my <a href="http://www.urbandictionary.com/define.php?term=mancrush" target="_blank"><em>mancrush</em> </a>started with <a href="http://www.baseballprospectus.com/" target="_blank">PECOTA</a> not fivethirtyeight) but as an applied statistician.</p>
+<p>The main reason <a href="http://fivethirtyeight.blogs.nytimes.com/" target="_blank">fivethrityeight</a> predicts election results so well is mainly due to the idea of averaging polls. This idea was around way before fivethirtyeight started. In fact, it&#8217;s a version of <a href="http://en.wikipedia.org/wiki/Meta-analysis" target="_blank">meta-analysis</a> which has been around for hundreds of years and is commonly used to <a href="http://www.ncbi.nlm.nih.gov/pubmed/3802833" target="_blank">improve results of clinical trials</a>. This election cycle several groups,  including Sam Wang (<a href="http://election.princeton.edu/" target="_blank">Princeton Election Consortium</a>), Simon Jackman (<a href="http://www.huffingtonpost.com/simon-jackman/pollster-predictions_b_2081013.html" target="_blank">pollster</a>), and Drew Linzer (<a href="http://votamatic.org/" target="_blank">VOTAMATIC</a>), predicted the election perfectly using this trick. </p>
+<p><span></span>While each group adds their own set of bells and whistles, most of the gains come from the aggregation of polls and understanding the concept of a standard error. Note that <span>while each individual poll may be a bit biased, historical data shows that these biases average out to 0. So by taking the average you obtain a close to unbiased estimate. Because there are so many pollsters, each one conducting several polls, you can also estimate the standard error of your estimate pretty well (empirically rather than theoretically). </span><span> </span><span>I include a plot below that provides evidence that bias is not an issue and that standard errors are well estimated. The dash line is at +/- 2 standard erros based on the average (across all states) standard error reported by fivethirtyeight. Note that the variability is smaller for the battleground states where more polls were conducted (this is consistent with state-specific standard error reported by fivethirtyeight).</span></p>
+<p><span>Finally, there is the issue of the use of the word &#8220;probability&#8221;. Obviously one can correctly state that there is a 90% chance of observing event A and then have it not happen: Romney could have won and the aggregators still been &#8220;right&#8221;. Also </span>frequentists complain when we talk about the probability of something that only will happen once? I actually don&#8217;t like getting into this philosophical discussion (<a href="http://andrewgelman.com/2012/10/is-it-meaningful-to-talk-about-a-probability-of-65-7-that-obama-will-win-the-election/" target="_blank">Gelman</a> has some thoughts worth reading) and I cut people who write for the masses some slack. If the aggregators consistently outperform the pundits in their predictions I have no problem with them using the word &#8220;probability&#8221; in their reports. I look forward to some of the post-election analysis of all this.</p>
+
+<p><a href="http://rafalab.jhsph.edu/simplystats/silver3.png" target="_blank"><img height="500" src="http://rafalab.jhsph.edu/simplystats/silver3.png" width="500"/></a></p>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                            
+                                                                                         <span st_url='http://simplystatistics.tumblr.com/post/35285752046/some-academic-thoughts-on-the-poll-aggregators' st_title='Some academic thoughts on the poll aggregators' class='st_twitter' ></span><span st_url='http://simplystatistics.tumblr.com/post/35285752046/some-academic-thoughts-on-the-poll-aggregators' st_title='Some academic thoughts on the poll aggregators' class='st_facebook' ></span><span st_url='http://simplystatistics.tumblr.com/post/35285752046/some-academic-thoughts-on-the-poll-aggregators' st_title='Some academic thoughts on the poll aggregators' class='st_tumblr' ></span><span st_url='http://simplystatistics.tumblr.com/post/35285752046/some-academic-thoughts-on-the-poll-aggregators' st_title='Some academic thoughts on the poll aggregators' class='st_linkedin' ></span><span st_url='http://simplystatistics.tumblr.com/post/35285752046/some-academic-thoughts-on-the-poll-aggregators' st_title='Some academic thoughts on the poll aggregators' class='st_reddit' ></span><span st_url='http://simplystatistics.tumblr.com/post/35285752046/some-academic-thoughts-on-the-poll-aggregators' st_title='Some academic thoughts on the poll aggregators' class='st_email' ></span><span st_url='http://simplystatistics.tumblr.com/post/35285752046/some-academic-thoughts-on-the-poll-aggregators' st_title='Some academic thoughts on the poll aggregators' class='st_google_reader' ></span><span st_url='http://simplystatistics.tumblr.com/post/35285752046/some-academic-thoughts-on-the-poll-aggregators' st_title='Some academic thoughts on the poll aggregators' class='st_sharethis' ></span>
+                     
+                                                                                  
+                        </div><!-- post-content -->
+<!--                        
+<script>
+var linkwithin_site_id = 998093;
+</script>
+<script src="http://www.linkwithin.com/widget.js"></script>
+                        <a href="http://www.linkwithin.com/"><img src="http://www.linkwithin.com/pixel.png" alt="Related Posts Plugin for WordPress, Blogger..." style="border: 0" /></a>                               
+-->
+                        
+                    </div><!-- .post -->
+                    
+                    
+                    
+                    
+                    
+                
+                    <div id="post-35187901781" class="post post-type-text">
+                        <div class="post-meta">
+                            <div class="type">
+                                <a href="http://simplystatistics.tumblr.com/post/35187901781/nate-silver-does-it-again-will-pundits-finally-accept">Text</a>
+                            </div><!-- .type -->
+                        
+                            <div class="date">
+                                November 07, 2012 - Author: rafalab
+                            </div><!-- .date -->
+                        
+                        
+                            <div class="comments">
+                                <a href="http://simplystatistics.tumblr.com/post/35187901781/nate-silver-does-it-again-will-pundits-finally-accept#disqus_thread">0 comments</a>
+                            </div>
+                        
+                        
+                        </div><!-- .post-meta -->
+                        <div class="post-content">
+                            
+                        
+                            <h3><a href="http://simplystatistics.tumblr.com/post/35187901781/nate-silver-does-it-again-will-pundits-finally-accept">Nate Silver does it again! Will pundits finally accept defeat?</a></h3>
+                            <p>My favorite statistician did it again! Just like in 2008, he predicted the presidential election results almost perfectly. For those that don&#8217;t know, Nate Silver is the statistician that runs the <a href="http://fivethirtyeight.blogs.nytimes.com/" target="_blank">fivethirtyeight blog</a>. He combines data from hundreds of polls, uses historical data to weigh them appropriately and then uses a statistical model to run simulations and predict outcomes.</p>
+<p>While the pundits were claiming the race was a &#8220;dead heat&#8221;, the day before the election Nate gave Obama a 90% chance of winning. Several pundits attacked Nate (some attacks were personal) for his predictions and demonstrated their ignorance of Statistics. Jeff wrote a <a href="http://simplystatistics.org/post/34635539704/on-weather-forecasts-nate-silver-and-the" target="_blank">nice post on this</a>. The plot below demonstrates how great Nate&#8217;s prediction was. Note that each of the 45 states (including DC) for which he predicted a 90% probability or higher of winning for candidate A, candidate A won. For the other 6 states the range of percentages was 48-52%. If Florida goes for Obama he will have predicted every single state correctly.</p>
+<p><strong>Update</strong><strong>: </strong>Congratulations also to Sam Wang (<a href="http://election.princeton.edu/" target="_blank">Princeton Election Consortium</a>) and Simon Jackman (<a href="http://www.huffingtonpost.com/simon-jackman/pollster-predictions_b_2081013.html" target="_blank">pollster</a>) that also called the election perfectly. And thanks to the pollsters that provided the unbiased (on average) data used by all these folks. Data analysts won &#8220;experts&#8221; lost.</p>
+<p><strong>Update 2</strong>: New plot with data from <a href="http://www.foxnews.com/politics/elections/2012-election-results/" target="_blank">here</a>. Old graph <a href="http://rafalab.jhsph.edu/simplystats/silver.png" target="_blank">here</a>.</p>
+<p><a href="http://rafalab.jhsph.edu/simplystats/silver2.png" target="_blank"><img height="500" src="http://rafalab.jhsph.edu/simplystats/silver2.png" width="500"/></a></p>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                            
+                                                                                         <span st_url='http://simplystatistics.tumblr.com/post/35187901781/nate-silver-does-it-again-will-pundits-finally-accept' st_title='Nate Silver does it again! Will pundits finally accept defeat?' class='st_twitter' ></span><span st_url='http://simplystatistics.tumblr.com/post/35187901781/nate-silver-does-it-again-will-pundits-finally-accept' st_title='Nate Silver does it again! Will pundits finally accept defeat?' class='st_facebook' ></span><span st_url='http://simplystatistics.tumblr.com/post/35187901781/nate-silver-does-it-again-will-pundits-finally-accept' st_title='Nate Silver does it again! Will pundits finally accept defeat?' class='st_tumblr' ></span><span st_url='http://simplystatistics.tumblr.com/post/35187901781/nate-silver-does-it-again-will-pundits-finally-accept' st_title='Nate Silver does it again! Will pundits finally accept defeat?' class='st_linkedin' ></span><span st_url='http://simplystatistics.tumblr.com/post/35187901781/nate-silver-does-it-again-will-pundits-finally-accept' st_title='Nate Silver does it again! Will pundits finally accept defeat?' class='st_reddit' ></span><span st_url='http://simplystatistics.tumblr.com/post/35187901781/nate-silver-does-it-again-will-pundits-finally-accept' st_title='Nate Silver does it again! Will pundits finally accept defeat?' class='st_email' ></span><span st_url='http://simplystatistics.tumblr.com/post/35187901781/nate-silver-does-it-again-will-pundits-finally-accept' st_title='Nate Silver does it again! Will pundits finally accept defeat?' class='st_google_reader' ></span><span st_url='http://simplystatistics.tumblr.com/post/35187901781/nate-silver-does-it-again-will-pundits-finally-accept' st_title='Nate Silver does it again! Will pundits finally accept defeat?' class='st_sharethis' ></span>
+                     
+                                                                                  
+                        </div><!-- post-content -->
+<!--                        
+<script>
+var linkwithin_site_id = 998093;
+</script>
+<script src="http://www.linkwithin.com/widget.js"></script>
+                        <a href="http://www.linkwithin.com/"><img src="http://www.linkwithin.com/pixel.png" alt="Related Posts Plugin for WordPress, Blogger..." style="border: 0" /></a>                               
+-->
+                        
+                    </div><!-- .post -->
+                    
+                    
+                    
+                    
+                    
+                
+                
+                    <div class="pagination">
+                        
+                        <span class="next-page"><a href="/page/2">Next &#187;</a></span>
+                    </div><!-- .pagination -->
+                
+                </div><!-- #content -->
+            </div><!-- #container -->
+            <div id="sidebar">
+            
+                <h3>About</h3>
+                <div id="about" class="widget">
+                    <img src="http://25.media.tumblr.com/avatar_390b44692ddc_64.png" alt="portrait" />
+                    <div class="description"><p><script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-25607630-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<p><b>About us</b>: We are three biostatistics professors (<a href="http://www.biostat.jhsph.edu/~jleek/research.html">Jeff Leek</a>, <a href="http://www.biostat.jhsph.edu/~rpeng/">Roger Peng</a>, and <a href="http://rafalab.jhsph.edu/">Rafa Irizarry</a>) who are fired up about the new era where data are abundant and statisticians are scientists.</p>
+
+<p>
+<b> Follow us:</b></br>
+<a href="https://twitter.com/simplystats" class="twitter-follow-button">Follow @simplystats</a>
+<script src="//platform.twitter.com/widgets.js" type="text/javascript"></script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-like" data-href="https://www.facebook.com/simplystatistics" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div></BR>
+</p>
+
+<p><b>About this blog</b>: We’ll be posting ideas we find interesting, contributing to discussion of science/popular writing, linking to articles that inspire us, and sharing advice with up-and-coming statisticians.</p>
+
+<p><b>Why “Simply Statistics”</b>: We needed a title. Plus, we like the idea of using simple statistics to solve real, important problems. We aren’t fans of unnecessary complication - that just leads to lies, damn lies and something else. </p></p></div>
+                </div>
+            
+			
+            
+  <script type="text/javascript" src="http://simplystatistics.disqus.com/combination_widget.js?num_items=5&hide_mods=0&color=grey&default_tab=recent&excerpt_length=200"></script><a href="http://disqus.com/">Powered by Disqus</a>
+            
+            
+            
+            
+            </div><!-- #sidebar -->
+        </div><!-- #main -->
+        <div id="footer">
+            <div id="colophon"><p>Powered by <a href="http://tumblr.com">Tumblr</a>. <a href="http://www.tumblr.com/theme/10375">Minimal Theme</a> designed by <a href="http://arturkim.com">Artur Kim</a>.</p></div>
+        </div><!-- #footer -->
+    </div><!-- #wrapper -->
+
+<script type="text/javascript" src="/tweets.js"></script>
+
+
+    <script type="text/javascript">
+        //<![CDATA[
+        (function() {
+            var links = document.getElementsByTagName('a');
+            var query = '?';
+            for(var i = 0; i < links.length; i++) {
+                if(links[i].href.indexOf('#disqus_thread') >= 0) {
+                    query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+                }
+            }
+            document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/simplystatistics/get_num_replies.js' + query + '"></' + 'script>');
+        })();
+        //]]>
+    </script>
+
+
+<!-- BEGIN TUMBLR CODE -->
+        <iframe src="http://assets.tumblr.com/iframe.html?46874281c0244ac62b28cb902740d7c8&amp;src=http%3A%2F%2Fsimplystatistics.tumblr.com%2F&amp;lang=en_US&amp;name=simplystatistics" width="330" height="25" scrolling="no" frameborder="0" style="position:absolute; z-index:1337; top:0px; right:0px; border:0px; background-color:transparent; overflow:hidden;" id="tumblr_controls"></iframe>
+    <!--[if IE]><script type="text/javascript">document.getElementById('tumblr_controls').allowTransparency=true;</script><![endif]-->
+    <img style="position:absolute;z-index:-3334;top:0px;left:0px;visibility:hidden;" src="http://www.tumblr.com/impixu?T=1359523779&J=eyJibG9naWQiOiIyODIwMjM0OSJ9&U=NFLBFMLOHA&K=2dd6c53b3458358ee725308de101ad25f0379a2e5eabf8fb0c8aa1b0fbd54468"/><!-- END TUMBLR CODE --><iframe src="http://assets.tumblr.com/analytics.html?459463e736f5e14a6b709883439e6021" scrolling="no" width="1" height="1" frameborder="0" style="background-color:transparent; overflow:hidden; position:absolute; top:0; left:0 z-index:9999;" id="ga_target"></iframe>
+
+
+    <script type="text/javascript">
+        __qoptions = _qoptions = { qacct: 'p-19UtqE8ngoZbM' };
+    </script>
+    <script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
+    <noscript>
+        <img src="http://pixel.quantserve.com/pixel/p-19UtqE8ngoZbM.gif"
+        style="display:none; border-width:0px; height:1px; width:1px;"/>
+    </noscript>
+
+</body>
+</html>
