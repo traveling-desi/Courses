@@ -1,0 +1,42 @@
+setwd("/Users/sarpotd/Desktop/Coursera/Big Data in Education/week8/Assignment1/")
+asgn <- read.csv("data-coursera-sn-asgn1-for-asgn8-v2.txt",header=TRUE,sep ="\t")
+asgn <- cbind(asgn,asgn[asgn$response.to,"poster"])
+colnames(asgn) <- c("id", "poster", "thread", "response.to", "posted.to")
+
+
+d <- asgn[!is.na(asgn$posted.to),]
+d <- d[!(d$poster == d$posted.to), ]
+e <- d[,c("poster","posted.to")]
+
+
+
+all_unique_edges <- unique(paste(e$poster,e$posted.to,sep="_"))
+unique_reverse_edges <- unique(paste(e$posted.to,e$poster,sep="_"))
+intersect(all_unique_edges,unique_reverse_edges)
+
+
+
+
+
+poster <- sort(asgn$poster)
+posted.to <- sort(asgn$posted.to)
+match(posted.to,poster)
+poster_bak <- poster
+poster_bak[match(posted.to,poster)] = NA
+subset(poster_bak,!is.na(poster_bak))
+a <- unique(subset(poster_bak,!is.na(poster_bak)))
+b <- cbind(c(rep(NA,length(a))),c(rep(NA,length(a))),c(rep(NA,length(a))),c(rep(NA,length(a))),a)
+colnames(b) <- colnames(asgn)
+asgn <- rbind(asgn,b)
+
+
+
+require(igraph)
+c <- asgn[!is.na(asgn$posted.to),]
+d <- c[, c("poster","posted.to")]
+d <- d[order(d$poster,d$posted.to),]
+write.table(d,file="edge.txt",sep=" ",quote=FALSE,col.names=FALSE,row.names=FALSE)
+graph <-  read.graph("edge.txt", format="ncol")
+shortest.paths(graph,v="3903",to="1588",mode="out")
+
+
