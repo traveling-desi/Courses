@@ -1,0 +1,22 @@
+setwd("/Users/sarpotd/Desktop/Coursera/Data Analysis/Core concepts in Data Analysis/week4/Programming/")
+read.table("dataset_390_1.txt")
+a <- read.table("dataset_390_1.txt")
+breaks_vec <- c(0,0.5,1.5,2,max(a$V4))
+y <- cut(a$V4,breaks_vec, right=TRUE)
+h <- as.matrix(table(a$V5,y))
+h_pr <- h/150
+h_pr_sum <- apply(h_pr,1,sum)
+h_sum <- apply(h,2,sum)
+cond_prob <- function(c) (c/h_sum)
+h_cond_prob <- t(apply(h,1,cond_prob))
+q_func <- function(c) ((c - h_pr_sum)/h_pr_sum)
+q <- apply(h_cond_prob,2,q_func)
+
+h_pr_sum_hk <- as.matrix(apply(h_pr,2,sum))
+h_pr_sum_gl <- as.matrix(apply(h_pr,1,sum))
+h_exp <- h_pr_sum_gl %*% t(h_pr_sum_hk)
+pearson <- (h_pr - h_exp)/(h_exp ^ 0.5)
+
+
+
+

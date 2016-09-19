@@ -1,0 +1,480 @@
+querygrain(pn, nodes=c(tub))
+querygrain(pn, nodes=c("tub"))
+querygrain(pn, nodes=c(t.a))
+querygrain(pn, nodes=c("t.a"))
+querygrain(pn, nodes=c("t.a+asia"))
+querygrain(pn, nodes=c("~tub+asia))
+""
+querygrain(pn, nodes=c("~tub+asia"))
+querygrain(pn, nodes=c("tub",t.a), type ="conditonal")
+querygrain(pn, nodes=c("tub",t.a), type ="conditional")
+querygrain(pn, nodes=c("tub","t.a"), type ="conditional")
+setFinding(pn,nodes=("asia"),states="y")
+setFinding(pn,nodes=("asia"),states="y",prop=TRUE)
+querygrain(pn,nodes=("asia"))
+querygrain(pn,nodes=("tub"))
+querygrain(pn,nodes=("tub", "asia"), type=conditional)
+querygrain(pn,nodes=c("tub", "asia"), type=conditional)
+querygrain(pn,nodes=c("tub", "asia"), type="conditional")
+setFinding(pn,nodes=("asia"),states="y",prop=TRUE)
+querygrain(pn,nodes=("tub"))
+querygrain(pn,nodes=c("tub", "asia"), type="conditional")
+setFinding(pn,nodes=("asia"),states=1,prop=TRUE)
+querygrain(pn,nodes=("tub"))
+querygrain(pn,nodes=c("tub", "asia"), type="conditional")
+querygrain(pn,setFinding(pn,nodes=("asia"),states="yes",prop=TRUE), nodes="tub")
+querygrain(setFinding(pn,nodes=("asia"),states="yes",prop=TRUE), nodes="tub")
+querygrain(setFinding(pn,nodes=("smoke"),states="yes",prop=TRUE), nodes="xray")
+querygrain(pn, nodes="xray")
+querygrain(setFinding(pn,nodes=("tub"),states="yes",prop=TRUE), nodes="asia")
+?grain
+Asia (chest clinique) example:#
+yn <- c("yes","no")#
+a    <- cptable(~asia, values=c(1,99),levels=yn)#
+t.a  <- cptable(~tub+asia, values=c(5,95,1,99),levels=yn)#
+s    <- cptable(~smoke, values=c(5,5), levels=yn)#
+l.s  <- cptable(~lung+smoke, values=c(1,9,1,99), levels=yn)#
+b.s  <- cptable(~bronc+smoke, values=c(6,4,3,7), levels=yn)#
+e.lt <- cptable(~either+lung+tub,values=c(1,0,1,0,1,0,0,1),levels=yn)#
+x.e  <- cptable(~xray+either, values=c(98,2,5,95), levels=yn)#
+d.be <- cptable(~dysp+bronc+either, values=c(9,1,7,3,8,2,1,9), levels=yn)#
+plist <- compileCPT(list(a, t.a, s, l.s, b.s, e.lt, x.e, d.be))#
+pn <- grain(plist)#
+pn#
+summary(pn)#
+plot(pn)#
+pnc <- compile(pn, propagate=TRUE)
+querygrain(setFinding(pn,nodes=("dysp"),states="yes",prop=TRUE), nodes="bronc")
+querygrain(setFinding(pn,nodes=("dysp"),states="yes",prop=TRUE), nodes="smoke")
+querygrain(setFinding(pn,nodes=c("dysp","asia"),states="yes",prop=TRUE), nodes="smoke")
+querygrain(setFinding(pn,nodes=c("dysp","asia"),states=c("yes","yes"),prop=TRUE), nodes="smoke")
+querygrain(setFinding(pn,nodes=c("dysp","asia"),states=c("yes","yes"),prop=TRUE), nodes="xray")
+querygrain(setFinding(pn,nodes=c("dysp","asia","smoke"),states=c("yes","yes","yes"),prop=TRUE), nodes="xray")
+querygrain(setFinding(pn,nodes=c("dysp","asia","smoke"),states=c("yes","yes","yes"),prop=TRUE), nodes="bronc")
+querygrain(setFinding(pn,nodes=c("smoke"),states=c("yes"),prop=TRUE), nodes=c("bronc","tub","lung")
+)
+querygrain(setFinding(pn,nodes=c("asia","smoke","dysp","xray"),states=c("yes","no","no","yes"),prop=TRUE), nodes=c("bronc","tub","lung"))
+setwd("/Users/sarpotd/Desktop/Coursera/Data Analysis/Core concepts in Data Analysis/week4/Programming/")#
+read.table("dataset_390_1.txt")#
+a <- read.table("dataset_390_1.txt")#
+breaks_vec <- c(0.5,1.5,2)
+table(a$V5,a$V4)
+?table
+table(a$V5,breaks_vec)
+?as.factor
+table(a$V5,as.factor(a$V4,breaks_vec))
+factor(a$V4,breaks_vec)
+?levels
+y <- gl(2, 4, 8)#
+levels(y) <- c("low", "high")#
+y
+?gl
+levels(a$V4) <- breaks_vec
+a$V4
+y <- gl(2, 4, 8)
+y
+y <- a$V4
+y
+setwd("/Users/sarpotd/Desktop/Coursera/Data Analysis/Core concepts in Data Analysis/week4/Programming/")#
+read.table("dataset_390_1.txt")#
+a <- read.table("dataset_390_1.txt")#
+breaks_vec <- c(0.5,1.5,2)
+a$V4
+y <- a$V4
+levels(y) <- breaks_vec
+y
+cut(y,breaks_vec)
+setwd("/Users/sarpotd/Desktop/Coursera/Data Analysis/Core concepts in Data Analysis/week4/Programming/")#
+read.table("dataset_390_1.txt")#
+a <- read.table("dataset_390_1.txt")#
+breaks_vec <- c(0,0.5,1.5,2,max(a$V4))#
+cut(a$V4,breaks_vec)
+setwd("/Users/sarpotd/Desktop/Coursera/Data Analysis/Core concepts in Data Analysis/week4/Programming/")#
+read.table("dataset_390_1.txt")#
+a <- read.table("dataset_390_1.txt")#
+breaks_vec <- c(0,0.5,1.5,2,max(a$V4))#
+y <- cut(a$V4,breaks_vec)#
+table(a$V5,y)
+?quetelet
+??quetelet
+??Quetelet
+?chisq
+?chisquare
+?dot
+?as.matrix
+?as.matrix
+h <- as.matrix(table(a$V5,y))
+h
+sum(h)
+h/150
+?tapply
+h
+apply(h,1,sum)
+apply(h,2,sum)
+h_sum <- apply(h,2,sum)
+cond_prob <- function(c) ( c - h_sum)
+apply(h,2,cond_prob)
+apply(h,1,cond_prob)
+h_sum <- as.matirx(apply(h,2,sum))
+h_sum <- as.matrix(apply(h,2,sum))
+apply(h,1,cond_prob)
+h_sum
+h_sum <- apply(h,2,sum)
+h_sum
+summary(h_sum)
+str(h_sum)
+str(h)
+h <- as.dataframe(table(a$V5,y))
+h <- as.dataFrame(table(a$V5,y))
+?dataFrame
+?dataframe
+?apply
+lapply(h,cond_prob)
+?apply
+setwd("/Users/sarpotd/Desktop/Coursera/Data Analysis/Core concepts in Data Analysis/week4/Programming/")#
+read.table("dataset_390_1.txt")#
+a <- read.table("dataset_390_1.txt")#
+breaks_vec <- c(0,0.5,1.5,2,max(a$V4))#
+y <- cut(a$V4,breaks_vec)#
+h <- as.matrix(table(a$V5,y))#
+h_pr <- h/150#
+h_sum <- apply(h,2,sum)#
+cond_prob <- function(c) (c/h_sum)#
+h_cond_prob <- apply(h,2,cond_prob)
+h_cond_prob
+h_cond_prob <- apply(h,1,cond_prob)
+h_cond_prob
+h
+h_sum <- apply(h,1,sum)
+h_sum
+cond_prob <- function(c) (c/h_sum)#
+h_cond_prob <- apply(h,2,cond_prob)
+h_cond_prob
+h_sum <- apply(h,1,sum)#
+cond_prob <- function(c) (c - h_sum)#
+h_cond_prob <- apply(h,2,cond_prob)
+h_cond_prob
+h_pr
+h_pr_sum <- apply(h,1,sum)
+q_func <- function(c) ((c - h_pr_sum)/h_pr_sum)#
+q <- appl(h_cond_prob,2,q_func)
+q <- apply(h_cond_prob,2,q_func)
+q
+h_pr_sum
+h_pr_sum <- apply(h_pr,1,sum)
+h_pr_sum
+sum(h_pr_sum)
+q <- apply(h_cond_prob,2,q_func)
+q
+setwd("/Users/sarpotd/Desktop/Coursera/Data Analysis/Core concepts in Data Analysis/week4/Programming/")#
+read.table("dataset_390_1.txt")#
+a <- read.table("dataset_390_1.txt")#
+breaks_vec <- c(0,0.5,1.5,2,max(a$V4))#
+y <- cut(a$V4,breaks_vec)#
+h <- as.matrix(table(a$V5,y))#
+h_pr <- h/150#
+h_pr_sum <- apply(h_pr,1,sum)#
+h_sum <- apply(h,1,sum)#
+cond_prob <- function(c) (c/h_sum)#
+h_cond_prob <- apply(h,2,cond_prob)#
+q_func <- function(c) ((c - h_pr_sum)/h_pr_sum)#
+q <- apply(h_cond_prob,2,q_func)
+q
+setwd("/Users/sarpotd/Desktop/Coursera/Data Analysis/Core concepts in Data Analysis/week4/Programming/")#
+read.table("dataset_390_1.txt")#
+a <- read.table("dataset_390_1.txt")#
+breaks_vec <- c(0,0.5,1.5,2,max(a$V4))#
+y <- cut(a$V4,breaks_vec)#
+h <- as.matrix(table(a$V5,y))#
+h_pr <- h/150#
+h_pr_sum <- apply(h_pr,1,sum)#
+h_sum <- apply(h,1,sum)#
+cond_prob <- function(c) (c/h_sum)#
+h_cond_prob <- apply(h,2,cond_prob)#
+q_func <- function(c) ((c - h_pr_sum)/h_pr_sum)#
+q <- apply(h_cond_prob,2,q_func)
+q
+h
+H_SUM
+H_SUM
+h_sum
+h_pr_sum
+h_cond_prob
+setwd("/Users/sarpotd/Desktop/Coursera/Data Analysis/Core concepts in Data Analysis/week4/Programming/")#
+read.table("dataset_390_1.txt")#
+a <- read.table("dataset_390_1.txt")#
+breaks_vec <- c(0,0.5,1.5,2,max(a$V4))#
+y <- cut(a$V4,breaks_vec)#
+h <- as.matrix(table(a$V5,y))#
+h_pr <- h/150#
+h_pr_sum <- apply(h_pr,2,sum)#
+h_sum <- apply(h,2,sum)
+h_pr_sum
+cond_prob <- function(c) (c/h_sum)#
+h_cond_prob <- apply(h,2,cond_prob)
+h_cond_prob
+h_cond_prob <- apply(h,1,cond_prob)#
+q_func <- function(c) ((c - h_pr_sum)/h_pr_sum)#
+q <- apply(h_cond_prob,1,q_func)
+h_cond_prob
+h_sum
+cond_prob <- function(c) (c - h_sum)#
+h_cond_prob <- apply(h,1,cond_prob)
+h
+h_cond_prob
+q_func <- function(c) ((c - h_pr_sum)/h_pr_sum)#
+q <- apply(h_cond_prob,2,q_func)
+q
+cond_prob <- function(c) (c/h_sum)#
+h_cond_prob <- apply(h,1,cond_prob)#
+q_func <- function(c) ((c - h_pr_sum)/h_pr_sum)#
+q <- apply(h_cond_prob,2,q_func)
+q
+h_cond_prob
+?transpose
+??transpose
+h_cond_prob <- t(apply(h,1,cond_prob))
+h_cond_prob
+q_func <- function(c) ((c - h_pr_sum)/h_pr_sum)#
+q <- apply(h_cond_prob,1,q_func)
+q
+q_func <- function(c) ((c - h_pr_sum)/h_pr_sum)#
+q <- t(apply(h_cond_prob,1,q_func))
+q
+?crossproduct
+??cross product
+??cross
+h_pr_sum_hk <- apply(h_pr,2,sum)#
+h_pr_gl <- apply(h_pr,1,sum)
+h_pr_sum_hk
+h_pr_sum_gl
+h_pr_gl
+h_pr_sum_gl <- apply(h_pr,1,sum)
+crossprod(hpr_sum_gl,h_pr_sum_hk)
+crossprod(h_pr_sum_gl,h_pr_sum_hk)
+crossprod(t(h_pr_sum_gl),h_pr_sum_hk)
+str(h_pr_sum_gl)
+str(h_pr_sum_hk)
+t(h_pr_sum_gl)
+crossprod(h_pr_sum_gl,t(h_pr_sum_hk))
+h_pr_sum_hk <- as.matrix(apply(h_pr,2,sum))#
+h_pr_sum_gl <- as.matrix(apply(h_pr,1,sum))
+t(h_pr_sum_gl)
+h_pr_sum_gl
+crossprod(h_pr_sum_gl,t(h_pr_sum_hk))
+h_pr_sum_hk
+t(h_pr_sum_hk)
+?crossprod
+h_pr_sum_gl %*% t(h_pr_sum_hk)
+h_pr <- h_pr_sum_gl %*% t(h_pr_sum_hk)
+h_pr_exp <- h_pr_sum_gl %*% t(h_pr_sum_hk)
+h_pr <- h/150
+h_pr
+h_pr_exp
+(h_pr - h_pr_exp)^2/(h_pr_exp)
+setwd("/Users/sarpotd/Desktop/Coursera/Data Analysis/Core concepts in Data Analysis/week4/Programming/")#
+read.table("dataset_390_1.txt")#
+a <- read.table("dataset_390_1.txt")#
+breaks_vec <- c(0,0.5,1.5,2,max(a$V4))#
+y <- cut(a$V4,breaks_vec)#
+h <- as.matrix(table(a$V5,y))#
+h_pr <- h/150#
+h_pr_sum <- apply(h_pr,2,sum)#
+h_sum <- apply(h,2,sum)#
+cond_prob <- function(c) (c/h_sum)#
+h_cond_prob <- t(apply(h,1,cond_prob))#
+q_func <- function(c) ((c - h_pr_sum)/h_pr_sum)#
+q <- t(apply(h_cond_prob,1,q_func))#
+h_pr_sum_hk <- as.matrix(apply(h_pr,2,sum))#
+h_pr_sum_gl <- as.matrix(apply(h_pr,1,sum))#
+h_exp <- h_pr_sum_gl %*% t(h_pr_sum_hk)#
+pearson <- (h_pr - h_pr_exp)^2/(h_pr_exp)
+q
+pearson
+h
+h_pr
+h_cond_prob
+h_pr_sum
+h_pr_sum <- apply(h_pr,1,sum)
+h_pr_sum
+q_func <- function(c) ((c - h_pr_sum)/h_pr_sum)#
+q <- t(apply(h_cond_prob,1,q_func))
+q_func <- function(c) ((c - h_pr_sum)/h_pr_sum)#
+q <- t(apply(h_cond_prob,2,q_func))
+q
+h_pr_sum_hk <- as.matrix(apply(h_pr,2,sum))#
+h_pr_sum_gl <- as.matrix(apply(h_pr,1,sum))#
+h_exp <- h_pr_sum_gl %*% t(h_pr_sum_hk)#
+pearson <- (h_pr - h_pr_exp)^2/(h_pr_exp)
+pearson
+h_exp
+pearson
+h_pr_sum_hk <- as.matrix(apply(h_pr,2,sum))#
+h_pr_sum_gl <- as.matrix(apply(h_pr,1,sum))#
+h_exp <- h_pr_sum_gl %*% t(h_pr_sum_hk)#
+pearson <- (h_pr - h_exp)^2/(h_exp)
+pearson
+setwd("/Users/sarpotd/Desktop/Coursera/Data Analysis/Core concepts in Data Analysis/week4/Programming/")#
+read.table("dataset_390_1.txt")#
+a <- read.table("dataset_390_1.txt")#
+breaks_vec <- c(0,0.5,1.5,2,max(a$V4))#
+y <- cut(a$V4,breaks_vec)#
+h <- as.matrix(table(a$V5,y))#
+h_pr <- h/150#
+h_pr_sum <- apply(h_pr,1,sum)#
+h_sum <- apply(h,2,sum)#
+cond_prob <- function(c) (c/h_sum)#
+h_cond_prob <- t(apply(h,1,cond_prob))#
+q_func <- function(c) ((c - h_pr_sum)/h_pr_sum)#
+q <- apply(h_cond_prob,2,q_func)#
+#
+h_pr_sum_hk <- as.matrix(apply(h_pr,2,sum))#
+h_pr_sum_gl <- as.matrix(apply(h_pr,1,sum))#
+h_exp <- h_pr_sum_gl %*% t(h_pr_sum_hk)#
+pearson <- (h_pr - h_exp)^2/(h_exp)
+q
+pearson
+h
+pearson <- (pearson)^0.5
+pearson
+setwd("/Users/sarpotd/Desktop/Coursera/Data Analysis/Core concepts in Data Analysis/week4/Programming/")#
+read.table("dataset_390_1.txt")#
+a <- read.table("dataset_390_1.txt")#
+breaks_vec <- c(0,0.5,1.5,2,max(a$V4))#
+y <- cut(a$V4,breaks_vec)#
+h <- as.matrix(table(a$V5,y))#
+h_pr <- h/150#
+h_pr_sum <- apply(h_pr,1,sum)#
+h_sum <- apply(h,2,sum)#
+cond_prob <- function(c) (c/h_sum)#
+h_cond_prob <- t(apply(h,1,cond_prob))#
+q_func <- function(c) ((c - h_pr_sum)/h_pr_sum)#
+q <- apply(h_cond_prob,2,q_func)#
+#
+h_pr_sum_hk <- as.matrix(apply(h_pr,2,sum))#
+h_pr_sum_gl <- as.matrix(apply(h_pr,1,sum))#
+h_exp <- h_pr_sum_gl %*% t(h_pr_sum_hk)#
+pearson <- (h_pr - h_exp)^2/(h_exp)#
+pearson <- (pearson)^0.5
+q
+pearson
+?cut
+setwd("/Users/sarpotd/Desktop/Coursera/Data Analysis/Core concepts in Data Analysis/week4/Programming/")#
+read.table("dataset_390_1.txt")#
+a <- read.table("dataset_390_1.txt")#
+breaks_vec <- c(0,0.5,1.5,2,max(a$V4))#
+y <- cut(a$V4,breaks_vec, right=TRUE)#
+h <- as.matrix(table(a$V5,y))#
+h_pr <- h/150#
+h_pr_sum <- apply(h_pr,1,sum)#
+h_sum <- apply(h,2,sum)#
+cond_prob <- function(c) (c/h_sum)#
+h_cond_prob <- t(apply(h,1,cond_prob))#
+q_func <- function(c) ((c - h_pr_sum)/h_pr_sum)#
+q <- apply(h_cond_prob,2,q_func)#
+#
+h_pr_sum_hk <- as.matrix(apply(h_pr,2,sum))#
+h_pr_sum_gl <- as.matrix(apply(h_pr,1,sum))#
+h_exp <- h_pr_sum_gl %*% t(h_pr_sum_hk)#
+pearson <- (h_pr - h_exp)^2/(h_exp)#
+pearson <- (pearson)^0.5
+pearson
+q
+h
+setwd("/Users/sarpotd/Desktop/Coursera/Data Analysis/Core concepts in Data Analysis/week4/Programming/")#
+read.table("dataset_390_1.txt")#
+a <- read.table("dataset_390_1.txt")#
+breaks_vec <- c(0,0.5,1.5,2,max(a$V4))#
+y <- cut(a$V4,breaks_vec, right=TRUE)#
+h <- as.matrix(table(a$V5,y))#
+h_pr <- h/150#
+h_pr_sum <- apply(h_pr,1,sum)#
+h_sum <- apply(h,2,sum)#
+cond_prob <- function(c) (c/h_sum)#
+h_cond_prob <- t(apply(h,1,cond_prob))#
+q_func <- function(c) ((c - h_pr_sum)/h_pr_sum)#
+q <- apply(h_cond_prob,2,q_func)#
+#
+h_pr_sum_hk <- as.matrix(apply(h_pr,2,sum))#
+h_pr_sum_gl <- as.matrix(apply(h_pr,1,sum))#
+h_exp <- h_pr_sum_gl %*% t(h_pr_sum_hk)#
+pearson <- (h_pr - h_exp)/(h_exp ^ 0.5)
+q
+pearson
+h <- c(c(0,1), c(2,3))
+h
+?table
+setwd("/Users/sarpotd/Desktop/Coursera/Data Analysis/Core concepts in Data Analysis/week4/Programming/")#
+a <- read.table("free.txt")
+?read.table
+ta Analysis/Core concepts in Data Analysis/week4/Programming/")#
+a <- read.table("free.txt",header=TRUE)
+a <- read.table("free.txt",header=TRUE)
+a <- read.table("free.txt",header=TRUE)
+a
+colnames(a)
+rownames(a)
+rownames(a) <- c("Free", "Partly_Free", "Partly_Unfree", "Unfree")
+rownames(a) <- c("Free" "Partly_Free" "Partly_Unfree" "Unfree")
+?c
+rownames(a) <- c("Free" "Partly_Free" "Partly_Unfree" "Unfree" )
+rownames(a) <- c("Free" "Partly_Free" "Partly_Unfree" "Unfree" "Totals")
+rownames(a) <- c("Free", "Partly_Free", "Partly_Unfree", "Unfree", "Totals")
+a
+setwd("/Users/sarpotd/Desktop/Coursera/Data Analysis/Core concepts in Data Analysis/week4/Programming/")#
+a <- read.table("free.txt",header=TRUE)#
+rownames(a) <- c("Free", "Partly_Free", "Partly_Unfree", "Unfree", "Totals")#
+breaks_vec <- c(0,0.5,1.5,2,max(a$V4))#
+y <- cut(a$V4,breaks_vec, right=TRUE)#
+h <- as.matrix(table(a$V5,y))#
+h_pr <- h/150#
+h_pr_sum <- apply(h_pr,1,sum)#
+h_sum <- apply(h,2,sum)#
+cond_prob <- function(c) (c/h_sum)#
+h_cond_prob <- t(apply(h,1,cond_prob))#
+q_func <- function(c) ((c - h_pr_sum)/h_pr_sum)#
+quetele <- apply(h_cond_prob,2,q_func)
+h <- a#
+h_pr <- h/sum(h)#
+h_pr_sum <- apply(h_pr,1,sum)#
+h_sum <- apply(h,2,sum)#
+cond_prob <- function(c) (c/h_sum)#
+h_cond_prob <- t(apply(h,1,cond_prob))#
+q_func <- function(c) ((c - h_pr_sum)/h_pr_sum)#
+quetele <- apply(h_cond_prob,2,q_func)
+quetele
+setwd("/Users/sarpotd/Desktop/Coursera/Data Analysis/Core concepts in Data Analysis/week4/Programming/")#
+a <- read.table("free.txt",header=TRUE)#
+rownames(a) <- c("Free", "Partly_Free", "Partly_Unfree", "Unfree")#
+#breaks_vec <- c(0,0.5,1.5,2,max(a$V4))#
+#y <- cut(a$V4,breaks_vec, right=TRUE)#
+#h <- as.matrix(table(a$V5,y))#
+h <- a#
+h_pr <- h/sum(h)#
+h_pr_sum <- apply(h_pr,1,sum)#
+h_sum <- apply(h,2,sum)#
+cond_prob <- function(c) (c/h_sum)#
+h_cond_prob <- t(apply(h,1,cond_prob))#
+q_func <- function(c) ((c - h_pr_sum)/h_pr_sum)#
+quetele <- apply(h_cond_prob,2,q_func)
+setwd("/Users/sarpotd/Desktop/Coursera/Data Analysis/Core concepts in Data Analysis/week4/Programming/")#
+a <- read.table("free.txt",header=TRUE)#
+rownames(a) <- c("Free", "Partly_Free", "Partly_Unfree", "Unfree")#
+#breaks_vec <- c(0,0.5,1.5,2,max(a$V4))#
+#y <- cut(a$V4,breaks_vec, right=TRUE)#
+#h <- as.matrix(table(a$V5,y))#
+h <- a#
+h_pr <- h/sum(h)#
+h_pr_sum <- apply(h_pr,1,sum)#
+h_sum <- apply(h,2,sum)#
+cond_prob <- function(c) (c/h_sum)#
+h_cond_prob <- t(apply(h,1,cond_prob))#
+q_func <- function(c) ((c - h_pr_sum)/h_pr_sum)#
+quetele <- apply(h_cond_prob,2,q_func)
+a
+quetele
+h
+h_pr
+h_cond_pr
+h_cond_prob
+quetele

@@ -1,0 +1,4 @@
+setwd("/Users/sarpotd/Desktop/Coursera/Data Analysis/Core concepts in Data Analysis/week1/Programming/")
+read.table("dataset_317_1.txt")
+a <- read.table("dataset_317_1.txt")
+str(a)

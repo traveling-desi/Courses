@@ -1,0 +1,32 @@
+setwd("/Users/sarpotd/Desktop/Coursera/Data Analysis/Core concepts in Data Analysis/Final/")
+a <- read.table("dataset_392_1.txt", header= TRUE)
+
+a <- as.matrix(a[,2:4])
+a_mean <- apply(a,2,mean)
+
+a_range <- apply(a,2,range)
+
+e <- a_range[2,]-a_range[1,]
+sub <- function(d) ((d-a_mean)/e)
+
+#sub <- function(d) ((d-a_mean))
+c <- t(apply(a,1,sub))
+
+#ecd_norm <- function(d)
+
+c_dim <- dim(c)[1]
+
+for(i in 1:c_dim) {
+		for(k in 1:c_dim) {
+			print(paste(i , k ,sum((c[i,] -c[k,])^2), sep= " "))
+		}
+}
+
+
+
+ecd_norm <- function(d) (sum(d^2))
+c_ecd <- t(apply(c,1,ecd_norm))
+
+c_ctr <- rbind(c[3,],c[7,])
+kmeans(c, c_ctr)
+

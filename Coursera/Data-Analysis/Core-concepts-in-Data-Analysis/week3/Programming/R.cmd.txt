@@ -1,0 +1,5 @@
+setwd("/Users/sarpotd/Desktop/Coursera/Data Analysis/Core concepts in Data Analysis/week3/Programming/")
+read.table("dataset_389_1.txt")
+a <- read.table("dataset_389_1.txt")
+ lm(V3 ~ V4, data=a)
+ cor(a$V3,a$V4)

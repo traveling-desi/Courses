@@ -1,0 +1,5 @@
+Low	Low_Medium	High_Medium	High
+0	1	7	39	
+0	13	28	7	
+16	22	9	1	
+31	12	4	0  

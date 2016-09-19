@@ -1,0 +1,10 @@
+setwd("/Users/sarpotd/Desktop/Coursera/Data Analysis/Core concepts in Data Analysis/week2/Programming/")
+read.table("dataset_374_1.txt")
+a <- read.table("dataset_374_1.txt")
+min_a <- min(a$V1)
+max_a <- max(a$V1)
+bins <- 10
+rng <- (max(a$V1) - min(a$V1))/bins
+breaks_vec = seq(from=min_a, to=max_a, by=rng)
+h <- hist(x=a$V1,breaks=breaks_vec)
+h
