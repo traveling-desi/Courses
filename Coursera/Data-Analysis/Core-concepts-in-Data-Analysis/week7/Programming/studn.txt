@@ -1,0 +1,8 @@
+Occup:IT
+Occup:BA
+Occup:AN
+Age
+Children
+SoftEngineering
+OOProgramming
+CompIntelligence

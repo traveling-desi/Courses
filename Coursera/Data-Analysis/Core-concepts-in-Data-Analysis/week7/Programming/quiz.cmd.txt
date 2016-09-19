@@ -1,0 +1,39 @@
+setwd("/Users/sarpotd/Desktop/Coursera/Data Analysis/Core concepts in Data Analysis/week7/Programming/")
+a <- read.table("studn.dat")
+b <- read.table("studn.txt")
+colnames(a) <- b[,1]
+c <- matrix(nrow=nrow(a),ncol =4)
+c[,1] <- a$Age
+c[,2] <- a$SoftEngineering
+c[,3] <- a$OOProgramming
+c[,4] <- a$CompIntelligence
+s <- svd(c)
+(s$d[1]^.5)*s$v[,1]
+
+
+c_mean <- apply(c,2,mean)
+c_range<- apply(c,2,range)
+
+sub_mean <- function(x) {
+	(x - c_mean)/(c_range[2,] - c_range[1,])
+}
+c_ctr <- t(apply(c,1,sub_mean))
+
+s <- svd(c_ctr)
+(s$d[1]^.5)*s$v[,1]
+(s$d[2]^.5)*s$v[,2]
+
+sum((s$d*s$d)[1:2])/sum(c_ctr*c_ctr)
+
+
+a <- a[,1:4]
+
+s <- svd(a)
+c <- s$v[,1]
+
+c <- (s$d[1]^.5) * c
+
+cont <- s$d[1]^2/sum(a*a)
+
+
+

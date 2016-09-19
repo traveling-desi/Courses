@@ -1,0 +1,13 @@
+setwd("/Users/sarpotd/Desktop/Coursera/Data Analysis/Core concepts in Data Analysis/week6/Programming/")
+a <- read.table("dataset_391_1.txt")
+a <- a[,1:4]
+
+s <- svd(a)
+c <- s$v[,1]
+
+c <- (s$d[1]^.5) * c
+
+cont <- s$d[1]^2/sum(a*a)
+
+
+

@@ -1,0 +1,450 @@
+?grain
+Asia (chest clinique) example:#
+yn <- c("yes","no")#
+a    <- cptable(~asia, values=c(1,99),levels=yn)#
+t.a  <- cptable(~tub+asia, values=c(5,95,1,99),levels=yn)#
+s    <- cptable(~smoke, values=c(5,5), levels=yn)#
+l.s  <- cptable(~lung+smoke, values=c(1,9,1,99), levels=yn)#
+b.s  <- cptable(~bronc+smoke, values=c(6,4,3,7), levels=yn)#
+e.lt <- cptable(~either+lung+tub,values=c(1,0,1,0,1,0,0,1),levels=yn)#
+x.e  <- cptable(~xray+either, values=c(98,2,5,95), levels=yn)#
+d.be <- cptable(~dysp+bronc+either, values=c(9,1,7,3,8,2,1,9), levels=yn)#
+plist <- compileCPT(list(a, t.a, s, l.s, b.s, e.lt, x.e, d.be))#
+pn <- grain(plist)#
+pn#
+summary(pn)#
+plot(pn)#
+pnc <- compile(pn, propagate=TRUE)#
+#
+## If we want to query the joint distribution of the disease nodes,#
+## computations can be speeded up by forcing these nodes to be in#
+## the same clique of the junction tree:#
+#
+pnc2 <- compile(pn, root=c("lung", "bronc", "tub"), propagate=TRUE)#
+#
+system.time({#
+  for (i in 1:200) #
+    querygrain(pnc, nodes=c("lung","bronc", "tub"), type="joint")})#
+system.time({#
+  for (i in 1:200) #
+    querygrain(pnc2, nodes=c("lung","bronc", "tub"), type="joint")})#
+## Create network from gmData (with data) and graph specification.#
+## There are different ways:#
+data(HairEyeColor)#
+d   <- HairEyeColor#
+daG <- dagList(list(~Hair, ~Eye:Hair, ~Sex:Hair))#
+class(daG)#
+uG <- ugList(list(~Eye:Hair, ~Sex:Hair))#
+class(uG)#
+#
+## Create directly from dag:#
+b1  <- grain(daG,d)#
+class(b1)#
+#
+## Build model from undirected (decomposable) graph#
+b3  <- grain(uG,d)#
+class(b3)#
+#
+## Simple example - one clique only in triangulated graph:#
+plist <- compileCPT(list(a, t.a))#
+pn <- grain(plist)#
+querygrain(pn)#
+#
+## Simple example - disconnected network:#
+plist <- compileCPT(list(a, t.a, s))#
+pn <- grain(plist)#
+querygrain(pn)
+?cptable
+a
+t.a
+?grain
+Asia (chest clinique) example:#
+yn <- c("yes","no")#
+a    <- cptable(~asia, values=c(1,99),levels=yn)#
+t.a  <- cptable(~tub+asia, values=c(5,95,1,99),levels=yn)#
+s    <- cptable(~smoke, values=c(5,5), levels=yn)#
+l.s  <- cptable(~lung+smoke, values=c(1,9,1,99), levels=yn)#
+b.s  <- cptable(~bronc+smoke, values=c(6,4,3,7), levels=yn)#
+e.lt <- cptable(~either+lung+tub,values=c(1,0,1,0,1,0,0,1),levels=yn)#
+x.e  <- cptable(~xray+either, values=c(98,2,5,95), levels=yn)#
+d.be <- cptable(~dysp+bronc+either, values=c(9,1,7,3,8,2,1,9), levels=yn)#
+plist <- compileCPT(list(a, t.a, s, l.s, b.s, e.lt, x.e, d.be))#
+pn <- grain(plist)
+pn#
+summary(pn)#
+plot(pn)
+a
+?querygrain
+querygrain(pn, nodes=c(tub),propgate=TRUE)
+querygrain(pn, nodes=c(tub),propagate=TRUE)
+querygrain(pn, nodes=c(tub))
+querygrain(pn, nodes=c("tub"))
+querygrain(pn, nodes=c(t.a))
+querygrain(pn, nodes=c("t.a"))
+querygrain(pn, nodes=c("t.a+asia"))
+querygrain(pn, nodes=c("~tub+asia))
+""
+querygrain(pn, nodes=c("~tub+asia"))
+querygrain(pn, nodes=c("tub",t.a), type ="conditonal")
+querygrain(pn, nodes=c("tub",t.a), type ="conditional")
+querygrain(pn, nodes=c("tub","t.a"), type ="conditional")
+setFinding(pn,nodes=("asia"),states="y")
+setFinding(pn,nodes=("asia"),states="y",prop=TRUE)
+querygrain(pn,nodes=("asia"))
+querygrain(pn,nodes=("tub"))
+querygrain(pn,nodes=("tub", "asia"), type=conditional)
+querygrain(pn,nodes=c("tub", "asia"), type=conditional)
+querygrain(pn,nodes=c("tub", "asia"), type="conditional")
+setFinding(pn,nodes=("asia"),states="y",prop=TRUE)
+querygrain(pn,nodes=("tub"))
+querygrain(pn,nodes=c("tub", "asia"), type="conditional")
+setFinding(pn,nodes=("asia"),states=1,prop=TRUE)
+querygrain(pn,nodes=("tub"))
+querygrain(pn,nodes=c("tub", "asia"), type="conditional")
+querygrain(pn,setFinding(pn,nodes=("asia"),states="yes",prop=TRUE), nodes="tub")
+querygrain(setFinding(pn,nodes=("asia"),states="yes",prop=TRUE), nodes="tub")
+querygrain(setFinding(pn,nodes=("smoke"),states="yes",prop=TRUE), nodes="xray")
+querygrain(pn, nodes="xray")
+querygrain(setFinding(pn,nodes=("tub"),states="yes",prop=TRUE), nodes="asia")
+?grain
+Asia (chest clinique) example:#
+yn <- c("yes","no")#
+a    <- cptable(~asia, values=c(1,99),levels=yn)#
+t.a  <- cptable(~tub+asia, values=c(5,95,1,99),levels=yn)#
+s    <- cptable(~smoke, values=c(5,5), levels=yn)#
+l.s  <- cptable(~lung+smoke, values=c(1,9,1,99), levels=yn)#
+b.s  <- cptable(~bronc+smoke, values=c(6,4,3,7), levels=yn)#
+e.lt <- cptable(~either+lung+tub,values=c(1,0,1,0,1,0,0,1),levels=yn)#
+x.e  <- cptable(~xray+either, values=c(98,2,5,95), levels=yn)#
+d.be <- cptable(~dysp+bronc+either, values=c(9,1,7,3,8,2,1,9), levels=yn)#
+plist <- compileCPT(list(a, t.a, s, l.s, b.s, e.lt, x.e, d.be))#
+pn <- grain(plist)#
+pn#
+summary(pn)#
+plot(pn)#
+pnc <- compile(pn, propagate=TRUE)
+querygrain(setFinding(pn,nodes=("dysp"),states="yes",prop=TRUE), nodes="bronc")
+querygrain(setFinding(pn,nodes=("dysp"),states="yes",prop=TRUE), nodes="smoke")
+querygrain(setFinding(pn,nodes=c("dysp","asia"),states="yes",prop=TRUE), nodes="smoke")
+querygrain(setFinding(pn,nodes=c("dysp","asia"),states=c("yes","yes"),prop=TRUE), nodes="smoke")
+querygrain(setFinding(pn,nodes=c("dysp","asia"),states=c("yes","yes"),prop=TRUE), nodes="xray")
+querygrain(setFinding(pn,nodes=c("dysp","asia","smoke"),states=c("yes","yes","yes"),prop=TRUE), nodes="xray")
+querygrain(setFinding(pn,nodes=c("dysp","asia","smoke"),states=c("yes","yes","yes"),prop=TRUE), nodes="bronc")
+querygrain(setFinding(pn,nodes=c("smoke"),states=c("yes"),prop=TRUE), nodes=c("bronc","tub","lung")
+)
+querygrain(setFinding(pn,nodes=c("asia","smoke","dysp","xray"),states=c("yes","no","no","yes"),prop=TRUE), nodes=c("bronc","tub","lung"))
+x <- matrix(nrow=6,ncol=3)
+x
+x[1,] <- c(41,66,90)
+x
+x[2,] <- c(57,56,60)
+x[3,] <- c(61,72,79)
+x[4,] <- c(69,73,72)
+x
+x[5,] <- c(63,52,88)
+x[6,] <- c(62,83,80)
+x
+svd(x)
+s <- svd(x)
+s[1]
+s[1,1]
+s$d[1]
+s$u[,1]
+s$d*s$u[,1]
+s$v[,1]
+s$d*s$u[,1]*s$v[,1]
+s$d*s$u[,1]*t(s$v[,1])
+s$d*t(s$u[,1])*s$v[,1]
+s$u[,1]
+t(s$u[,1])
+t(t(s$u[,1]))
+s$d*t(t(s$u[,1]))*s$v[,1]
+s$d*t(t(s$u[,1]))*t(s$v[,1])
+t(s$v[,1])
+z <- as.matrix(t(t(s$u[,1]))
+)
+z
+c' <- as.matrix(s$v[,1])
+}
+]
+)
+/
+''
+c <- as.matrix(s$v[,1])
+c
+c <- t(as.matrix(s$v[,1]))
+c
+s
+s$d[1]*z*c
+z
+c
+?vector product
+?*
+?%*%
+?product
+z%*%c
+svd$d[1]*z%*%c
+svd$d[1]*(z%*%c)
+svd$d[1]
+svd$d[1,1]
+svd$d
+s$d[1]*z%*%c
+s
+setwd("/Users/sarpotd/Desktop/Coursera/Data Analysis/Core concepts in Data Analysis/week6/Programming/")#
+a <- read.table("studn.dat")#
+a <- read.table("studn.txt")
+setwd("/Users/sarpotd/Desktop/Coursera/Data Analysis/Core concepts in Data Analysis/week7/Programming/")#
+a <- read.table("studn.dat")#
+a <- read.table("studn.txt")
+setwd("/Users/sarpotd/Desktop/Coursera/Data Analysis/Core concepts in Data Analysis/week7/Programming/")#
+a <- read.table("studn.dat")#
+b <- read.table("studn.txt")
+a
+b
+svd(a)
+b
+colnames(a) <- b
+head(a)
+colnames(a) <- b[,1]
+head(a)
+a$Age
+a$Age,a$SoftEngineering
+c(a$Age,a$SoftEngineering)
+?append
+[a$Age,a$SoftEngineering]
+c <- matrix(nrow())
+nrow(a)
+c <- matrix(nrow=nrow(a),ncol =4)
+c
+head(a)
+setwd("/Users/sarpotd/Desktop/Coursera/Data Analysis/Core concepts in Data Analysis/week7/Programming/")#
+a <- read.table("studn.dat")#
+b <- read.table("studn.txt")#
+colnames(a) <- b[,1]#
+c <- matrix(nrow=nrow(a),ncol =4)#
+c[,1] <- a$Age#
+c[,2] <- a$SoftEngineering#
+c[,3] <- a$OOProgramming#
+c[,4] <- a$CompIntelligence
+c
+s <- svd(c)
+s
+s[,1]
+s$v[,1]
+s$d[1]
+s$d[1]^.5
+(s$d[1]^.5)*s$v[,1]
+?lapply
+?apply
+a
+apply(,2,mean)
+apply(a,2,mean)
+a-apply(a,2,mean)
+a_mean <- apply(a,2,mean)
+a - a_mean
+a .- a_mean
+a %-% a_mean
+apply(a,2,a-a_mean)
+?subtract
+?centering
+?norm
+(x1 <- cbind(1,1:10))
+norm(x1)
+a_mean <- apply(a,2,mean)#
+#
+sub_mean <- function(c) (c - a_mean)#
+#
+a_ctr <- apply(a,1,sub_mean)
+a_ctr
+apply(a,2,range)
+a_range<- apply(a,2,range)
+a[1,] -a[2,]
+a_range[1,] -a_rnge[2,]
+a_range[1,] -a_range[2,]
+a_range[2,] -a_range[1,]
+a_mean <- apply(a,2,mean)#
+a_range<- apply(a,2,range)#
+#
+sub_mean <- function(c) {#
+	(c - a_mean)/(a_range[2,] -a_range[1,])#
+}#
+a_ctr <- apply(a,1,sub_mean)
+a_ctr
+svd(a_ctr)
+c_mean <- apply(c,2,mean)#
+c_range<- apply(c,2,range)#
+#
+sub_mean <- function(x) {#
+	(x - c_mean)/(c_range[2,] - c_range[1,])#
+}#
+c_ctr <- apply(c,1,sub_mean)#
+#
+s <- svd(c)#
+(s$d[1]^.5)*s$v[,1]
+(s$d[2]^.5)*s$v[,1]
+(s$d[2]^.5)*s$v[,2]
+s <- svd(c_ctr)#
+(s$d[1]^.5)*s$v[,1]#
+(s$d[2]^.5)*s$v[,1]
+s
+c_ctr
+c_ctr <- t(apply(c,1,sub_mean))#
+#
+s <- svd(c_ctr)#
+(s$d[1]^.5)*s$v[,1]#
+(s$d[2]^.5)*s$v[,1]
+c_ctr <- t(apply(c,1,sub_mean))#
+#
+s <- svd(c_ctr)#
+(s$d[1]^.5)*s$v[,1]#
+(s$d[2]^.5)*s$v[,2]
+svd$d*svd$d
+s$d*s$d
+svd$d
+s$d
+sum(s$d*s$d)
+c_ctr
+sum(c_ctr*c_ctr)
+sum(s$d*s$d)/sum(c_ctr*c_ctr)
+sum(s$d*s$d)
+sum((s$d*s$d)[,1:2])
+s$d*s$d
+(s$d*s$d)[1:2]
+sum((s$d*s$d)[1:2])
+sum((s$d*s$d)[1:2])/sum(c_ctr*c_ctr)
+setwd("/Users/sarpotd/Desktop/Coursera/Data Analysis/Core concepts in Data Analysis/week7/Programming/")#
+a <- read.table("dataset_392_1.txt")
+a
+a <- a[,1:4]
+a
+svd(a)
+s <- svd(a)#
+c1 <- s$v[,1]
+c1
+c1 <- -s$v[,1]
+c1
+alpha <- 1/sum(c1)
+alpha
+a
+repmat
+alpha <- 1/sum(c1)#
+max_a <- apply(a,2,max)#
+#
+norm_func <- function(c) ( c*100/max_a)#
+#
+apply(a,1,norm_func)
+t(apply(a,1,norm_func))
+s <- svd(a)#
+c1 <- -s$v[,1]
+c1
+alpha <- 1/sum(c1)
+alpha
+c1*alpha
+c1*alpha*a[5]
+c1*alpha*a[5,]
+sum(c1*alpha*a[5,])
+s
+b <- t(apply(a,1,norm_func))#
+s <- svd(b)#
+c1 <- -s$v[,1]#
+alpha <- 1/sum(c1)#
+sum(c1*alpha*ab[5,])
+b <- t(apply(a,1,norm_func))#
+s <- svd(b)#
+c1 <- -s$v[,1]#
+alpha <- 1/sum(c1)#
+sum(c1*alpha*b[5,])
+b <- t(apply(a,1,norm_func))#
+s <- svd(b)#
+c1 <- -s$v[,1]#
+alpha <- 1/sum(c1)#
+sum(c1*alpha*a[5,])
+max_a
+a
+min_a <- apply(a,2,min)#
+#
+norm_func <- function(c) ( (c-min_a)*100/(max_a-min_a))#
+#
+b <- t(apply(a,1,norm_func))#
+s <- svd(b)#
+c1 <- -s$v[,1]#
+alpha <- 1/sum(c1)#
+sum(c1*alpha*b[5,])
+min_a <- apply(a,2,min)#
+#
+norm_func <- function(c) ( (c-min_a)*100/(max_a-min_a))#
+#
+b <- t(apply(a,1,norm_func))#
+s <- svd(b)#
+c1 <- -s$v[,1]#
+alpha <- 1/sum(c1)#
+sum(c1*alpha*a[5,])
+b
+s <- svd(a)#
+c1 <- -s$v[,1]#
+max_c1 <- max(c1)#
+min_c1 <- min(c1)#
+#
+(c1-min_c1)*100/(max_c1-min_c1)
+alpha <- 1/sum(c1)#
+sum(c1*alpha*b[5,])
+alpha <- 1/sum(c1)#
+sum(c1*alpha*a[5,])
+c2 <- (c1-min_c1)*100/(max_c1-min_c1)#
+#
+alpha <- 1/sum(c2)#
+sum(c2*alpha*a[5,])
+c2
+a*c1
+b <- a*c1#
+#
+max_b <- apply(b,2,max)#
+min_b <- apply(b,2,min)#
+#
+c2 <- (c1-min_c1)*100/(max_c1-min_c1)#
+#
+norm_func <- function(c) ( (c-min_b)*100/(max_b-min_b))#
+c <- t(apply(b,1,norm_func))
+c
+a*c1
+a%*%c1
+a
+c1
+a%*%t(c1)
+t(c1)
+t(t(c1))
+a*t(t(c1))
+a%*%t(t(c1))
+setwd("/Users/sarpotd/Desktop/Coursera/Data Analysis/Core concepts in Data Analysis/week7/Programming/")#
+a <- read.table("dataset_392_1.txt")#
+#
+a <- as.matrix(a[,1:4])#
+#
+s <- svd(a)#
+c1 <- as.matrix(-s$v[,1])
+a
+c1
+a%*%c1
+b <- a%*%c1
+max_b <- max(b)#
+min_b <- min(b)#
+#
+c <- (b-min_b)*100/(max_b-min_b)
+c
+setwd("/Users/sarpotd/Desktop/Coursera/Data Analysis/Core concepts in Data Analysis/week7/Programming/")#
+a <- read.table("dataset_392_1.txt")#
+#
+a <- as.matrix(a[,1:4])#
+#
+s <- svd(a)#
+c1 <- as.matrix(-s$v[,1])#
+b <- a%*%c1#
+#
+max_b <- max(b)#
+min_b <- min(b)#
+#
+c <- (b-min_b)*100/(max_b-min_b)
+c
+c[3]
+c[15]
+c[150]

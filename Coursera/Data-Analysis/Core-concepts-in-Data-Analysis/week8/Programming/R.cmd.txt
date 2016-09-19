@@ -1,0 +1,15 @@
+setwd("/Users/sarpotd/Desktop/Coursera/Data Analysis/Core concepts in Data Analysis/week8/Programming/")
+a <- read.table("dataset_393_1.txt")
+
+a <- as.matrix(a[,1:4])
+a_mean <- apply(a,2,mean)
+
+a_range <- apply(a,2,range)
+
+e <- a_range[2,]-a_range[1,]
+sub <- function(d) ((d-a_mean)/e)
+c <- t(apply(a,1,sub))
+
+c_ctr <- rbind(c[1,],c[51,],c[101,])
+kmeans(c, c_ctr)
+

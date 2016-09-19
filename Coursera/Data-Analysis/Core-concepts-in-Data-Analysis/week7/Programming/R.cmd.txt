@@ -1,0 +1,16 @@
+setwd("/Users/sarpotd/Desktop/Coursera/Data Analysis/Core concepts in Data Analysis/week7/Programming/")
+a <- read.table("dataset_392_1.txt")
+
+a <- as.matrix(a[,1:4])
+
+s <- svd(a)
+c1 <- as.matrix(-s$v[,1])
+
+
+b <- a%*%c1
+
+max_b <- max(b)
+min_b <- min(b)
+
+c <- (b-min_b)*100/(max_b-min_b)
+
