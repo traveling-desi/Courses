@@ -1,0 +1,74 @@
+*Vertices 31
+  1  "e_be_born"
+  2  "e_coil"
+  3  "e_crop_up"
+  4  "e_feather"
+  5  "e_gush"
+  6  "e_origin"
+  7  "e_spring"
+  8  "f_ecart"
+  9  "f_jaillir"
+  10  "f_naitre"
+  11  "f_origine"
+  12  "f_printemps"
+  13  "f_provenance"
+  14  "f_ressort"
+  15  "f_saut"
+  16  "f_source"
+  17  "f_surgir"
+  18  "g_Abstammung"
+  19  "g_Feder"
+  20  "g_Fruehling"
+  21  "g_Quelle"
+  22  "g_Sprung"
+  23  "g_Ursprung"
+  24  "g_springen"
+  25  "h_izvor"
+  26  "h_odskok"
+  27  "h_opruga"
+  28  "h_pero"
+  29  "h_podrijetlo"
+  30  "h_proljece"
+  31  "h_vrelo"
+*Edges
+   19  4  1
+   12  20  1
+   6  13  1
+   14  19  1
+   14  2  1
+   8  26  1
+   28  4  1
+   27  2  1
+   25  13  1
+   25  11  1
+   25  21  1
+   25  16  1
+   28  19  1
+   30  12  1
+   30  20  1
+   26  15  1
+   17  3  1
+   10  1  1
+   16  21  1
+   27  19  1
+   27  14  1
+   11  23  1
+   11  18  1
+   7  24  1
+   7  19  1
+   7  12  1
+   7  10  1
+   7  16  1
+   7  17  1
+   7  9  1
+   7  20  1
+   7  14  1
+   7  21  1
+   9  24  1
+   9  5  1
+   23  29  1
+   23  31  1
+   23  25  1
+   22  26  1
+   15  24  1
+   15  22  1
