@@ -1,0 +1,332 @@
+missClass = function(values,prediction){sum(((prediction > 0.5)*1) != values)/length(values)}
+missClass(trainSA$chd,predict(glm1,type="response"))
+missClass(testSA$chd,predict(glm1,newdata=testSA,type="response"))
+predict(glm1,type="response")
+predict(glm1)
+library(pgmm)#
+data(olive)#
+olive = olive[,-1]
+tree(0)
+library(tree)
+head(olive)
+tree1 <- tree(Area ~ ., data=newdata)
+newData = data.frame(Palmitic = 1200, Palmitoleic = 120, Stearic=200,Oleic=7000,Linoleic = 900, Linolenic = 32, Arachidic=60,Eicosenoic=7)
+tree1 <- tree(Area ~ ., data=newdata)
+newData <- data.frame(Palmitic = 1200, Palmitoleic = 120, Stearic=200,Oleic=7000,Linoleic = 900, Linolenic = 32, Arachidic=60,Eicosenoic=7)
+tree1 <- tree(Area ~ ., data=newdata)
+tree1 <- tree(Area ~ ., data=newData)
+tree1 <- tree(Area ~ ., data=olive)
+summary(tree1)
+plot(tree1)
+text(tree1)
+pred1 <- predict(tree1, newData)
+pred1
+set.seed(53535)#
+xValues = seq(0,2*pi,length=100)#
+yValues = rnorm(100) + sin(xValues)
+library(splines)
+ns1 <- ns(xValues, df= 1)
+lm1 <- lm(yValues ~ ns1)
+summary(lm1)
+ns2 <- ns(xValues, df= 2)
+lm2 <- lm(yValues ~ ns2)
+summary(lm2)
+ns3 <- ns(xValues, df= 3)
+lm3 <- lm(yValues ~ ns3)
+summary(lm3)
+?rmse
+library(hydroGOF)
+?rmse
+rmse(lm1$fitted,yValues)
+rmse(lm2$fitted,yValues)
+rmse(lm3$fitted,yValues)
+ns4 <- ns(xValues, df= 4)
+lm4 <- lm(yValues ~ ns4)
+summary(lm4)
+plot(xValues,lm3$fitted)
+plot(xValues,lm1$fitted)
+plot(xValues,lm2$fitted)
+plot(xValues,lm3$fitted)
+plot(xValues,lm4$fitted)
+library(simpleboot) #
+data(airquality)#
+attach(airquality)
+?quantile
+quantile(Wind,0.75)
+Wind
+quantfunc <- function(x,i){quantile(x[i],0.75)}
+bootquant <- boot(Wind,quantfunc,1000)
+?one.boot
+?boot
+?one.boot
+bootquant <- one.boot(Wind,quantfunc,1000)
+set.seed(883833)
+bootquant <- one.boot(Wind,quantfunc,1000)
+?sd
+sd(bootquant)
+one.boot(Wind,quantfunc,1000)
+bootquant <- one.boot(Wind,quantfunc,1000)
+sd(bootquant$t)
+set.seed(883833)
+bootquant <- one.boot(Wind,quantfunc,1000)
+summary(bootquant)
+bootquan
+bootquant
+sd(bootquant$t)
+?rstudent
+data(Cars93,package="MASS")
+library(ipred)
+?bagging
+set.seed(7363)
+head(Cars93)
+bagging(Drivetrain ~  Price + Type, data=Cars93, coob=TRUE)
+baggedtree <- bagging(DriveTrain ~  Price + Type, data=Cars93, coob=TRUE)
+print(baggedtree)
+baggedtree <- bagging(DriveTrain ~  Price + Type, data=Cars93, coob=TRUE,nbagg=3)
+baggedtree <- bagging(DriveTrain ~  Price + Type, data=Cars93,nbagg=3)
+print(baggedtree)
+library(randomForest)
+?randomForest
+forest_cars <- randomForest(DriveTrain ~  Price + Type, data=Cars93,ntree=3)
+forest_cars
+newdata = data.frame(Type = "Large",Price = 20)
+ped <- predict(forest_cars,newdata)
+tree1 <- tree(DriveTrain ~  Price + Type, data=Cars93)
+library(tree)
+tree1 <- tree(DriveTrain ~  Price + Type, data=Cars93)
+ped <- predict(tree1,newdata)
+ped
+tree2 <- tree(DriveTrain ~  Price + Type, data=Cars93)
+ped1 <- predict(tree1,newdata)
+ped1
+ped2 <- predict(tree2,newdata)
+ped2
+tree3 <- tree(DriveTrain ~  Price + Type, data=Cars93)
+ped3 <- predict(tree3,newdata)
+ped3
+Cars93[c("Type"==large,"Price"==20),]
+Cars93[(Cars93$Type==large&Cars$Price==20),]
+Cars93[Cars93$Type=="large",]
+Cars93[Cars93$Type=="large"]
+Cars93[Cars93$Type=="large",]
+Cars93[Cars93$Type==large,]
+Cars93["Cars93$Type==large",]
+Cars93[Cars93$Type==large]
+Cars93[][Cars93$Type==large]]
+Cars93[[Cars93$Type==large]]
+Cars93[[Cars93$Type=="large"]]
+?subset
+subset(Cars93,Type=="large")
+subset(Cars93,Type=="large",select)
+subset(Cars93,Type=="large",select=*)
+subset(Cars93,Type=="large",select="*")
+subset(Cars93,Type=="large")
+subset(Cars93,Price==20)
+library(ElemStatLearn)#
+data(vowel.train)#
+data(vowel.test)
+forest1 <- randomForest(as.factor(y) ~ ., data=vowel.train)
+library(e1071)
+svm1 <- svm(as.factor(y) ~ ., data=vowel.train)
+pred_forest <- predict(forest1,vowel.test)
+pred_forest
+summary(pred_forest)
+rmse(predict(forest1,vowel.test), vowel.test$y)
+rmse(predict(forest1,vowel.test), as.factor(vowel.test$y))
+vowel.train$y <- as.factor(vowel.train$y)
+vowel.test$y <- as.factor(vowel.test$y)
+forest1 <- randomForest(y ~ ., data=vowel.train)
+rmse(predict(forest1,vowel.test), vowel.test$y)
+rmse(predict(forest1,vowel.test), as.numeric(vowel.test$y))
+vowel.train$y
+library(ElemStatLearn)#
+data(vowel.train)#
+data(vowel.test)
+head(vowel.train$y)
+class(vowel.train$y)
+vowel.train$y <- as.factor(vowel.train$y)
+vowel.test$y <- as.factor(vowel.test$y)
+forest1 <- randomForest(y ~ .,data=vowel.train)
+rmse(predict(forest1,vowel.test),test$y)
+predict(forest1,vowel.test)
+library(ElemStatLearn)#
+data(vowel.train)#
+data(vowel.test)
+forest1 <- randomForest(y ~ .,data=vowel.train)
+rmse(predict(forest1,vowel.test),test$y)
+rmse(predict(forest1,vowel.test),vowel.test$y)
+set.seed(33833)
+forest1 <- randomForest(y ~ .,data=vowel.train)
+rmse(predict(forest1,vowel.test),vowel.test$y)
+svm1 <- svm(y ~ .,data=vowel.train)
+rmse(predict(svm1,vowel.test),vowel.test$y)
+predict(forest1,vowel.test)
+predict(forest1,vowel.test) == predict(svm1,vowel.test)
+vowel.test[predict(forest1,vowel.test) == predict(svm1,vowel.test),]
+c <- predict(forest1,vowel.test) == predict(svm1,vowel.test)
+c_i <- predict(forest1,vowel.test) == predict(svm1,vowel.test)
+vowel.test[c_i,]
+c_i
+head(vowel.test)
+vowel.test[c_i,]
+table(predict(forest1,vowel.test) == predict(svm1,vowel.test)0
+table(predict(forest1,vowel.test) == predict(svm1,vowel.test)
+)
+vowel.train$y <- as.factor(vowel.train$y)#
+vowel.test$y <- as.factor(vowel.test$y)#
+forest1 <- randomForest(y ~ .,data=vowel.train)#
+rmse(predict(forest1,vowel.test),vowel.test$y)
+library(ElemStatLearn)#
+data(vowel.train)#
+data(vowel.test)
+forest1 <- randomForest(factor(y) ~ .,data=vowel.train)
+predict(forest1,vowel.test)
+pred1_forest <- predict(forest1,vowel.test)
+pred1_forest != vowel.test$y
+sum(pred1_forest != vowel.test$y)
+sum(pred1_forest != vowel.test$y)/length(vowel.test$y)
+set.seed(33833)
+forest1 <- randomForest(factor(y) ~ .,data=vowel.train)
+pred1_forest <- predict(forest1,vowel.test)
+sum(pred1_forest != vowel.test$y)/length(vowel.test$y)
+svm1 <- svm(factor(y) ~ .,data=vowel.train)
+pred1_svm <- predict(svm1,vowel.test)
+sum(pred1_svm != vowel.test$y)/length(vowel.test$y)
+pred1_svm == pred1_forest
+order(pred1_svm == pred1_forest)
+pred1_svm[pred1_svm == pred1_forest,]
+subset(pred1_svm,pred1_svm == pred1_forest)
+pred1_svm
+index <- subset(pred1_svm,pred1_svm == pred1_forest)
+pred1_svm[index,]
+index
+index1 <- subset(pred1_svm,pred1_svm == pred1_forest)
+index2 <- subset(vowel.test,pred1_svm == pred1_forest)
+sum(index1 != index$y)/length(vowel.test$y)
+sum(index1 != index2$y)/length(vowel.test$y)
+sum(index1 != index2$y)/length(index2$y)
+data(Cars93,package="MASS")
+set.seed(7363)
+head(Cars93)
+dim(Cars93)
+sample(Cars93,replace=TRUE)
+sample1 <- sample(Cars93,replace=TRUE)
+sample2 <- sample(Cars93,replace=TRUE)
+sample3 <- sample(Cars93,replace=TRUE)
+head(sample1)
+head(sample2)
+?sample
+sample3 <- sample(Cars93[,1:27],replace=TRUE)
+head(sample3)
+head(Cars93)
+set.seed(7363)
+sample(1:dim(Cars93)[1], replace=T)
+dim(Cars93)[1]
+table(sample(1:dim(Cars93)[1], replace=T))
+Cars93[sample(1:dim(Cars93)[1], replace=T),]
+head(Cars93[sample(1:dim(Cars93)[1], replace=T),])
+cars1 <- Cars93[sample(1:dim(Cars93)[1], replace=T),]
+cars2 <- Cars93[sample(1:dim(Cars93)[1], replace=T),]
+cars3 <- Cars93[sample(1:dim(Cars93)[1], replace=T),]
+tree1 <- lm(DriveTrain ~ Price + Type, data=cars1)
+tree2 <- lm(DriveTrain ~ Price + Type, data=cars2)
+tree3 <- lm(DriveTrain ~ Price + Type, data=cars3)
+tree1 <- tree(DriveTrain ~ Price + Type, data=cars1)
+tree2 <- tree(DriveTrain ~ Price + Type, data=cars2)
+tree3 <- tree(DriveTrain ~ Price + Type, data=cars3)
+newdata = data.frame(Type = "Large",Price = 20)
+predict(tree1,newdata)
+predict(tree2,newdata)
+predict(tree3,newdata)
+data(Cars93,package="MASS")#
+set.seed(7363)#
+cars1 <- Cars93[sample(1:dim(Cars93)[1], replace=T),]#
+cars2 <- Cars93[sample(1:dim(Cars93)[1], replace=T),]#
+cars3 <- Cars93[sample(1:dim(Cars93)[1], replace=T),]#
+tree1 <- tree(DriveTrain ~ Price + Type, data=cars1)#
+tree2 <- tree(DriveTrain ~ Price + Type, data=cars2)#
+tree3 <- tree(DriveTrain ~ Price + Type, data=cars3)#
+newdata = data.frame(Type = "Large",Price = 20)#
+predict(tree1,newdata)#
+predict(tree2,newdata)#
+predict(tree3,newdata)
+setwd("/Users/sarpotd/Desktop/Coursera/Data Analysis/Programming Assignment 2/")#
+load("R Data/samsungData.rda")#
+sd <- samsungData#
+names(sd) <- gsub("\\)","",names(sd))#
+names(sd) <- gsub("\\(","",names(sd))#
+names(sd) <- make.names(names(sd),unique =TRUE)#
+testset_sd <- sd[sd$subject%in%c(27,28,29),]#
+testset_sd <- subset(testset_sd,select=-subject)#
+trainset_sd <- sd[!sd$subject%in%c(27,28,29),]#
+trainset_sd <- subset(trainset_sd,select=-subject)#
+#
+set.seed(123)
+library(randomForest)#
+system.time(forest_sd <- randomForest(as.factor(activity) ~ ., data=trainset_sd, prox=TRUE, ntree=150, importance=T))
+forest_sd
+system.time(forest_sd_2 <- randomForest(as.factor(activity) ~ #
+tGravityAcc.min.X   + #
+tGravityAcc.mean.X  +  #
+tGravityAcc.max.X   + #
+tGravityAcc.energy.X  + #
+tGravityAcc.min.Y  + #
+tGravityAcc.mean.Y  +  #
+tGravityAcc.max.Y + #
+tGravityAcc.energy.Y +#
+tGravityAcc.min.Z  + #
+tGravityAcc.mean.Z  + #
+tGravityAcc.max.Z + #
+tGravityAcc.energy.Z +#
+angleX.gravityMean + #
+angleY.gravityMean + #
+angleZ.gravityMean + #
+fBodyAccJerk.energy.X  + #
+fBodyAccJerk.energy.Y  + #
+fBodyAccJerk.energy.Z  + #
+tBodyAcc.correlation.X.Y +#
+tBodyAcc.correlation.X.Z +#
+tBodyAcc.correlation.Y.Z +#
+tGravityAcc.arCoeff.X.1 +#
+tGravityAcc.arCoeff.X.2 +#
+tGravityAcc.arCoeff.X.3 +#
+tGravityAcc.arCoeff.X.4 +#
+tGravityAcc.arCoeff.Y.1 +#
+tGravityAcc.arCoeff.Y.2 +#
+tGravityAcc.arCoeff.Y.3 +#
+tGravityAcc.arCoeff.Y.4 +#
+tGravityAcc.arCoeff.Z.1 +#
+tGravityAcc.arCoeff.Z.2 +#
+tGravityAcc.arCoeff.Z.3 +#
+tGravityAcc.arCoeff.Z.4 +#
+fBodyAcc.bandsEnergy.1.8, data=trainset_sd, prox=TRUE, ntree=150, importance=T))
+forest_sd_2
+OOB estimate of  error rate: 1.92%#
+Confusion matrix:#
+         laying sitting standing walk walkdown walkup  class.error#
+laying     1183       1        0    0        0      0 0.0008445946#
+sitting       0    1071       13    0        0      0 0.0119926199#
+standing      0      44     1106    0        0      0 0.0382608696#
+walk          0       0        0 1032       19     11 0.0282485876#
+walkdown      0       0        0    9      828     11 0.0235849057#
+walkup        0       0        0    8        4    910 0.0130151844
+system.time(forest_sd_3 <- randomForest(as.factor(activity) ~ tGravityAcc.min.X))
+system.time(forest_sd_3 <- randomForest(as.factor(activity) ~ tGravityAcc.min.X, data=trainset_sd, prox=TRUE, ntree=150, importance=T))
+forest_sd_3
+sum(predict(forest_sd_2,newdata=trainset_sd) != trainset_sd$activity)/length(trainset_sd$activity)
+sum(predict(forest_sd,newdata=trainset_sd) != trainset_sd$activity)/length(trainset_sd$activity)
+table1 <- table(predict(forest_sd,newdata=trainset_sd,type="class"), trainset_sd$activity)
+table
+table1
+table1 <- table(predict(forest_sd_2,newdata=testset_sd,type="class"), testset_sd$activity)
+table1
+sum(table1[row(table1) != col(table1)])/sum(table1)
+table1 <- table(predict(forest_sd,newdata=testset_sd,type="class"), testset_sd$activity)
+sum(table1[row(table1) != col(table1)])/sum(table1)
+plot(forest_sd_2)
+plot(forest_sd_2,main="fd")
+plot(forest_sd_2,main="OOB error reduces as # of trees increases")
+dev.copy2pdf(file="figure.pdf")
+plot(forest_sd,main="OOB error reduces as # of trees increases")
+dim(trainset_sd)
+dim(testset_sd)

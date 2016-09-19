@@ -1,0 +1,283 @@
+summary(iris)
+apply(iris[, 1:4], 2, mean)
+apply(iris[, 1:4], 1, mean)
+library(datasets)#
+data(mtcars)
+head(mtcars)
+?sapply
+/tapply
+?tapply
+?mean
+mean(mtcars$mpg, mtcars$cyl)
+sapply(mtcars, cyl, mean)
+tapply(mtcars$mpg, mtcars$cyl, mean)
+print(mtcars)
+tapply(mtcars$mpg, mtcars$cyl, mean)
+tapply(iris$Sepal.Lenght, iris$Species, mean)
+tapply(iris$Sepal.Length, iris$Species, mean)
+?tapply
+tapply(mtcars$hp, mtcars$cyl, mean)
+?sapply
+f <- function(x) {#
+        g <- function(y) {#
+                y + z#
+        }#
+        z <- 4#
+        x + g(x)#
+}
+z <- 10#
+f(3)
+debug(ls)
+ls
+?ls
+ls
+x <- list(rnorm(100), runif(100), rpois(100, 1))#
+sapply(x, quantile, probs = c(0.25, 0.75))
+?quantile
+?rnorm
+?runif
+?rpois
+?gl
+?list
+debug(ls)
+ls(g)
+exit
+quit
+?read.csv
+dir()
+ls
+pwd
+pwd()
+get_dir()
+getwd()
+?cd
+?cd()
+?getwd
+?png()
+png()
+x <- rnorm(100)#
+hist(x)
+hist(x)
+x <- rnorm(100)
+hist(x)
+?png
+quartz()
+hist(x)
+dev.off()
+?par
+?plo
+?plot
+?axis
+x <- rnorm(100)
+y <- x + rnorm(100)
+par(las = 1)
+plot(x, y)
+par(las = 2)
+plot(x, y)
+x1 <- rnorm(100)
+y1 <- rnorm(100)
+points(x1, y1, col = "red")
+dev.off
+dev.off()
+?gl
+library(lattice)
+library(nlme)
+xyplot(distance ~ age | Subject, data = Orthodont)
+?Orthodont
+xyplot(distance ~ age | Subject, data = Orthodont, type =b)
+xyplot(distance ~ age | Subject, data = Orthodont, type = b)
+xyplot(distance ~ age | Subject, data = Orthodont, type = "b")
+xyplot(weight ~ Time | Diet, BodyWeight)
+xyplot(distance ~ age | Subject, data = Orthodont, type = "b")
+xyplot(weight ~ Time | Diet, BodyWeight)
+?BodyWeight
+plot(0, 0, main = "theta")
+quartz()
+plot(0, 0, main = "theta")
+set.seed(1)
+rpois(5, 2)
+xyplot(weight ~ Time | Diet, BodyWeight)
+?mtext
+?ltext
+?barchart
+?coplot
+plot(0, 0, main = expression("theta")
+)
+plot(0, 0, main = expression("theta"))
+plot(0, 0, main = expression(theta))
+?lsegments
+quit()
+?rgb
+rgb(45,78,78)
+rgb(45,78,78,78)
+rgb(45,78)
+rgb(45,78,78)
+rgb(45,78,78,1)
+rgb(45,78,78,1,max = 255)
+?setoldclass
+?setoldclass()
+?setOldClass()
+?poisson
+?rposs
+?rpoiss
+?rnorm
+search(poisson)
+?poisson
+?rpois
+set.seed(31);#
+heightsCM = rnorm(30,mean=188, sd=5);#
+weightsK = rnorm(30,mean=84,sd=3); #
+hasDaughter = sample(c(TRUE,FALSE),size=30,replace=T); #
+dataFrame = data.frame(heightsCM,weightsK,hasDaughter);
+dataFrame
+dataFrame[heightsCM>188]
+dataFrame["heightsCM">188]
+dataFrame[$heightsCM>188]
+dataFrame[dataFrame$heightsCM>188]
+dataFrame
+dataFrame$heightsCM
+dataFrame$heightsCM > 188
+temp <- dataFrame$heightsCM > 188
+dataFrame[temp]
+dataFrame[heightsCM>188,]
+dataFrameSubset <- dataFrame[heightsCM>188,]
+dataFrameSubset$weightsK
+mean(dataFrameSubset$weightsK)
+?Cauchy
+cauchyValues <- rcauchy(100)
+head(cauchyValues)
+set.seed(41)
+cauchyValues <- rcauchy(100)
+?sample
+set.seed(415)
+sample(cauchyValues,10,replace = TRUE)
+?rmvnorm
+?rnorm
+library(datasets)
+data(iris)
+head(iris)
+irisiSubset <- iris[,1:4]
+irissubset <- irisiSubset
+head(irissubset)
+hClustering <- hclust(irissubset)
+?hclust
+is.na(iris)
+table(is.na(iris))
+hc <- hclust(irissubset)
+iris_dist <- dist(irissubset)
+hc <- hclust(iris_dist)
+plot(hc)
+?plot
+plot(hc)
+plot(hc,cex=0.5)
+plot(hc,cey=0.5)
+plot(hc,ce=0.5)
+plot(hc,yaxp=c(0,6,1)
+)
+new <- read.csv("https://spark-public.s3.amazonaws.com/dataanalysis/quiz3question4.csv", method=curl)
+?read.csv
+new <- read.csv("https://spark-public.s3.amazonaws.com/dataanalysis/quiz3question4.csv")
+new <- read.csv("https://spark-public.s3.amazonaws.com/dataanalysis/quiz3question4.csv",method="curl")
+new <- read.csv("https://spark-public.s3.amazonaws.com/dataanalysis/quiz3question4.csv", method="curl")
+new <- read.csv("https://spark-public.s3.amazonaws.com/dataanalysis/quiz3question4.csv")
+new <- read.csv("http://spark-public.s3.amazonaws.com/dataanalysis/quiz3question4.csv")
+head(new)
+?plot
+plot(new[,3],new[,4])
+plot(new[,2],new[,3])
+str(new)
+new_2 <- new[,2:3]
+head(new_2)
+kmeansObj <- kmeans(new_2,2)
+names(kmeansObj)
+plot(new[,2],new[,3],col=kmeansObj$cluster,pch=19,cex=2)
+points(kmeansObj$centers,col=1:3,pch=3,cex=3,lwd=3)
+kmeansObj <- kmeans(new_2,3)
+plot(new[,2],new[,3],col=kmeansObj$cluster,pch=19,cex=2)
+points(kmeansObj$centers,col=1:3,pch=3,cex=3,lwd=3)
+kmeansObj <- kmeans(new_2,2)
+plot(new[,2],new[,3],col=kmeansObj$cluster,pch=19,cex=2)
+kmeansObj <- kmeans(new_2,2)
+plot(new[,2],new[,3],col=kmeansObj$cluster,pch=19,cex=2)
+kmeansObj <- kmeans(new_2,2)
+plot(new[,2],new[,3],col=kmeansObj$cluster,pch=19,cex=2)
+kmeansObj <- kmeans(new_2,2)
+plot(new[,2],new[,3],col=kmeansObj$cluster,pch=19,cex=2)
+kmeansObj <- kmeans(new_2,2)
+plot(new[,2],new[,3],col=kmeansObj$cluster,pch=19,cex=2)
+kmeansObj <- kmeans(new_2,3)
+plot(new[,2],new[,3],col=kmeansObj$cluster,pch=19,cex=2)
+kmeansObj <- kmeans(new_2,2)
+plot(new[,2],new[,3],col=kmeansObj$cluster,pch=19,cex=2)
+library(ElemStatLearn)
+data(zip.train)
+im = zip2image(zip.train,3)
+image(im)
+im_8 = zip2image(zip.train,8)
+im_18 = zip2image(zip.train,18)
+?svd
+svd(im_8)
+image(im_8)
+image(im_18)
+head(im)
+svd(scale(im_8))
+?scale
+svd_8 <- svd(scale(im_8))
+plot(svd_8$d^2/sum(svd_8$d^2),xlab="COLUMN",PCH=19)
+plot(svd_8$d^2/sum(svd_8$d^2),xlab="COLUMN",pch=19)
+svd_18 <- svd(scale(im_18))
+plot(svd_18$d^2/sum(svd_18$d^2),xlab="COLUMN",pch=19)
+svd_8 <- svd(im_8)
+svd_18 <- svd(im_18)
+plot(svd_18$d^2/sum(svd_18$d^2),xlab="COLUMN",pch=19)
+plot(svd_8$d^2/sum(svd_8$d^2),xlab="COLUMN",pch=19)
+plot(svd_18$d^2/sum(svd_18$d^2),xlab="COLUMN",pch=19)
+plot(svd_8$d^2/sum(svd_8$d^2),xlab="COLUMN",pch=19)
+new <- svd_8$d^2/sum(svd_8$d^2)
+new
+movies <- read.table("https://spark-public.s3.amazonaws.com/dataanalysis/movies.txt",sep="\t",header=T,quaote="")
+movies <- read.table("http://spark-public.s3.amazonaws.com/dataanalysis/movies.txt",sep="\t",header=T,quote="")
+head(movies)
+data(warpbreaks)
+warpbreaks
+head(warpbreaks)
+lm(warpbreaks$breaks ~ as.factor(warpbreaks$tension))
+summary(lm(warpbreaks$breaks ~ as.factor(warpbreaks$tension)))
+table(as.factor(warpbreaks$tension))
+confint(lm(warpbreaks$breaks ~ as.factor(warpbreaks$tension)))
+confint(lm(warpbreaks$breaks ~ as.factor(warpbreaks$tension,ref=M)))
+confint(lm(warpbreaks$breaks ~ as.factor(warpbreaks$tension,ref="M)))"
+""
+confint(lm(warpbreaks$breaks ~ as.factor(warpbreaks$tension,ref="M")))
+confint(lm(warpbreaks$breaks ~ relevel(warpbreaks$tension,ref="M")))
+confint(lm(warpbreaks$breaks ~ relevel(warpbreaks$tension,ref="H")))
+head(movies)
+lm(movies$score ~ movies$box.office)
+lm(movies$score ~ movies$box.office + movies$running.time + movies$box.office*movies$running.time)
+lm(movies$score ~ movies$running.time)
+summary(lm(movies$score ~ movies$running.time))
+summary(lm(movies$box.office ~ movies$running.time))
+summary(lm(movies$score ~ movies$box.office + movies$running.time))
+head(movies)
+setwd("/Users/sarpotd/Desktop/Coursera/Data Analysis/Programming Assignment 1/R Code/")#
+loansData <- read.csv("../R Data/loansData.csv", as.is=TRUE)#
+par(mfrow=c(1,2))#
+#
+rownames(loansData) <- NULL#
+par(ask=TRUE)#
+#
+loansData$Interest.Rate <- as.numeric(gsub("%","",loansData$Interest.Rate))#
+loansData$Debt.To.Income.Ratio <- as.numeric(gsub("%","",loansData$Debt.To.Income.Ratio))#
+loansData <- loansData[order(loansData$Interest.Rate),]#
+#
+loansData <- na.omit(loansData)#
+loansData[loansData$Employment.Length == "n/a","Employment.Length"] <- "< 1 year"#
+loansData$FICO <- apply(sapply(strsplit(loansData$FICO.Range, "-"), function(x) as.numeric(x)), 2, mean)#
+loansData$FICO_4_ranges <- cut(loansData$FICO,4)#
+temp <- tapply(loansData$Interest.Rate,loansData$FICO_4_ranges)#
+loansData_642_689 <- loansData[temp==1,]#
+loansData_689_737 <- loansData[temp==2,]#
+loansData_737_785 <- loansData[temp==3,]#
+loansData_785_832 <- loansData[temp==4,]
+summary(lm(loansData$Interest.Rate ~ loansData$Inquiries.in.the.Last.6.Months + as.factor(loansData$Loan.Length) + as.factor(loansData$FICO_4_ranges)))
+confint(lm(loansData$Interest.Rate ~ loansData$Inquiries.in.the.Last.6.Months + as.factor(loansData$Loan.Length) + as.factor(loansData$FICO_4_ranges)))

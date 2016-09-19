@@ -1,0 +1,139 @@
+﻿Coursera Data Analysis
+Assignment 1 Rubric
+
+
+
+
+Does the analysis have an introduction, methods, results, and conclusions section?
+0: No serious attempt to answer complete the assignment
+1: None of these elements are present
+2: Only one of these elements is present
+3: Only two of these elements are present
+4: All three of these elements are present
+5: All four elements are present.
+
+
+Are figures labeled and referred to by number in the text?
+0: No figure at all
+1: Figures are not labeled
+2: Figures are poorly labeled and not referred to by number in the text
+3: Figures are well labeled but not referred to by number in the text
+4: Figures are well labeled and referred to by number in the text
+5: Figure are exceptionally well labeled and referred to by number in the text
+
+
+Is the analysis written in clear and understandable English?
+0: The analysis is not written in English.
+1: The analysis is written in English that is not understandable or clear
+2: The analysis is written in understandable English but is not clear
+3: The analysis is written in understandable English and is somewhat clear
+4: The analysis is written in clear and understandable English.
+5: The analysis is written in exceptionally clear and understandable English
+
+
+Are the names of variables reported in plain language, rather than in coded names?
+0: No variable names are used in the analysis
+1: R variable names with no explanation are used in the analysis.
+2: R variable names are used with explanation in the analysis
+3: Plain language variable names are used but are not explained
+4: Plain language variable names are used and explained
+5: Variables in plain language are exceptionally clearly explained and used.
+
+
+Does the analysis report the number of observations/samples?
+0: The analysis does not discuss the number of observations/samples
+2: The analysis does not report the number of observations/samples overall
+4: The analysis reports the overall number of observations, but not the number that play a role in each analysis
+5: The analysis reports the number of observations used in each analysis
+
+
+Does the analysis report any missing data or other unusual features?
+0: The analysis does not report on any potentially unusual features in the data
+1: The analysis reports unusual features in the data but does not describe them
+2: The analysis reports unusual features in the data and describes them
+3: The analysis reports and explains the issues with unusual features in the data
+4: The analysis reports, explains, and attempts to resolve issues with unusual features of the data
+5: The analysis describes clearly unusual features in the data, the issues caused by those features, and solutions to the issues.
+
+
+Does the analysis include description and justification for data transformations? 
+0: The analysis does not report transformations that were performed.
+3: The analysis reports transformations that were performed.
+5: The analysis reports transformations that were performed and justifies them.
+
+
+Does the analysis include a discussion of potential confounders?
+0: The analysis does not mention potential confounders.
+1: The analysis mentions confounders but does not discuss their effect.
+2: The analysis mentions confounders and describes their effect.
+3: The analysis discusses confounders and potential avenues to address them.
+4: The analysis discusses confounders and reports the approach for addressing them.
+5: The analysis thoroughly discusses confounders, their effect, and the approach for addressing them. 
+
+
+Are the statistical models correctly applied?
+0: No statistical models are applied
+1: Statistical models are applied but not described.
+2: Statistical models are used and described, but incorrectly applied
+4: Statistical models are described and correctly applied
+5: Statistical models are exceptionally well described and applied. 
+
+
+Are estimates reported with appropriate units and measures of uncertainty?
+0: Estimates and uncertainty measures are not reported.
+1: Estimates are reported but without uncertainty. 
+4: Estimates and measures of uncertainty are reported without units
+5: Estimates and measures of uncertainty are reported with units
+
+
+Are estimators/predictions appropriately interpreted?
+0: Estimators or predictions are not described.
+1: Estimators or predictors are described but not interpreted
+2: Estimators or predictors are described and interpreted incorrectly
+4: Estimators or predictors are described and appropriately interpreted.
+5: Estimators or predictors are exceptionally well described and interpreted
+
+
+Does the analysis make concrete conclusions?
+0: The analysis does not make conclusions.
+1: The analysis makes only vague conclusions.
+2: The analysis makes concrete, but unsupported conclusions
+5: The analysis makes concrete and well supported conclusions
+
+
+Does the analysis specify potential problems with the conclusions?
+0: The analysis does not discuss potential problems with the conclusions
+4: The analysis discusses potential problems with the conclusions 
+5: The analysis discusses potential problems with the conclusions and points out possible solutions
+
+
+Does the analysis include references for the statistical methods used?
+0: The analysis includes no references.
+1: The analysis includes references but they are not cited in the text.
+3: The analysis is missing key references.
+5: The analysis includes all appropriate references. 
+
+
+FIGURE
+Is the figure caption descriptive enough to stand alone?
+0: There is no figure caption
+1: The figure caption is not comprehensible
+2: The figure caption does not clearly explain the figure. 
+3: The figure caption is difficult to understand and is not enough to understand the figure
+4: The figure caption is well written but is not enough to understand the figure
+5: The figure caption explains the plot sufficiently to stand alone
+
+
+Does the figure focus on a key issue in the processing/modeling of the data?
+0: The figure is not present
+1: The figure is not comprehensible
+3: The figure focuses on issues irrelevant to the main analysis
+4: The figure focuses on key issues in the main analysis
+5: The figure exceptionally illustrates and supports key points in the analysis.
+
+
+Are axes labeled in plain language and large enough to read?
+0: There are no axis labels.
+2: The axis labels are too small to read.
+3: The axis labels use R variable names instead of plain language names
+5: The axis labels and legends are clear, use plain language, and are large enough to read.
