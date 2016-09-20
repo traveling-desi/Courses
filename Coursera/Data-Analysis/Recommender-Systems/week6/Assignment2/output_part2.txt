@@ -1,0 +1,5 @@
+862,0.5082,Toy Story (1995)
+10020,0.3870,Beauty and the Beast (1991)
+585,0.3834,Monsters Inc. (2001)
+812,0.3790,Aladdin (1992)
+808,0.3381,Shrek (2001)

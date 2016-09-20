@@ -1,0 +1,770 @@
+library(ElemStatLearn)#
+data(vowel.train)#
+data(vowel.test)
+forest1 <- randomForest(factor(y) ~ .,data=vowel.train)
+predict(forest1,vowel.test)
+pred1_forest <- predict(forest1,vowel.test)
+pred1_forest != vowel.test$y
+sum(pred1_forest != vowel.test$y)
+sum(pred1_forest != vowel.test$y)/length(vowel.test$y)
+set.seed(33833)
+forest1 <- randomForest(factor(y) ~ .,data=vowel.train)
+pred1_forest <- predict(forest1,vowel.test)
+sum(pred1_forest != vowel.test$y)/length(vowel.test$y)
+svm1 <- svm(factor(y) ~ .,data=vowel.train)
+pred1_svm <- predict(svm1,vowel.test)
+sum(pred1_svm != vowel.test$y)/length(vowel.test$y)
+pred1_svm == pred1_forest
+order(pred1_svm == pred1_forest)
+pred1_svm[pred1_svm == pred1_forest,]
+subset(pred1_svm,pred1_svm == pred1_forest)
+pred1_svm
+index <- subset(pred1_svm,pred1_svm == pred1_forest)
+pred1_svm[index,]
+index
+index1 <- subset(pred1_svm,pred1_svm == pred1_forest)
+index2 <- subset(vowel.test,pred1_svm == pred1_forest)
+sum(index1 != index$y)/length(vowel.test$y)
+sum(index1 != index2$y)/length(vowel.test$y)
+sum(index1 != index2$y)/length(index2$y)
+data(Cars93,package="MASS")
+set.seed(7363)
+head(Cars93)
+dim(Cars93)
+sample(Cars93,replace=TRUE)
+sample1 <- sample(Cars93,replace=TRUE)
+sample2 <- sample(Cars93,replace=TRUE)
+sample3 <- sample(Cars93,replace=TRUE)
+head(sample1)
+head(sample2)
+?sample
+sample3 <- sample(Cars93[,1:27],replace=TRUE)
+head(sample3)
+head(Cars93)
+set.seed(7363)
+sample(1:dim(Cars93)[1], replace=T)
+dim(Cars93)[1]
+table(sample(1:dim(Cars93)[1], replace=T))
+Cars93[sample(1:dim(Cars93)[1], replace=T),]
+head(Cars93[sample(1:dim(Cars93)[1], replace=T),])
+cars1 <- Cars93[sample(1:dim(Cars93)[1], replace=T),]
+cars2 <- Cars93[sample(1:dim(Cars93)[1], replace=T),]
+cars3 <- Cars93[sample(1:dim(Cars93)[1], replace=T),]
+tree1 <- lm(DriveTrain ~ Price + Type, data=cars1)
+tree2 <- lm(DriveTrain ~ Price + Type, data=cars2)
+tree3 <- lm(DriveTrain ~ Price + Type, data=cars3)
+tree1 <- tree(DriveTrain ~ Price + Type, data=cars1)
+tree2 <- tree(DriveTrain ~ Price + Type, data=cars2)
+tree3 <- tree(DriveTrain ~ Price + Type, data=cars3)
+newdata = data.frame(Type = "Large",Price = 20)
+predict(tree1,newdata)
+predict(tree2,newdata)
+predict(tree3,newdata)
+data(Cars93,package="MASS")#
+set.seed(7363)#
+cars1 <- Cars93[sample(1:dim(Cars93)[1], replace=T),]#
+cars2 <- Cars93[sample(1:dim(Cars93)[1], replace=T),]#
+cars3 <- Cars93[sample(1:dim(Cars93)[1], replace=T),]#
+tree1 <- tree(DriveTrain ~ Price + Type, data=cars1)#
+tree2 <- tree(DriveTrain ~ Price + Type, data=cars2)#
+tree3 <- tree(DriveTrain ~ Price + Type, data=cars3)#
+newdata = data.frame(Type = "Large",Price = 20)#
+predict(tree1,newdata)#
+predict(tree2,newdata)#
+predict(tree3,newdata)
+set.seed(3343)#
+pValues = rep(NA,100)#
+for(i in 1:100){#
+  z = rnorm(20)#
+  x = rnorm(20)#
+  y = rnorm(20,mean=0.5*x)#
+  pValues[i] = summary(lm(y ~ x))$coef[2,4]#
+}
+pValues
+pValues>0.001
+pValues[pValues>0.001]
+table(pValues>0.001)
+sort(pValues)
+pValues_sorted <- sort(pValues)
+index(pValues_sorted)
+order(pValues_sorted)
+pValues_sorted*order(pValues_sorted)
+pValues_sorted <= 0.1*order(pValues_sorted)
+table(pValues_sorted <= 0.1*order(pValues_sorted))
+table(pValues_sorted <= 0.001*order(pValues_sorted))
+x <-rnorm(500)
+mean(x)
+sd(x)
+y = 1 + 2*x +e
+e <-rnorm(500)
+y = 1 + 2*x +e
+summary(lm(y ~ x))
+head(y,x)
+head(y)
+head(x)
+max(x)
+min(x)
+plot(x,c(1:500,1))
+rep(1:500,1)
+plot(x,rep(1:500,1))
+x>1
+x[x>1]
+x[order(x>1)]
+order(x>1)
+length(order(x>1))
+?order
+table(x>1)
+table(x<-1)
+table(x < -1)
+plot(x,rep(1:500,1))
+x <- rnorm(500)
+table(x < -1)
+x>1
+x[x>1]
+x[x>1] <- NA
+x
+x <- rnorm(500)#
+e <- rnorm(500)#
+y = 1 + 2*x + e#
+#
+x_n <- x#
+y_n <- y#
+x_n[x_n>1] <- NA#
+#
+lm1 <- lm(y ~ x)#
+lm1$coeff[1]#
+lm1$coeff[2]#
+lm1_n < lm(y_n ~ x_n)#
+lm1_n$coeff[1]#
+lm1_n$coeff[2]
+lm1_n <- lm(y_n ~ x_n)#
+lm1_n$coeff[1]#
+lm1_n$coeff[2]
+for(i in 1:1000)#
+lm1[i] <- lm(y ~ x)#
+lm1_n[i] <- lm(y_n ~ x_n)#
+}
+for(i in 1:1000) {}#
+lm1[i] <- lm(y ~ x)#
+lm1_n[i] <- lm(y_n ~ x_n)#
+}
+for(i in 1:1000) {#
+lm1[i] <- lm(y ~ x)#
+lm1_n[i] <- lm(y_n ~ x_n)#
+}
+warnings()
+mean(lm1_n$coeff[1])#
+mean(lm1_n$coeff[2])#
+#
+mean(lm1$coeff[1])#
+mean(lm1$coeff[2])
+x <- rnorm(500)#
+e <- rnorm(500)#
+y = 1 + 2*x + e#
+#
+x_n <- x#
+y_n <- y#
+x_n[x_n>1] <- NA#
+y_n[y_n>1] <- NA#
+#
+for(i in 1:1000) {#
+lm1[i] <- lm(y ~ x)#
+lm1_n[i] <- lm(y ~ x_n)#
+lm2_n[i] <- lm(y_n ~ x)#
+}
+for(i in 1:1000) {#
+x <- rnorm(500)#
+e <- rnorm(500)#
+y = 1 + 2*x + e#
+#
+x_n <- x#
+y_n <- y#
+x_n[x_n>1] <- NA#
+y_n[y_n>1] <- NA#
+#
+lm1[i] <- lm(y ~ x)#
+lm1_n[i] <- lm(y ~ x_n)#
+lm2_n[i] <- lm(y_n ~ x)#
+}
+lm(y_n ~ x)
+lm(y ~ x_n)
+beta_lm1 <- rep(NA,1000)#
+beta_lm1_n <- rep(NA,1000)#
+beta_lm2_n <- rep(NA,1000)#
+for(i in 1:1000) {#
+x <- rnorm(500)#
+e <- rnorm(500)#
+y = 1 + 2*x + e#
+#
+x_n <- x#
+y_n <- y#
+x_n[x_n>1] <- NA#
+y_n[y_n>1] <- NA#
+#
+beta_lm1[i] <- lm(y ~ x)$coeff[2]#
+beta_lm1_n[i] <- lm(y ~ x_n)$coeff[2]#
+beta_lm2_n[i] <- lm(y_n ~ x)$coeff[2]#
+}#
+#
+mean(beta_lm1)#
+mean(beta_lm1_n)#
+mean(beta_lm2_n)
+library(MASS)#
+beta_lm1 <- rep(NA,1000)#
+beta_lm1_n <- rep(NA,1000)#
+beta_lm2_n <- rep(NA,1000)#
+for(i in 1:1000) {#
+x <- rnorm(500)#
+e <- rnorm(500)#
+y = 1 + 2*x + e#
+#
+x_n <- x#
+y_n <- y#
+x_n[x_n>1] <- NA#
+y_n[y_n>1] <- NA#
+#
+beta_lm1[i] <- rlm(y ~ x)$coeff[2]#
+beta_lm1_n[i] <- rlm(y ~ x_n)$coeff[2]#
+beta_lm2_n[i] <- rlm(y_n ~ x)$coeff[2]#
+}#
+#
+mean(beta_lm1)#
+mean(beta_lm1_n)#
+mean(beta_lm2_n)
+dir()
+?randomForest
+library(randomForest)
+?randomForest
+ret <- c(-1.1168 , -1.3565 , 1.3754 , -1.0396 , 0.5662 , -0.0050 , -1.9092 , 1.1039 , -0.2332 , -0.6678 , -1.3045 , 0.8229 , 0.9616 , -0.9685 , 1.0631 , -2.8888 , 0.6022 , 1.1204 , -0.9511 , 0.0810 , -0.8619 , 0.0685 , -0.2053 , 0.9565 , 0.1795 , -2.4565 , -0.0656 , -0.1942 , 0.3471 , -0.2564 , 1.2923 , -0.3045 , 0.4619 , -1.8819 , -1.1397 , 1.9877 , -0.0960 , 1.0440 , -0.2722 , -0.0218 , 0.8140 , 1.9191 , 2.1450 , -0.3924 , 0.8846 , -2.0569 , -0.8699 , -0.4551 , -0.5114 , -0.0412 , 0.2515 , -0.6077 , 1.8807 , -0.2756 , -1.2639 , -1.4916 , -0.9395 , 2.3707 , -0.2759 , -0.7360)
+mean(ret)
+sd(ret)
+?rnorm
+qnorm(0.9,mean=mean(ret),sd=sd(ret), lower.tail = TRUE)
+qnorm(0.1,mean=mean(ret),sd=sd(ret), lower.tail = TRUE)
+qnorm(0.9,mean=mean(ret),sd=sd(ret), lower.tail = TRUE)
+qnorm(0.9,mean=mean(ret),sd=sd(ret))
+sort(ret)
+ret <- sort(ret)
+length(ret)
+kp = 0.9*60
+kp
+ret[54]
+ret[54:60]
+sum(ret[54:60])
+sum(ret[54:60])/6
+source("/Users/sarpotd/Desktop/Coursera/Econometrics/Assignment9/portfolio.r")#
+V <- matrix(c(0.008,-0.002,0.004,  -0.002,0.002,-0.002,  0.004,-0.002,0.008),nrow=3,ncol=3)#
+rf <- 0.01#
+u <- matrix(c(0.06,0.02,0.04),nrow=1,ncol=3)#
+mu.vec <- c(0.06,0.02,0.04)#
+x <- matrix(c(1/3,1/3,1/3),nrow=3,ncol=1)#
+p_u <- u%*%x#
+p_V <- sqrt(t(x)%*%V%*%x)#
+sigma.mat <- V#
+#
+top.mat= cbind(2*sigma.mat, rep(1,3))#
+bot.vec = c(rep(1,3), 0)#
+Am.mat = rbind(top.mat,bot.vec)#
+b.vec = c(rep(0,3),1)#
+z.m.mat = solve(Am.mat)%*%b.vec#
+m.vec = z.m.mat[1:3,1]#
+#
+sigma.inv.mat = solve(sigma.mat)#
+one.vec = rep(1,3)#
+mu.minus.rf <- mu.vec-rf*one.vec#
+top.mat = sigma.inv.mat%*%mu.minus.rf#
+bot.val = as.numeric(t(one.vec)%*%top.mat)#
+t.vec <- top.mat[,1]/bot.val#
+t_u < mu.vec%*%t.vec#
+t_V <- sqrt(t(t.vec)%*%V%*%t.vec)
+t_u <- mu.vec%*%t.vec#
+t_V <- sqrt(t(t.vec)%*%V%*%t.vec)
+t_u
+t_V
+t.vec
+V <- matrix(c(0.0056,-0.002,0.0037,  -0.002,0.0022,-0.0022,  0.0037,-0.0022,0.0074),nrow=3,ncol=3)#
+rf <- 0.01#
+u <- matrix(c(-0.0005186,0.047057,-0.0006986),nrow=1,ncol=3)#
+mu.vec <- c(0.06,0.02,0.04)#
+x <- matrix(c(1/3,1/3,1/3),nrow=3,ncol=1)#
+p_u <- u%*%x#
+p_V <- sqrt(t(x)%*%V%*%x)#
+sigma.mat <- V#
+#
+top.mat= cbind(2*sigma.mat, rep(1,3))#
+bot.vec = c(rep(1,3), 0)#
+Am.mat = rbind(top.mat,bot.vec)#
+b.vec = c(rep(0,3),1)#
+z.m.mat = solve(Am.mat)%*%b.vec#
+m.vec = z.m.mat[1:3,1]#
+#
+sigma.inv.mat = solve(sigma.mat)#
+one.vec = rep(1,3)#
+mu.minus.rf <- mu.vec-rf*one.vec#
+top.mat = sigma.inv.mat%*%mu.minus.rf#
+bot.val = as.numeric(t(one.vec)%*%top.mat)#
+t.vec <- top.mat[,1]/bot.val#
+t_u <- mu.vec%*%t.vec#
+t_V <- sqrt(t(t.vec)%*%V%*%t.vec)
+t_u
+t_V
+1+(5*(t_u-1)/t_V)
+1+(5*(t_u-0.01)/t_V)
+V
+u
+V <- matrix(c(0.0056,-0.002,0.0037,  -0.002,0.0022,-0.0022,  0.0037,-0.0022,0.0074),nrow=3,ncol=3)#
+rf <- 0.01#
+u <- matrix(c(-0.005186,0.047057,-0.006986),nrow=1,ncol=3)#
+mu.vec <- c(0.06,0.02,0.04)#
+x <- matrix(c(1/3,1/3,1/3),nrow=3,ncol=1)#
+p_u <- u%*%x#
+p_V <- sqrt(t(x)%*%V%*%x)#
+sigma.mat <- V#
+#
+top.mat= cbind(2*sigma.mat, rep(1,3))#
+bot.vec = c(rep(1,3), 0)#
+Am.mat = rbind(top.mat,bot.vec)#
+b.vec = c(rep(0,3),1)#
+z.m.mat = solve(Am.mat)%*%b.vec#
+m.vec = z.m.mat[1:3,1]#
+#
+sigma.inv.mat = solve(sigma.mat)#
+one.vec = rep(1,3)#
+mu.minus.rf <- mu.vec-rf*one.vec#
+top.mat = sigma.inv.mat%*%mu.minus.rf#
+bot.val = as.numeric(t(one.vec)%*%top.mat)#
+t.vec <- top.mat[,1]/bot.val#
+t_u <- mu.vec%*%t.vec#
+t_V <- sqrt(t(t.vec)%*%V%*%t.vec)
+u
+1+(5*(t_u-0.01)/t_V)
+t_u
+t_V
+V <- matrix(c(0.0056,-0.002,0.0037,  -0.002,0.0022,-0.0022,  0.0037,-0.0022,0.0074),nrow=3,ncol=3)#
+rf <- 0.01#
+u <- matrix(c(-0.005186,0.047057,-0.006986),nrow=1,ncol=3)#
+mu.vec <- c(0.06,0.02,0.04)#
+x <- matrix(c(1/3,1/3,1/3),nrow=3,ncol=1)#
+p_u <- u%*%x#
+p_V <- sqrt(t(x)%*%V%*%x)#
+sigma.mat <- V#
+#
+top.mat= cbind(2*sigma.mat, rep(1,3))#
+bot.vec = c(rep(1,3), 0)#
+Am.mat = rbind(top.mat,bot.vec)#
+b.vec = c(rep(0,3),1)#
+z.m.mat = solve(Am.mat)%*%b.vec#
+m.vec = z.m.mat[1:3,1]#
+#
+sigma.inv.mat = solve(sigma.mat)#
+one.vec = rep(1,3)#
+mu.minus.rf <- mu.vec-rf*one.vec#
+top.mat = sigma.inv.mat%*%mu.minus.rf#
+bot.val = as.numeric(t(one.vec)%*%top.mat)#
+t.vec <- top.mat[,1]/bot.val#
+t_u <- mu.vec%*%t.vec#
+t_V <- sqrt(t(t.vec)%*%V%*%t.vec)
+t_u
+source("/Users/sarpotd/Desktop/Coursera/Econometrics/Assignment9/portfolio.r")#
+V <- matrix(c(0.0056,-0.002,0.0037,  -0.002,0.0022,-0.0022,  0.0037,-0.0022,0.0074),nrow=3,ncol=3)#
+rf <- 0.01#
+u <- matrix(c(-0.005186,0.047057,-0.006986),nrow=1,ncol=3)#
+mu.vec <- c(0.06,0.02,0.04)#
+x <- matrix(c(1/3,1/3,1/3),nrow=3,ncol=1)#
+p_u <- u%*%x#
+p_V <- sqrt(t(x)%*%V%*%x)#
+sigma.mat <- V#
+#
+top.mat= cbind(2*sigma.mat, rep(1,3))#
+bot.vec = c(rep(1,3), 0)#
+Am.mat = rbind(top.mat,bot.vec)#
+b.vec = c(rep(0,3),1)#
+z.m.mat = solve(Am.mat)%*%b.vec#
+m.vec = z.m.mat[1:3,1]#
+#
+sigma.inv.mat = solve(sigma.mat)#
+one.vec = rep(1,3)#
+mu.minus.rf <- mu.vec-rf*one.vec#
+top.mat = sigma.inv.mat%*%mu.minus.rf#
+bot.val = as.numeric(t(one.vec)%*%top.mat)#
+t.vec <- top.mat[,1]/bot.val#
+t_u <- mu.vec%*%t.vec#
+t_V <- sqrt(t(t.vec)%*%V%*%t.vec)
+t_u
+t_V
+V <- matrix(c(0.0056,-0.002,0.0037,  -0.002,0.0022,-0.0022,  0.0037,-0.0022,0.0074),nrow=3,ncol=3)#
+rf <- 0.01#
+u <- matrix(c(-0.5186,0.047057,-0.006986),nrow=1,ncol=3)#
+mu.vec <- c(0.06,0.02,0.04)#
+x <- matrix(c(1/3,1/3,1/3),nrow=3,ncol=1)#
+p_u <- u%*%x#
+p_V <- sqrt(t(x)%*%V%*%x)#
+sigma.mat <- V#
+#
+top.mat= cbind(2*sigma.mat, rep(1,3))#
+bot.vec = c(rep(1,3), 0)#
+Am.mat = rbind(top.mat,bot.vec)#
+b.vec = c(rep(0,3),1)#
+z.m.mat = solve(Am.mat)%*%b.vec#
+m.vec = z.m.mat[1:3,1]#
+#
+sigma.inv.mat = solve(sigma.mat)#
+one.vec = rep(1,3)#
+mu.minus.rf <- mu.vec-rf*one.vec#
+top.mat = sigma.inv.mat%*%mu.minus.rf#
+bot.val = as.numeric(t(one.vec)%*%top.mat)#
+t.vec <- top.mat[,1]/bot.val#
+t_u <- mu.vec%*%t.vec#
+t_V <- sqrt(t(t.vec)%*%V%*%t.vec)
+t_u
+V <- matrix(c(0.0056,-0.002,0.0037,  -0.002,0.0022,-0.0022,  0.0037,-0.0022,0.0074),nrow=3,ncol=3)#
+rf <- 0.01#
+u <- matrix(c(-0.5186,0.047057,-0.006986),nrow=1,ncol=3)#
+mu.vec <- c(-0.5186,0.047057,-0.006986)#
+sigma.mat <- V#
+#
+top.mat= cbind(2*sigma.mat, rep(1,3))#
+bot.vec = c(rep(1,3), 0)#
+Am.mat = rbind(top.mat,bot.vec)#
+b.vec = c(rep(0,3),1)#
+z.m.mat = solve(Am.mat)%*%b.vec#
+m.vec = z.m.mat[1:3,1]#
+#
+sigma.inv.mat = solve(sigma.mat)#
+one.vec = rep(1,3)#
+mu.minus.rf <- mu.vec-rf*one.vec#
+top.mat = sigma.inv.mat%*%mu.minus.rf#
+bot.val = as.numeric(t(one.vec)%*%top.mat)#
+t.vec <- top.mat[,1]/bot.val#
+t_u <- mu.vec%*%t.vec#
+t_V <- sqrt(t(t.vec)%*%V%*%t.vec)
+t_u
+t_V
+1+5(t_u-0.01)/t_V)
+1+5()(t_u-0.01)/t_V)
+1+5((t_u-0.01)/t_V)
+1+5*((t_u-0.01)/t_V)
+V <- matrix(c(0.0056,-0.002,0.0037,  -0.002,0.0022,-0.0022,  0.0037,-0.0022,0.0074),nrow=3,ncol=3)#
+rf <- 0.01#
+u <- matrix(c(-0.005186,0.047057,-0.006986),nrow=1,ncol=3)#
+mu.vec <- c(-0.005186,0.047057,-0.006986)#
+sigma.mat <- V#
+#
+top.mat= cbind(2*sigma.mat, rep(1,3))#
+bot.vec = c(rep(1,3), 0)#
+Am.mat = rbind(top.mat,bot.vec)#
+b.vec = c(rep(0,3),1)#
+z.m.mat = solve(Am.mat)%*%b.vec#
+m.vec = z.m.mat[1:3,1]#
+#
+sigma.inv.mat = solve(sigma.mat)#
+one.vec = rep(1,3)#
+mu.minus.rf <- mu.vec-rf*one.vec#
+top.mat = sigma.inv.mat%*%mu.minus.rf#
+bot.val = as.numeric(t(one.vec)%*%top.mat)#
+t.vec <- top.mat[,1]/bot.val#
+t_u <- mu.vec%*%t.vec#
+t_V <- sqrt(t(t.vec)%*%V%*%t.vec)
+1+5*((t_u-0.01)/t_V)
+t.vec
+mu.vec
+mu2.vec <- c(0.06,0.02,0.04)
+mu2.vec%*%t.vec
+t_u
+1.69*t.vec
+(1.69*t.vec)%*%mu2.ve
+(1.69*t.vec)%*%mu2.vec
+sum(1.69*t.vec)
+(1.69*t.vec)%*%mu2.vec -0.69*1
+(1.69*t.vec)%*%mu2.vec -0.69*0.01
+?rnorm
+pnorm(0,0,1)
+pnorm(0.1083,0,1)
+remove.packages("sqldf")
+source("http://bioconductor.org/biocLite.R")biocLite("graph")biocLite("RBGL")
+source("http://bioconductor.org/biocLite.R")
+biocLite("graph")
+biocLite("RBGL")
+biocLite("Rgraphviz")
+chunk number 1: #
+library(gRain)#
+options("prompt"=" ","width"=100)#
+### chunk number 2: #
+yn <- c("yes","no")#
+a    <- cpt(~asia, values=c(1,99),levels=yn)#
+t.a  <- cpt(~tub+asia, values=c(5,95,1,99),levels=yn)#
+s    <- cpt(~smoke, values=c(5,5), levels=yn)#
+l.s  <- cpt(~lung+smoke, values=c(1,9,1,99), levels=yn)#
+b.s  <- cpt(~bronc+smoke, values=c(6,4,3,7), levels=yn)#
+e.lt <- cpt(~either+lung+tub,values=c(1,0,1,0,1,0,0,1),levels=yn)#
+x.e  <- cpt(~xray+either, values=c(98,2,5,95), levels=yn)#
+d.be <- cpt(~dysp+bronc+either, values=c(9,1,7,3,8,2,1,9), levels=yn)#
+### chunk number 3: #
+plist <- cptspec(list(a, t.a, s, l.s, b.s, e.lt, x.e, d.be))#
+pn <- newgmInstance(plist)#
+pn#
+### chunk number 4: #
+querygm(pn,nodes=c("lung","bronc"))#
+### chunk number 5: #
+pn2  <- enterEvidence(pn,nodes=c("asia","dysp"),states=c("yes","yes"))#
+### chunk number 6: #
+querygm(pn2,nodes=c("lung","bronc"))#
+### chunk number 7: #
+querygm(pn2,nodes=c("lung","bronc"), type="joint")#
+### chunk number 8: #
+pnc <- compilegm(pn)#
+### chunk number 9: #
+pnc <- propagate(pnc)#
+### chunk number 10: #
+querygm(pnc,nodes=c("lung","bronc"))#
+querygm(pnc,nodes=c("lung","bronc"),type="joint")#
+querygm(pnc,nodes=c("lung","bronc"),type="conditional")#
+### chunk number 11: #
+pnc2  <- enterEvidence(pnc,nodes=c("asia","dysp"),states=c("yes","yes"))#
+pnc2  <- enterEvidence(pnc,evlist=list(c("asia","yes"),c("dysp", "yes")))#
+### chunk number 12: #
+evidence(pnc2)#
+### chunk number 13: #
+pevidence(pnc2)#
+### chunk number 14: #
+querygm(pnc2,nodes=c("lung","bronc"))#
+querygm(pnc2,nodes=c("lung","bronc"), type="joint")#
+querygm(pnc2,nodes=c("lung","bronc"), type="conditional")#
+### chunk number 15: #
+pnc2  <- enterEvidence(pnc,nodes=c("asia"),states=c("yes"),propagate=FALSE)#
+##evidence(pnc2)#
+pnc2  <- enterEvidence(pnc2,nodes=c("dysp"),states=c("yes"),propagate=FALSE)#
+##evidence(pnc2)#
+pnc2 <- propagate(pnc2)#
+evidence(pnc2)#
+### chunk number 16: #
+pnc3 <- retractEvidence(pnc2, nodes="asia")#
+evidence(pnc3)#
+### chunk number 17: #
+summary(pn)#
+summary(pnc)#
+### chunk number 18: #
+plot(pn)#
+plot(pnc)#
+### chunk number 19: #
+nodeNames(pn)#
+nodeStates(pn)#
+### chunk number 20: #
+pnc2 <- compilegm(pn, root=c("lung", "bronc", "tub"), propagate=TRUE)#
+### chunk number 21: #
+system.time({for (i in 1:10) querygm(pnc,nodes=c("lung","bronc", "tub"),type="joint")})#
+system.time({for (i in 1:10) querygm(pnc2,nodes=c("lung","bronc", "tub"),type="joint")})#
+### chunk number 22: #
+simulate(pnc, nsim=20)#
+simulate(pnc2, nsim=20)#
+### chunk number 23: #
+nd <- structure(list(bronc = structure(c(1L, 1L, 1L, 1L), .Label = c("yes", #
+"no"), class = "factor"), dysp = structure(c(1L, 1L, 1L, 1L), .Label = c("yes", #
+"no"), class = "factor"), either = structure(c(1L, 1L, 1L, 2L#
+), .Label = c("yes", "no"), class = "factor"), lung = structure(c(1L, #
+1L, 2L, 2L), .Label = c("yes", "no"), class = "factor"), tub = structure(c(2L, #
+2L, 1L, 2L), .Label = c("yes", "no"), class = "factor"), asia = structure(c(2L, #
+2L, 2L, 1L), .Label = c("yes", "no"), class = "factor"), xray = structure(c(1L, #
+1L, 1L, 1L), .Label = c("yes", "no"), class = "factor"), smoke = structure(c(1L, #
+2L, 1L, 2L), .Label = c("yes", "no"), class = "factor")), .Names = c("bronc", #
+"dysp", "either", "lung", "tub", "asia", "xray", "smoke"), row.names = c(NA, #
+4L), class = "data.frame")#
+### chunk number 24: #
+nd#
+predict(pnc, response=c("lung","bronc"), newdata=nd, #
+ predictors=c("smoke", "asia", "tub" , "dysp", "xray"), type="class")#
+### chunk number 25: #
+predict(pnc, response=c("lung","bronc"), newdata=nd,#
+ predictors=c("smoke", "asia", "tub" , "dysp", "xray"), type="dist")#
+### chunk number 26: #
+chestNames <- c("asia", "smoke", "tub", "lung", "bronc", "either", "xray", "dysp")#
+gmd <- newgmData(chestNames,valueLabels=c("yes","no"))#
+gmd#
+### chunk number 27: #
+a    <- cpt(~asia, values=c(1,99),gmData=gmd)#
+t.a  <- cpt(~tub+asia, values=c(5,95,1,99),gmData=gmd)#
+s    <- cpt(~smoke, values=c(5,5), gmData=gmd)#
+l.s  <- cpt(~lung+smoke, values=c(1,9,1,99), gmData=gmd)#
+b.s  <- cpt(~bronc+smoke, values=c(6,4,3,7), gmData=gmd)#
+e.lt <- cpt(~either+lung+tub,values=c(1,0,1,0,1,0,0,1),gmData=gmd)#
+x.e  <- cpt(~xray+either, values=c(98,2,5,95), gmData=gmd)#
+d.be <- cpt(~dysp+bronc+either, values=c(9,1,7,3,8,2,1,9), gmData=gmd)#
+### chunk number 28: #
+t.a#
+### chunk number 29: #
+plist <- cptspec(list(a, t.a, s, l.s, b.s, e.lt, x.e, d.be))#
+### chunk number 30: #
+pn <- newgmInstance(plist, gmData=gmd)#
+### chunk number 31: #
+chestSim <- simulate(pnc, nsim=1000)#
+chestSsim <- as.cumcounts(chestSim, Freq="Freq")#
+chestSim[1:10,]#
+### chunk number 32: #
+g<-list(~asia, ~tub + asia, ~smoke, ~lung + smoke, ~bronc + smoke, #
+    ~either + lung + tub, ~xray + either, ~dysp + bronc + either)#
+dag<-newdagsh(g)#
+dag#
+### chunk number 33: #
+pnx <- newgmInstance(dag, gmData=as.gmData(chestSim))#
+pnx <- compilegm(pnx, propagate=TRUE)#
+### chunk number 34: #
+g<-list(~asia + tub, ~either + lung + tub, ~either + lung + smoke, #
+    ~bronc + either + smoke, ~bronc + dysp + either, ~either + #
+        xray)#
+ug <- newugsh(g)#
+ug#
+### chunk number 35: #
+pny <- newgmInstance(ug, as.gmData(chestSim))#
+pny <- compilegm(pny, propagate=TRUE)
+?
+newgmInstance
+?? newgmInstance
+?grain
+Asia (chest clinique) example:#
+yn <- c("yes","no")#
+a    <- cptable(~asia, values=c(1,99),levels=yn)#
+t.a  <- cptable(~tub+asia, values=c(5,95,1,99),levels=yn)#
+s    <- cptable(~smoke, values=c(5,5), levels=yn)#
+l.s  <- cptable(~lung+smoke, values=c(1,9,1,99), levels=yn)#
+b.s  <- cptable(~bronc+smoke, values=c(6,4,3,7), levels=yn)#
+e.lt <- cptable(~either+lung+tub,values=c(1,0,1,0,1,0,0,1),levels=yn)#
+x.e  <- cptable(~xray+either, values=c(98,2,5,95), levels=yn)#
+d.be <- cptable(~dysp+bronc+either, values=c(9,1,7,3,8,2,1,9), levels=yn)#
+plist <- compileCPT(list(a, t.a, s, l.s, b.s, e.lt, x.e, d.be))#
+pn <- grain(plist)#
+pn#
+summary(pn)#
+plot(pn)#
+pnc <- compile(pn, propagate=TRUE)#
+#
+## If we want to query the joint distribution of the disease nodes,#
+## computations can be speeded up by forcing these nodes to be in#
+## the same clique of the junction tree:#
+#
+pnc2 <- compile(pn, root=c("lung", "bronc", "tub"), propagate=TRUE)#
+#
+system.time({#
+  for (i in 1:200) #
+    querygrain(pnc, nodes=c("lung","bronc", "tub"), type="joint")})#
+system.time({#
+  for (i in 1:200) #
+    querygrain(pnc2, nodes=c("lung","bronc", "tub"), type="joint")})#
+## Create network from gmData (with data) and graph specification.#
+## There are different ways:#
+data(HairEyeColor)#
+d   <- HairEyeColor#
+daG <- dagList(list(~Hair, ~Eye:Hair, ~Sex:Hair))#
+class(daG)#
+uG <- ugList(list(~Eye:Hair, ~Sex:Hair))#
+class(uG)#
+#
+## Create directly from dag:#
+b1  <- grain(daG,d)#
+class(b1)#
+#
+## Build model from undirected (decomposable) graph#
+b3  <- grain(uG,d)#
+class(b3)#
+#
+## Simple example - one clique only in triangulated graph:#
+plist <- compileCPT(list(a, t.a))#
+pn <- grain(plist)#
+querygrain(pn)#
+#
+## Simple example - disconnected network:#
+plist <- compileCPT(list(a, t.a, s))#
+pn <- grain(plist)#
+querygrain(pn)
+?cptable
+a
+t.a
+?grain
+Asia (chest clinique) example:#
+yn <- c("yes","no")#
+a    <- cptable(~asia, values=c(1,99),levels=yn)#
+t.a  <- cptable(~tub+asia, values=c(5,95,1,99),levels=yn)#
+s    <- cptable(~smoke, values=c(5,5), levels=yn)#
+l.s  <- cptable(~lung+smoke, values=c(1,9,1,99), levels=yn)#
+b.s  <- cptable(~bronc+smoke, values=c(6,4,3,7), levels=yn)#
+e.lt <- cptable(~either+lung+tub,values=c(1,0,1,0,1,0,0,1),levels=yn)#
+x.e  <- cptable(~xray+either, values=c(98,2,5,95), levels=yn)#
+d.be <- cptable(~dysp+bronc+either, values=c(9,1,7,3,8,2,1,9), levels=yn)#
+plist <- compileCPT(list(a, t.a, s, l.s, b.s, e.lt, x.e, d.be))#
+pn <- grain(plist)
+pn#
+summary(pn)#
+plot(pn)
+a
+?querygrain
+querygrain(pn, nodes=c(tub),propgate=TRUE)
+querygrain(pn, nodes=c(tub),propagate=TRUE)
+querygrain(pn, nodes=c(tub))
+querygrain(pn, nodes=c("tub"))
+querygrain(pn, nodes=c(t.a))
+querygrain(pn, nodes=c("t.a"))
+querygrain(pn, nodes=c("t.a+asia"))
+querygrain(pn, nodes=c("~tub+asia))
+""
+querygrain(pn, nodes=c("~tub+asia"))
+querygrain(pn, nodes=c("tub",t.a), type ="conditonal")
+querygrain(pn, nodes=c("tub",t.a), type ="conditional")
+querygrain(pn, nodes=c("tub","t.a"), type ="conditional")
+setFinding(pn,nodes=("asia"),states="y")
+setFinding(pn,nodes=("asia"),states="y",prop=TRUE)
+querygrain(pn,nodes=("asia"))
+querygrain(pn,nodes=("tub"))
+querygrain(pn,nodes=("tub", "asia"), type=conditional)
+querygrain(pn,nodes=c("tub", "asia"), type=conditional)
+querygrain(pn,nodes=c("tub", "asia"), type="conditional")
+setFinding(pn,nodes=("asia"),states="y",prop=TRUE)
+querygrain(pn,nodes=("tub"))
+querygrain(pn,nodes=c("tub", "asia"), type="conditional")
+setFinding(pn,nodes=("asia"),states=1,prop=TRUE)
+querygrain(pn,nodes=("tub"))
+querygrain(pn,nodes=c("tub", "asia"), type="conditional")
+querygrain(pn,setFinding(pn,nodes=("asia"),states="yes",prop=TRUE), nodes="tub")
+querygrain(setFinding(pn,nodes=("asia"),states="yes",prop=TRUE), nodes="tub")
+querygrain(setFinding(pn,nodes=("smoke"),states="yes",prop=TRUE), nodes="xray")
+querygrain(pn, nodes="xray")
+querygrain(setFinding(pn,nodes=("tub"),states="yes",prop=TRUE), nodes="asia")
+?grain
+Asia (chest clinique) example:#
+yn <- c("yes","no")#
+a    <- cptable(~asia, values=c(1,99),levels=yn)#
+t.a  <- cptable(~tub+asia, values=c(5,95,1,99),levels=yn)#
+s    <- cptable(~smoke, values=c(5,5), levels=yn)#
+l.s  <- cptable(~lung+smoke, values=c(1,9,1,99), levels=yn)#
+b.s  <- cptable(~bronc+smoke, values=c(6,4,3,7), levels=yn)#
+e.lt <- cptable(~either+lung+tub,values=c(1,0,1,0,1,0,0,1),levels=yn)#
+x.e  <- cptable(~xray+either, values=c(98,2,5,95), levels=yn)#
+d.be <- cptable(~dysp+bronc+either, values=c(9,1,7,3,8,2,1,9), levels=yn)#
+plist <- compileCPT(list(a, t.a, s, l.s, b.s, e.lt, x.e, d.be))#
+pn <- grain(plist)#
+pn#
+summary(pn)#
+plot(pn)#
+pnc <- compile(pn, propagate=TRUE)
+querygrain(setFinding(pn,nodes=("dysp"),states="yes",prop=TRUE), nodes="bronc")
+querygrain(setFinding(pn,nodes=("dysp"),states="yes",prop=TRUE), nodes="smoke")
+querygrain(setFinding(pn,nodes=c("dysp","asia"),states="yes",prop=TRUE), nodes="smoke")
+querygrain(setFinding(pn,nodes=c("dysp","asia"),states=c("yes","yes"),prop=TRUE), nodes="smoke")
+querygrain(setFinding(pn,nodes=c("dysp","asia"),states=c("yes","yes"),prop=TRUE), nodes="xray")
+querygrain(setFinding(pn,nodes=c("dysp","asia","smoke"),states=c("yes","yes","yes"),prop=TRUE), nodes="xray")
+querygrain(setFinding(pn,nodes=c("dysp","asia","smoke"),states=c("yes","yes","yes"),prop=TRUE), nodes="bronc")
+querygrain(setFinding(pn,nodes=c("smoke"),states=c("yes"),prop=TRUE), nodes=c("bronc","tub","lung")
+)
+querygrain(setFinding(pn,nodes=c("asia","smoke","dysp","xray"),states=c("yes","no","no","yes"),prop=TRUE), nodes=c("bronc","tub","lung"))
+require(ggplot2)#
+require(data.table)#
+#
+setwd("/Users/sarpotd/Desktop/Coursera/Recommender Systems/week5/Assignment2/")#
+results <- data.table(read.csv("eval-assignment/target/analysis/eval-results.csv"))#
+ggplot(results[,list(RMSE=mean(RMSE.ByUser)),by=list(Algorithm,NNbrs)][,list(Name=paste(Algorithm,NNbrs),Algorithm,NNbrs,RMSE)]) +#
+#
+    aes(x=Name, y=RMSE) +#
+#
+    geom_boxplot() +#
+#
+# The following line rotates labels on the x-axis vertically.#
+#
+    theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5))
