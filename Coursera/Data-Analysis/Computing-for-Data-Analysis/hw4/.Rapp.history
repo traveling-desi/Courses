@@ -1,0 +1,276 @@
+which(iris[[Species]] == setosa)
+?which
+b = iris[[species]]
+b = iris[[Species]]
+b = iris[['Species']]
+head(b)
+which(iris[['Species']] == setosa)
+which(iris[['Species']] == "setosa")
+which(iris[['Species']] == "virginica")
+h <- which(iris[['Species']] == "virginica")
+head(h)
+new <- iris[h]
+new <- iris[h,]
+head new
+head(new)
+str(new)
+?print
+print(new)
+summary(new)
+?apply
+summary(iris)
+apply(iris[, 1:4], 2, mean)
+apply(iris[, 1:4], 1, mean)
+library(datasets)#
+data(mtcars)
+head(mtcars)
+?sapply
+/tapply
+?tapply
+?mean
+mean(mtcars$mpg, mtcars$cyl)
+sapply(mtcars, cyl, mean)
+tapply(mtcars$mpg, mtcars$cyl, mean)
+print(mtcars)
+tapply(mtcars$mpg, mtcars$cyl, mean)
+tapply(iris$Sepal.Lenght, iris$Species, mean)
+tapply(iris$Sepal.Length, iris$Species, mean)
+?tapply
+tapply(mtcars$hp, mtcars$cyl, mean)
+?sapply
+f <- function(x) {#
+        g <- function(y) {#
+                y + z#
+        }#
+        z <- 4#
+        x + g(x)#
+}
+z <- 10#
+f(3)
+debug(ls)
+ls
+?ls
+ls
+x <- list(rnorm(100), runif(100), rpois(100, 1))#
+sapply(x, quantile, probs = c(0.25, 0.75))
+?quantile
+?rnorm
+?runif
+?rpois
+?gl
+?list
+debug(ls)
+ls(g)
+exit
+quit
+?read.csv
+dir()
+ls
+pwd
+pwd()
+get_dir()
+getwd()
+?cd
+?cd()
+?getwd
+?png()
+png()
+x <- rnorm(100)#
+hist(x)
+hist(x)
+x <- rnorm(100)
+hist(x)
+?png
+quartz()
+hist(x)
+dev.off()
+?par
+?plo
+?plot
+?axis
+x <- rnorm(100)
+y <- x + rnorm(100)
+par(las = 1)
+plot(x, y)
+par(las = 2)
+plot(x, y)
+x1 <- rnorm(100)
+y1 <- rnorm(100)
+points(x1, y1, col = "red")
+dev.off
+dev.off()
+?gl
+library(lattice)
+library(nlme)
+xyplot(distance ~ age | Subject, data = Orthodont)
+?Orthodont
+xyplot(distance ~ age | Subject, data = Orthodont, type =b)
+xyplot(distance ~ age | Subject, data = Orthodont, type = b)
+xyplot(distance ~ age | Subject, data = Orthodont, type = "b")
+xyplot(weight ~ Time | Diet, BodyWeight)
+xyplot(distance ~ age | Subject, data = Orthodont, type = "b")
+xyplot(weight ~ Time | Diet, BodyWeight)
+?BodyWeight
+plot(0, 0, main = "theta")
+quartz()
+plot(0, 0, main = "theta")
+set.seed(1)
+rpois(5, 2)
+xyplot(weight ~ Time | Diet, BodyWeight)
+?mtext
+?ltext
+?barchart
+?coplot
+plot(0, 0, main = expression("theta")
+)
+plot(0, 0, main = expression("theta"))
+plot(0, 0, main = expression(theta))
+?lsegments
+quit()
+?rgb
+rgb(45,78,78)
+rgb(45,78,78,78)
+rgb(45,78)
+rgb(45,78,78)
+rgb(45,78,78,1)
+rgb(45,78,78,1,max = 255)
+?setoldclass
+?setoldclass()
+?setOldClass()
+?poisson
+?rposs
+?rpoiss
+?rnorm
+search(poisson)
+?poisson
+?rpois
+set.seed(31);#
+heightsCM = rnorm(30,mean=188, sd=5);#
+weightsK = rnorm(30,mean=84,sd=3); #
+hasDaughter = sample(c(TRUE,FALSE),size=30,replace=T); #
+dataFrame = data.frame(heightsCM,weightsK,hasDaughter);
+dataFrame
+dataFrame[heightsCM>188]
+dataFrame["heightsCM">188]
+dataFrame[$heightsCM>188]
+dataFrame[dataFrame$heightsCM>188]
+dataFrame
+dataFrame$heightsCM
+dataFrame$heightsCM > 188
+temp <- dataFrame$heightsCM > 188
+dataFrame[temp]
+dataFrame[heightsCM>188,]
+dataFrameSubset <- dataFrame[heightsCM>188,]
+dataFrameSubset$weightsK
+mean(dataFrameSubset$weightsK)
+?Cauchy
+cauchyValues <- rcauchy(100)
+head(cauchyValues)
+set.seed(41)
+cauchyValues <- rcauchy(100)
+?sample
+set.seed(415)
+sample(cauchyValues,10,replace = TRUE)
+causes <- c("asphyxiation”,  “blunt force”,  “other”,  “shooting”,  “stabbing”,  “unknown")
+cause <- "other"
+causes == cause
+cause == causes
+any(cause == causes)
+any(causes == cause)
+new<- c(1,2,3)
+new == 5
+new == 2
+new<- c("1","2","3")
+new == "2"
+causes <- c("a", "b", "c")
+causes == "a"
+causes == "z"
+causes <- c("asphyxiation”,  “blunt force”,  “other”,  “shooting”,  “stabbing”,  “unknown")
+causes
+causes <- c("asphyxiation”,  “blunt force”,  “other”,  “shooting”,  “stabbing”,  “unknown", "b")
+cause <= "b"
+cause <- "b"
+causes == cause
+causes <- c("asphyxiation",  "blunt force",  "other",  "shooting",  "stabbing",  "unknown")
+cause <- "other"
+causes == cause
+?upper
+?grep
+?paste
+setwd("/Users/sarpotd/Desktop/Coursera/Data Analysis/hw4")
+source(count.R)
+source("count.R")
+count("fd")
+source("count.R")
+count("fd")
+count("other")
+count("fd")
+count("other")
+source("count.R")
+count("other")
+?grep
+count("other")
+source("count.R")
+count("other")
+source("count.R")
+count("unknown")
+source("http://spark-public.s3.amazonaws.com/compdata/scripts/submitscript4.R")
+submit()
+submit()
+submit()
+homicides <- readLines("homicides.txt")
+homicides
+source("agecount.R")
+agecount(f)
+agecount()
+agecount(3)
+source("agecount.R")
+source("agecount.R")
+agecount(3)
+agecount(21)
+grep(str_to_search,homicides,ignore.case = TRUE)
+homicides <- readLines("homicides.txt")#
+	str_to_search <- paste("Age:",age,"year",sep = "( )+")#
+	print(str_to_search)#
+	length(grep(str_to_search,homicides,ignore.case = TRUE))
+homicides <- readLines("homicides.txt")#
+	str_to_search <- paste("Age:",21,"year",sep = "( )+")#
+	print(str_to_search)#
+	grep(str_to_search,homicides,ignore.case = TRUE)
+homicides <- readLines("homicides.txt")#
+	str_to_search <- paste("Age:",21,"year",sep = "( )+")#
+	print(str_to_search)#
+	grep(str_to_search,homicides,ignore.case = TRUE, value = true)
+homicides <- readLines("homicides.txt")#
+	str_to_search <- paste("Age:",21,"year",sep = "( )+")#
+	print(str_to_search)#
+	grep(str_to_search,homicides,ignore.case = TRUE, value = TRUE)
+old <- grep(str_to_search,homicides,ignore.case = TRUE)
+new <- grep(21,homicides,ignore.case = TRUE)
+setdiff(new,old)
+new
+old
+?as.character
+source("agecount.R")
+agecount(21)
+source("agecount.R")
+agecount(21)
+source("agecount.R")
+agecount(21)
+agecount(21)
+source("agecount.R")
+agecount(21)
+new <- grep("21",homicides,ignore.case = TRUE)
+new
+head(new)
+new <- grep("21",homicides,ignore.case = TRUE, value =TRUE)
+head(new)
+source("agecount.R")
+source("agecount.R")
+agecount(21)
+agecount(3)
+source("agecount.R")
+agecount(21)
+agecount(3)
+submit()
+submit()

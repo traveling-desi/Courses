@@ -1,0 +1,195 @@
+?arima
+?arima.sim
+cube <- function(x, n) {#
+        x^3#
+}
+cube(3)
+pow <- function(x = 4, n = 3) {#
+        x^n#
+}
+pow()
+x <- 1:10#
+if(x > 5) {#
+        x <- 0#
+}
+library(datasets)#
+data(iris)
+?iris
+str(iris)
+summary(iris)
+head(iris)
+library(datasets)#
+data(iris)
+head(iris)
+str(iris)
+h <- iris(Sepecies=viriginica)
+h <- iris[Species=viriginica]
+h <- iris[viriginica]
+h <- iris[Species]
+h <- iris[1]
+print iris[1]
+print h
+print h[1]
+head(h)
+head(iris)
+library(datasets)#
+data(iris)
+head(iris)
+iris[[Species]]
+which(iris[[Species]])
+which(iris[[Species]] == setosa)
+?which
+b = iris[[species]]
+b = iris[[Species]]
+b = iris[['Species']]
+head(b)
+which(iris[['Species']] == setosa)
+which(iris[['Species']] == "setosa")
+which(iris[['Species']] == "virginica")
+h <- which(iris[['Species']] == "virginica")
+head(h)
+new <- iris[h]
+new <- iris[h,]
+head new
+head(new)
+str(new)
+?print
+print(new)
+summary(new)
+?apply
+summary(iris)
+apply(iris[, 1:4], 2, mean)
+apply(iris[, 1:4], 1, mean)
+library(datasets)#
+data(mtcars)
+head(mtcars)
+?sapply
+/tapply
+?tapply
+?mean
+mean(mtcars$mpg, mtcars$cyl)
+sapply(mtcars, cyl, mean)
+tapply(mtcars$mpg, mtcars$cyl, mean)
+print(mtcars)
+tapply(mtcars$mpg, mtcars$cyl, mean)
+tapply(iris$Sepal.Lenght, iris$Species, mean)
+tapply(iris$Sepal.Length, iris$Species, mean)
+?tapply
+tapply(mtcars$hp, mtcars$cyl, mean)
+?sapply
+f <- function(x) {#
+        g <- function(y) {#
+                y + z#
+        }#
+        z <- 4#
+        x + g(x)#
+}
+z <- 10#
+f(3)
+debug(ls)
+ls
+?ls
+ls
+x <- list(rnorm(100), runif(100), rpois(100, 1))#
+sapply(x, quantile, probs = c(0.25, 0.75))
+?quantile
+?rnorm
+?runif
+?rpois
+?gl
+?list
+debug(ls)
+ls(g)
+exit
+quit
+?read.csv
+dir()
+ls
+pwd
+pwd()
+get_dir()
+getwd()
+?cd
+?cd()
+?getwd
+?which
+setwd("/Users/sarpotd/Desktop/Coursera/Data Analysis/hw2/")
+source("complete.R")
+dir()
+complete("specdata",1)
+source("complete.R")
+complete("specdata",1)
+source("complete.R")
+complete("specdata",1)
+source("complete.R")
+source("complete.R")
+complete("specdata",1)
+source("complete.R")
+complete("specdata",1)
+source("complete.R")
+complete("specdata",1)
+source("complete.R")
+complete("specdata",1)
+source("complete.R")
+complete("specdata",1)
+source("complete.R")
+complete("specdata",1)
+complete("specdata",1:10)
+length(1:10)
+source("complete.R")
+complete("specdata",1:10)
+source("complete.R")
+complete("specdata",1:10)
+source("complete.R")
+complete("specdata",1:10)
+source("complete.R")
+complete("specdata",1:10)
+source("complete.R")
+complete("specdata",1:10)
+complete("specdata",1)
+source("complete.R")
+complete("specdata",1)
+complete("specdata", c(2, 4, 8, 10, 12))
+complete("specdata", 30:25)
+source("http://spark-public.s3.amazonaws.com/compdata/scripts/complete-test.R")
+complete.testscript()
+complete("specdata", 30:25)
+source("complete.R")
+complete("specdata", 30:25)
+source("complete.R")
+complete("specdata", 30:25)
+source("http://spark-public.s3.amazonaws.com/compdata/scripts/complete-test.R")
+complete.testscript()
+dir()
+dir(specdata)
+dir("specdata")
+?corr
+?correlation
+source("corr.R")
+corr("specdata", 150)
+source("corr.R")
+corr("specdata", 150)
+source("corr.R")
+corr("specdata", 150)
+cr <- corr("specdata", 150)
+head(cr)
+source("corr.R")
+cr <- corr("specdata", 150)
+head(cr)
+source("corr.R")
+cr <- corr("specdata", 150)
+source("corr.R")
+cr <- corr("specdata", 150)
+head(cr)
+summary(cr)
+cr <- corr("specdata", 400)
+head(cr)
+summary(cr)
+cr <- corr("specdata", 5000)
+summary(cr)
+length(cr)
+cr <- corr("specdata")
+summary(cr)
+length(cr)
+source("http://spark-public.s3.amazonaws.com/compdata/scripts/corr-test.R")
+corr.testscript()

@@ -1,0 +1,260 @@
+apply(iris[, 1:4], 1, mean)
+library(datasets)#
+data(mtcars)
+head(mtcars)
+?sapply
+/tapply
+?tapply
+?mean
+mean(mtcars$mpg, mtcars$cyl)
+sapply(mtcars, cyl, mean)
+tapply(mtcars$mpg, mtcars$cyl, mean)
+print(mtcars)
+tapply(mtcars$mpg, mtcars$cyl, mean)
+tapply(iris$Sepal.Lenght, iris$Species, mean)
+tapply(iris$Sepal.Length, iris$Species, mean)
+?tapply
+tapply(mtcars$hp, mtcars$cyl, mean)
+?sapply
+f <- function(x) {#
+        g <- function(y) {#
+                y + z#
+        }#
+        z <- 4#
+        x + g(x)#
+}
+z <- 10#
+f(3)
+debug(ls)
+ls
+?ls
+ls
+x <- list(rnorm(100), runif(100), rpois(100, 1))#
+sapply(x, quantile, probs = c(0.25, 0.75))
+?quantile
+?rnorm
+?runif
+?rpois
+?gl
+?list
+debug(ls)
+ls(g)
+exit
+quit
+?read.csv
+dir()
+ls
+pwd
+pwd()
+get_dir()
+getwd()
+?cd
+?cd()
+?getwd
+?png()
+png()
+x <- rnorm(100)#
+hist(x)
+hist(x)
+x <- rnorm(100)
+hist(x)
+?png
+quartz()
+hist(x)
+dev.off()
+?par
+?plo
+?plot
+?axis
+x <- rnorm(100)
+y <- x + rnorm(100)
+par(las = 1)
+plot(x, y)
+par(las = 2)
+plot(x, y)
+x1 <- rnorm(100)
+y1 <- rnorm(100)
+points(x1, y1, col = "red")
+dev.off
+dev.off()
+?gl
+library(lattice)
+library(nlme)
+xyplot(distance ~ age | Subject, data = Orthodont)
+?Orthodont
+xyplot(distance ~ age | Subject, data = Orthodont, type =b)
+xyplot(distance ~ age | Subject, data = Orthodont, type = b)
+xyplot(distance ~ age | Subject, data = Orthodont, type = "b")
+xyplot(weight ~ Time | Diet, BodyWeight)
+xyplot(distance ~ age | Subject, data = Orthodont, type = "b")
+xyplot(weight ~ Time | Diet, BodyWeight)
+?BodyWeight
+plot(0, 0, main = "theta")
+quartz()
+plot(0, 0, main = "theta")
+set.seed(1)
+rpois(5, 2)
+xyplot(weight ~ Time | Diet, BodyWeight)
+?mtext
+?ltext
+?barchart
+?coplot
+plot(0, 0, main = expression("theta")
+)
+plot(0, 0, main = expression("theta"))
+plot(0, 0, main = expression(theta))
+?lsegments
+quit()
+getwd()
+setwd("/Users/sarpotd/Desktop/Coursera/Data Analysis/hw3/")
+outcome <- read.csv("ProgAssignment3-data/outcome-of-care-measures.csv", colClasses = "character")
+table(outcome$State)
+table(outcome$State) > 20
+outcome2 <- subset(outcome, table(outcome$State) > 20)
+table(outcome2$State)
+outcome2 <- subset(outcome, subset=(table(outcome$State) > 20))
+table(outcome2$State)
+outcome2 <- subset(outcome)
+State_20 <- table(outcome$State) > 20
+State_20
+State_20[outcome$State]
+State_20
+outcome$State
+State_20[outcome$State]
+table(State_20[outcome$State])
+State_20
+rownames(State_20)
+colnames(State_20)
+temp <- c(a="temp", b="temp2")
+temp
+rownames(temp)
+colnames(temp)
+names(temp)
+table(outcome$State)
+names(table(outcome$State))
+State_20
+State_20[outcome$State]
+outcome$State[State_20]
+table(outcome$State[State_20])
+table(outcome$State)
+State_20
+State_20[outcome$State]
+outcome2 <- subset(outcome,State_20[outcome$State])
+table(outcome2$State)
+death <- outcome2[, 11]
+state <- outcome2$State
+boxplot(death ~ state)
+death
+death <- as.numeric(outcome2[, 11])
+boxplot(death ~ state)
+?ylab
+?ylabel
+?boxplot
+?label
+?title
+title(main="Heart Attack",ylab="30-day Death")
+?par
+par(las=2)
+boxplot(death ~ state)
+death
+state
+cbind(death,state)
+outcome2[4626,]
+death_state <- cbind(death,state)
+colnames(death_state)
+table(death_state$state)
+table(death_state[state])
+table(death_state["state"])
+str(death_state)
+death_state[,1] <- as.numeric(death_state[,1])
+table(death_state["state"])
+death_state$state
+death_state
+death_state[,1] <- as.numeric(death_state[,1])
+death_state
+class(death_state[,1])
+as.numeric(death_state[,1]
+)
+death_state <- as.numeric(death_state[,1]
+)
+death_state
+death_state <- cbind(death_state,state)
+death_state
+death <- as.numeric(death_state[,1])
+death
+state
+rownames(death) <- state
+death
+str(death)
+str(state)
+rownames(death) <- state
+cbind(state,death)
+cbind(state,as.numeric(death))
+rownames(death) <- state
+str(death)
+summary(death)
+class(death)
+death
+state
+str(state)
+str(death)
+data.frame(state,death)
+new <- data.frame(state,death)
+new$state
+table(new$state)
+order(table(new$state))
+new
+new
+table(new$state)
+temp <- table(new$state)
+temp
+temp <- order(temp)
+temp
+temp <- order(temp)
+temp
+temp <- table(new$state)
+temp
+?order
+temp[order(temp)]
+new[order(new$state)]
+order(new$state)
+temp[order(temp)]
+names(temp[order(temp)])
+temp2 <- names(temp[order(temp)])
+temp2
+new
+new[temp2]
+temp2[new$state]
+temp[order(temp)]
+temp <- temp[order(temp)]
+temp2[new$state]
+table(temp2[new$state])
+yemp
+temp
+?tapply
+tapply(death,state,median)
+tapply(death,state,median,na.rm=TRUE)
+state.medians <- tapply(death,state,median,na.rm=TRUE)
+sorted.states <- names(sort(state.medians))
+sorted.states
+order(state.medians)
+sort(state.medians)
+state.medians[order(state.medians)]
+?split
+groups <- split(death,state)
+groups
+groups <- split(state,death)
+groups
+groups <- split(death,state)
+groups
+groups[sorted.states]
+boxplot(sorted.groups, main = "Heart Attack 30-day Death Rate by State", ylab = "30-day Death Rate", las=2, cex.axis=0.8)
+sorted.groups <- groups[sorted.states]
+boxplot(sorted.groups, main = "Heart Attack 30-day Death Rate by State", ylab = "30-day Death Rate", las=2, cex.axis=0.8)
+?reorder
+new
+reorder(new,new$state)
+reorder(new,table(new$state))
+state
+temp
+reorder(temp,temp)
