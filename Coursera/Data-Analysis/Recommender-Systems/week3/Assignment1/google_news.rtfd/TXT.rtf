@@ -1,0 +1,165 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf510
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 LucidaGrande;\f2\fswiss\fcharset0 ArialMT;
+}
+{\colortbl;\red255\green255\blue255;\red0\green45\blue153;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{check\}}{\leveltext\leveltemplateid1\'01\uc0\u10003 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid101\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid2}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
+\margl1440\margr1440\vieww18720\viewh12160\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\fs24 \cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\fs28 \cf0 We used google news ({\field{\*\fldinst{HYPERLINK "http://news.google.com"}}{\fldrslt news.google.com}}) to get 3 personalized newsfeed. Below we have included the screen capture of the news feeds from google. All the three screenshots were taken around 4:45 am GMT on Tuesday Sep/24/2013. The three terms that  we used for personalizing our news feed were:\
+\
+\pard\tx220\tx720\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li720\fi-720\pardirnatural
+\ls1\ilvl0\cf0 {\listtext	
+\f1 \uc0\u10003 
+\f0 	}bacpacking travel  (note the intentional typo in backpacking)\
+{\listtext	
+\f1 \uc0\u10003 
+\f0 	}World Equity Markets\
+{\listtext	
+\f1 \uc0\u10003 
+\f0 	}Recommender Systems\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\cf0 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\b\fs36 \cf2 \ul \ulc2 Recommender Systems (see screen shot below)
+\b0\fs24 \cf0 \ulnone \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\cf0 {{\NeXTGraphic Screen Shot 2013-09-23 at 9.13.35 PM.png \width28300 \height14360
+}¬}\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\fs28 \cf0 \
+One of the terms used for personalizing the news feed is "
+\i Recommender Systems
+\i0 ". A quick experiment shows that the articles recommended ARE the result of a word by word search for the terms presented. At a minimum stemming is undertaken (this can be clearly seen in the first few articles some of which contain "
+\i Recommendation System
+\i0 " instead of "
+\i Recommender System
+\i0 ".) Within this corpus of articles found through search, it is not clear what algorithm is used to mark some articles more relevant than the others. However we can make educated guesses about what the algorithm is not based on.\
+\pard\tx220\tx720\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li720\fi-720\pardirnatural
+\ls2\ilvl0\cf0 {\listtext	1.	}The relevance is not exclusively based on the time stamp of the article. In some cases older articles are deemed more relevant than newer ones (article 3 - "
+\f2\i YouTube Is Winning An Emmy, But Video Recommendation Still Has A Long \'85"
+\i0\b\fs32  
+\f0\b0\fs28 Vs article 4 - "
+\f2\i Microsoft Seeks Patent on Tastemaker Recommendations
+\i0 "
+\b\fs36  
+\f0\b0\fs28 below)\
+{\listtext	2.	}The relevance is also not exclusively based on TFIDF. The word recommend (
+\i recommendation, recommender, recommender
+\i0 ) can be considered a rare term and it occurs more times in article 3  - "
+\f2\i YouTube Is Winning An Emmy, But Video Recommendation Still Has A Long \'85"  
+\f0\i0 than in article 1 - 
+\i "
+\f2 Why Recommendation Engines Are About To Get Much Better
+\f0 ."
+\i0  Thus TFIDF score is not exclusively used for scoring relevance of the articles.
+\b \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\b0 \cf0 \
+It seems a weighted combination of TFIDF and time stamp of the article is used to score its relevance.\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\b \cf2 Improvement needed
+\b0 \cf0 \
+\
+The newsfeed also includes articles that have no relevance to recommender systems. For example article 6 -"
+\f2\i Why Zuckerberg Thinks Government Should Not \'93Move Fast And Break Things\'94 
+\i0 is included only because there is a short biography of Zuckerberg at the bottom of the page and how he worked on music recommendation system before he created Facebook. The main article is about a subject other than recommender systems. Clearly the personalized newsfeed failed to only look at the main article on the webpage to score article relevance.
+\b\fs36 \
+
+\f0\b0\fs24 \
+\page \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\b\fs36 \cf2 \ul \ulc2 bacpacking travel (see screen shot below)
+\b0\fs24 \ulnone \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\cf0 \
+
+\fs28 For the next newsfeed we created an intentional typo in one of the words. The real word is "
+\i backpacking
+\i0 ", but we used "
+\i bacpacking
+\i0 " for our search. Google search is forgiving of typos and either warns the user of the typo or auto-corrects the typo in the search results. We expected to see the same behavior in our personalized newsfeed and that is what we saw. Its also clear that case is not significant in searches.\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\b \cf2 Improvement needed\
+\cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\b0 \cf0 Again in this case we see articles included that had nothing to do with "
+\i bacpacking
+\i0 ". For example there was an article from "The Sun" (that needed\
+registration to read) and was about the actress Rachel McAdams. It seems the personalized newsfeed recommender is prone to making mistakes. However the wrong news article appropriately had a lowly relevance score.
+\b \cf2 \
+
+\b0 \cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\fs24 \cf0 {{\NeXTGraphic Screen Shot 2013-09-23 at 9.41.19 PM.png \width28380 \height15040
+}¬}\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\cf0 \
+\
+\
+\page \
+\
+\
+\
+\
+\page \
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\b\fs36 \cf2 \ul World Equity Markets
+\b0\fs24 \cf0 \ulnone \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\fs28 \cf0 For our last personalized news feed we used "
+\i World Equity Markets
+\i0 " in our search. "
+\i World
+\i0 " and "
+\i Markets
+\i0 " are fairly common words and hence will have low TFIDF scores. However "
+\i Equity
+\i0 " is a rarer word and hence will have a higher TFIDF score. The word equity can be used in social justice or economic equality context as well. and yet all the articles recommended in our news feed are related to the financial equity (stock) markets. Thus the search engine is smart enough to understand that the word "
+\i Equity
+\i0 " in association with the word "
+\i Markets
+\i0 " means stock markets.\
+\
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\fs24 \cf0 {{\NeXTGraphic Screen Shot 2013-09-23 at 9.13.05 PM.png \width28280 \height14280
+}¬}\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\cf0 \
+}
