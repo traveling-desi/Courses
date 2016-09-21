@@ -1,0 +1,114 @@
+Week 3: Programming Assignment 2
+
+Released Monday, May 26th, 2014
+Due Monday, June 9th, 2014
+
+In this assignment, you will use a Java ReentrantLock and Java
+Condition to implement a subset of the Java
+java.util.concurrent.Semaphore class, which we call SimpleSemaphore.
+This assignment also reuses the SimpleAtomicLong you implemented for
+week-2-assignment-1, so make sure it's compiling and running properly
+before attempting this assignment!
+
+The goal of this assignment is to use the SimpleSemaphore to correctly
+implement a resource manager that limits the number of Beings from
+Middle-Earth who can concurrently gaze into a Palantir.  Please see
+http://en.wikipedia.org/wiki/Palantir for more information on
+Palantirs if you're not yet a fan of Tolkein's Lord of the Ring's.
+
+The PalantirManagerUnitTest.java program creates three Palantiri and
+five Threads (one for each Palantir user) that concurrently attempt to
+acquire a Palantir and gaze into it for a certain amount of time.  If
+the SimpleSemaphore and SimpleAtomicLong are implemented properly the
+test should succeed without throwing any exceptions, as described
+further below.
+
+In this directory you'll find a number of files, all of which you
+should read.  However, the only two files you need to modify are
+SimpleAtomicLong.java and SimpleSemaphore.java in the
+src/edu/vuum/mocca directory, which contains the skeleton Java code
+that you'll implement by completing the "TODO - You fill in here"
+comments to provide a working solution.  DO NOT CHANGE THE OVERALL
+STRUCTURE OF THE SKELETON - just fill in the "TODO - You fill in here"
+portions!!!
+
+In particular, you'll need to do the following:
+
+. Implement the SimpleAtomicLong class, which you should replace with
+  your solution to week-2-assignment-1, after applying any fixes
+  motivated by watching the Virtual Office Hours video of the
+  instructor's solution(s).  This class is only used by the
+  PalantirManagerUnitTest.java and should not be used in the
+  SimpleSemaphore implementation itself.
+
+. Implement the SimpleSemaphore class using a Java ConditionObject
+  (accessed via a Condition) and Java ReentrantLock, which are covered
+  in these videos:
+  
+  Section 1: Module 2: Part 5: Java ReentrantLock
+  Section 1: Module 2: Part 8: Java ConditionObject 
+
+  There are also relevant discussions about using Java
+  ConditionObjects at these links that may help with the
+  SimpleSemaphore implementation:
+
+  http://docs.oracle.com/javase/1.5.0/docs/api/java/util/concurrent/locks/Condition.html
+  http://stackoverflow.com/questions/11308768/condition-should-unlock-before-await
+
+. Your SimpleSemaphore implementation must support the "Fair" and
+  "NotFair" semantics, which are covered in this video:
+
+  Section 1: Module 2: Part 7: Java Semaphore
+
+  It's easy to support both these semantics if you watch the Java
+  ReentrantLock video and understand how its constructor works.
+
+. The PalantirManagerTest.java program also uses various features of
+  Java Threads and Runnables, which are described in these videos:
+
+  Section 1: Module 2: Part 1: Overview of Java Threads (Part 1)
+  Section 1: Module 2: Part 2: Overview of Java Threads (Part 2)
+
+These videos are available at
+
+https://class.coursera.org/posa-002/lecture
+
+We'll also discuss this assignment specification (and later its
+solution) in the POSA MOOC "Virtual Office Hours", which are described
+in item #38 at the POSA MOOC FAQ available from
+
+http://www.coursera.org/course/posa
+
+To compile this code you need to use the provided Eclipse project.
+There is a Unit Test Suite that will run all three Unit test files
+included in the test/ directory for you at once.  When you first open
+the project in Eclipse, you might see compile errors if JUnit is not
+included in your build path.  To fix these errors, open
+SynchronizedQueueTest.java, hover over "org.junit," and click "Fix
+project setup."  Make sure "Add JUnit 4 library to the build path" is
+selected and then click "OK."  At this point, the compile errors
+should disappear!
+
+Right click on the test suite (AllTests.java) or an individual
+*_UnitTest.java file in Eclipse and select 'Run As' -> 'JUnit
+Test'. When the assignment is complete, all the tests should complete
+successfully.  If a test passes a green-check mark will appear next to
+the test in the JUnit view.  As long as this JUnit test "passes"
+successfully your program will be be consider "correct" for the
+purposes of assessing this assignment.
+
+If you'd like to enable verbose debugging output please set the
+diagnosticsEnabled flag in PlanantirManagerUnitTest.java to true (it
+defaults to false).  However, this will generate a lot of output and
+you'll need to look at it carefully to understand what it's doing.  If
+you do this, don't worry about "warnings" since there's an intentional
+race condition in the test since it's possible for one thread to call
+mFairnessChecker.addNewThread() and then yield to another thread which
+again calls mFairnessChecker.addNewThread() and then goes on without
+interruption to call mPalantirManager.acquirePalantir(), which will
+fool the fairness checker into wrongly thinking the acquisition wasn't
+fair.  We therefore just give a warning (rather than an error) if it
+looks like the semaphore acquire() method isn't "fair".  The key is
+not to have runtime exceptions, i.e., you want only "green-check
+marks" in the JUnit view output!
+

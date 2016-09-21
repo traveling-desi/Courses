@@ -1,0 +1,78 @@
+Week 2: Programming Assignment 1
+
+Released Monday, May 19th, 2014
+Due Monday, June 2nd, 2014
+
+In this second assignment, you'll implement a subset of the
+java.util.concurrent.atomic.SimpleAtomicLong class using a Java
+ReentrantReadWriteLock.  The goal is to understand how to use
+ReentrantReadWriteLock to serialize access to a variable that's shared
+by multiple threads.
+
+The BuggyLongTest.java program shows what happens if concurrent access
+to a long isn't properly serialized.  This test program works best on
+a multi-core/multi-processor machine, which should induce a failure
+due to race conditions stemming from parallel execution.  If this test
+"succeeds" then your target platform may not be sufficiently parallel
+to demonstrate the race conditions.
+
+In the src/edu/vuum/mocca directory you'll find the
+SimpleAtomicLong.java class, which contains the skeleton Java code
+that you'll implement by completing the "TODO - You fill in here"
+comments to provide a working solution.  DO NOT CHANGE THE OVERALL
+STRUCTURE OF THE SKELETON - just fill in the "TODO - You fill in here"
+portions!!!
+
+In particular, you'll need to do the following:
+
+. Implement the SimpleAtomicLong class using a Java
+  ReentrantReadWriteLock, which is covered in this video:
+  
+  Section 1: Module 2: Part 6: Java ReentrantReadWriteLock
+
+  There's also a good tutorial on ReentrantReadWriteLock at
+  
+  http://tutorials.jenkov.com/java-util-concurrent/readwritelock.html
+
+. Make sure to use a readLock() for SimpleAtomicLong.get() and
+  writeLock() for all the other SimpleAtomicLong methods.
+
+Note that the SimpleAtomicLongTest.java program uses Java Threads and
+Runnables, which are described in these videos:
+
+  Section 1: Module 2: Part 1: Overview of Java Threads (Part 1)
+  Section 1: Module 2: Part 2: Overview of Java Threads (Part 2)
+
+Likewise, it also uses the Java CountDownLatch and CyclicBarrier
+classes, which are described in this video:
+
+  Section 1: Module 2: Part 9: Java CountDownLatch
+
+These videos are available at
+
+https://class.coursera.org/posa-002/lecture
+
+When you first open the project in Eclipse, you might see compile
+errors if JUnit is not included in your build path.  To fix these
+errors, open SynchronizedQueueTest.java, hover over "org.junit," and
+click "Fix project setup."  Make sure "Add JUnit 4 library to the
+build path" is selected and then click "OK."  At this point, the
+compile errors should disappear!
+
+To run the JUnit tests in Eclipse, right-click on
+SimpleAtomicLongTests.java and Run As > JUnit Test.  The JUnit view
+will pop up in Eclipse and run the the tests, which are divided into
+two subsets: multi-threaded and single-threaded tests.  The
+single-threaded tests verify functionality of all methods within a
+single thread, while the multi-threaded tests do the same in a
+multi-threaded environment.  All tests should run successfully, i.e.,
+a green-check mark will appear next to the test in the JUnit view.  As
+long as this JUnit test "passes" successfully your program will be be
+consider "correct" for the purposes of assessing this assignment.
+
+
+
+
+
+
+

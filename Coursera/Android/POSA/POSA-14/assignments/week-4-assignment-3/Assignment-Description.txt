@@ -1,0 +1,124 @@
+Week 4: Programming Assignment 3
+
+Released Monday, June 2nd, 2014
+Due Monday, June 16th, 2014
+
+In this assignment, you will implement a Java program that creates two
+instances of the PlayPingPongThread and then starts these thread
+instances to correctly alternate printing "Ping" and "Pong",
+respectively, on the console display.  This assignment also reuses the
+SimpleSemaphore you implemented for the previous assignment, so please
+apply any fixes motivated by watching the Virtual Office Hours video
+of the instructor's solution(s).
+
+In this directory you'll find the PingPongRight.java class, which
+contains the skeleton Java code that you'll implement by completing
+the "TODO - You fill in here" comments to provide a working solution.
+DO NOT CHANGE THE OVERALL STRUCTURE OF THE SKELETON - just fill in the
+"TODO - You fill in here" portions!!!
+
+In particular, you'll need to do the following:
+
+. Implement the SimpleSemaphore class, which you should replace with
+  your working solution from the previous assignment, after applying
+  any fixes motivated by watching the Virtual Office Hours video of
+  the instructor's solution(s).
+  
+. Use your SimpleSemaphore to implement the PlayPingPongThread class
+  and fix the problems with the earlier PingPongWrong solution, which
+  is covered in this video:
+  
+  Section 1: Module 2: Part 3: Motivating Java Synchronization and Scheduling Mechanisms 
+
+. Implement the PingPongRight class data members (including a Java
+  CountDownLatch) and the main() function that uses the
+  SimpleSemaphore and CountDownLatch.  The Java CountDownLatch class
+  is covered in this video:
+
+  Section 1: Module 2: Part 9: Java CountDownLatch
+
+  There are also relevant discussions about using Java
+  CountDownLatches at these links:
+
+  http://javatechig.com/java/countdownlatch-and-java-concurrency-example  
+  http://tutorials.jenkov.com/java-util-concurrent/countdownlatch.html
+
+. The PingPongRight.java program also uses various features of Java
+  Threads and Runnables, which are described in these videos:
+
+  Section 1: Module 2: Part 1: Overview of Java Threads (Part 1)
+  Section 1: Module 2: Part 2: Overview of Java Threads (Part 2)
+
+. A more sophisticated example of a concurrent ping-pong program is
+  is shown in these videos:
+ 
+  Section 1: Module 2: Part 10: Java Synchronization and Scheduling Example (Part 1)
+  Section 1: Module 2: Part 11: Java Synchronization and Scheduling Example (Part 2)
+
+  This programming assignment isn't as sophisticated (e.g., it doesn't
+  implement a framework and doesn't use as many GoF patterns), but I
+  suggest you watch these videos to learn more about how binary
+  semaphores can be used to correctly alternate printing "ping" and
+  "pong" from two Java Threads.
+
+These videos are available at
+
+https://class.coursera.org/posa-002/lecture
+
+We'll also discuss this assignment specification (and later its
+solution) in the POSA MOOC "Virtual Office Hours", which are described
+in item #38 at the POSA MOOC FAQ available from
+
+http://www.courera.org/course/posa
+
+To compile this code you can either use the provided Eclipse project
+or go into the src/edu/vuum/mooca directory and simply type
+
+% javac PingPongRight.java SimpleSemaphore.java
+
+and to run the resulting class file simply type
+
+% java PingPongRight
+
+The correct solution when you run PingPongRight should look exactly
+like this:
+
+Ready...Set...Go!
+Ping!  (1)
+ Pong! (1)
+Ping!  (2)
+ Pong! (2)
+Ping!  (3)
+ Pong! (3)
+Ping!  (4)
+ Pong! (4)
+Ping!  (5)
+ Pong! (5)
+Ping!  (6)
+ Pong! (6)
+Ping!  (7)
+ Pong! (7)
+Ping!  (8)
+ Pong! (8)
+Ping!  (9)
+ Pong! (9)
+Ping!  (10)
+ Pong! (10)
+Done!
+
+There is also a Unit Test Suite that will run the PingPongRightTest
+file included in the test/edu/vuum/mooca directory for you at.  When
+you first open the project in Eclipse, you might see compile errors if
+JUnit is not included in your build path.  To fix these errors, open
+SynchronizedQueueTest.java, hover over "org.junit," and click "Fix
+project setup."  Make sure "Add JUnit 4 library to the build path" is
+selected and then click "OK."  At this point, the compile errors
+should disappear!
+
+Right click on the PingPongRightTest.java file in Eclipse and select
+'Run As' -> 'JUnit Test'. When the assignment is complete, the test
+should complete successfully.  If the test passes a green-check mark
+will appear next to the test in the JUnit view.  As long as this JUnit
+test "passes" successfully your program will be be consider "correct"
+for the purposes of assessing this assignment.
+
