@@ -1,0 +1,19 @@
+<?
+
+/**
+ * This file saves a raw image sent in the post 
+ * based on http://www.re-cycledair.com/html-5-canvas-saving-to-a-file-with-php
+ */
+
+$data = substr($_POST['imageData'], strpos($_POST['imageData'], ",") + 1);
+$decodedData = base64_decode($data);
+$filename = "./upload/canvas.png";
+$fp = fopen($filename, 'wb');
+fwrite($fp, $decodedData);
+fclose($fp);
+//echo ($_SERVER["HTTP_REFERER"]);
+//$this_dir = str_replace(basename($_SERVER["HTTP_REFERER"]), "", $_SERVER["HTTP_REFERER"]); 
+echo ($_SERVER["HTTP_REFERER"].$filename);
+
+?>
+
