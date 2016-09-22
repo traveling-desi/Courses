@@ -1,8 +1,8 @@
 # Courses
 
-This is repository contains videos for all the courses I have taken on Coursera, Udacity, and edx.
+This is repository contains class videos and some PDF files for all the courses I have taken on Coursera, Udacity, and edx.
 
-It also includes homework assignments together with solutions. 
+It also may include homework assignments together with solutions. 
 
 You will find mp4 and pdf files.
 
